@@ -1,0 +1,22 @@
+.row
+  .col-sm-11
+    .form-group
+      = form.label :name, class: 'control-label'
+      = form.text_field :name, class: 'form-control'
+  .col-sm-1
+    .form-group
+      .checkbox
+        = form.label :active do
+          = form.check_box :active
+          | Active?
+.form-group
+  = form.label :title, class: 'control-label'
+  = form.text_field :title, class: 'form-control'
+.form-group
+  = form.label :body, class: 'control-label'
+  = form.text_area :body, class: 'form-control', cols: 4
+.form-group
+  = form.label :category_id
+  = form.collection_select :category_id, Category.all, :id, :name, { include_blank: true }, class: 'form-control' do |b|
+    .checkbox
+      = b.label { b.text + b.check_box }

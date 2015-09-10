@@ -1,0 +1,34 @@
+.row
+  .col-sm-4
+    .form-group
+      = form.label :first_name, class: 'control-label'
+      = form.text_field :first_name, class: 'form-control'
+  .col-sm-4
+    .form-group
+      = form.label :last_name, class: 'control-label'
+      = form.text_field :last_name, class: 'form-control'
+  .col-sm-4
+    .form-group
+      = form.label :credentials, class: 'control-label'
+      = form.text_field :credentials, class: 'form-control'
+/.form-group
+/  = form.label :photo, class: 'control-label'
+/  = form.file_field :photo, class: 'form-control'
+.form-group
+  = form.label :title, class: 'control-label'
+  = form.text_area :title, class: 'form-control', rows: '6'
+.form-group
+  = form.label :services, class: 'control-label'
+  = form.text_area :services, class: 'form-control', rows: '6'
+.well
+  h2 Schedule
+  - form.object.build_schedule if form.object.schedule.blank?
+  = form.fields_for :schedule do |schedule|
+    = render 'schedule_fields', form: schedule
+
+.form-group
+  = form.label :notes, class: 'control-label'
+  = form.text_area :notes, class: 'form-control'
+.form-group
+  = form.label :bio, class: 'control-label'
+  = form.text_area :bio, class: 'form-control', rows: '10'

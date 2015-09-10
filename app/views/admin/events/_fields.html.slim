@@ -1,0 +1,22 @@
+.row
+  .col-sm-4
+    .form_group
+      = form.label :day, class: 'control-label'
+      = form.select :day, Event.days, {}, class: 'form-control'
+  .col-sm-3
+    .form-group
+      = form.label :start_time, class: 'control-label'
+      = form.time_field :start_time, class: 'form-control'
+  .col-sm-3
+    .form-group
+      = form.label :end_time, class: 'control-label'
+      = form.time_field :end_time, class: 'form-control'
+  .col-sm-1
+    .form-group
+      = form.label :off, 'Off?', class: 'control-label'
+      = form.check_box :off, class: 'checkbox'
+  - unless form.object.new_record?
+    .col-sm-1
+      .form-group
+        = form.label :_destroy, 'Remove day?', class: 'control-label'
+        = form.check_box :_destroy, class: 'checkbox'

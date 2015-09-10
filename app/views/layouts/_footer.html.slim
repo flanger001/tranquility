@@ -1,0 +1,28 @@
+.container-fluid.footer
+  .row
+    .col-md-12
+      p.text-center.slogan
+        i= slogan
+  .row.footer-body
+    .col-md-2
+      ul.list-unstyled.footer-links
+        - nav_links.each do |link|
+          li= link_to link.name, link.url
+    .col-md-8.text-center
+      address
+        | 83 West Pulteney St
+        br
+        | Corning, NY 14830
+        br
+        abbr title='Phone 1' P1: (607) 769-8080
+        br
+        abbr title='Email'
+          | E:
+          =< mail_to 'christina.lower@yahoo.com', 'christina.lower@yahoo.com', class: 'lowercase-override'
+      p: a href='/spa-hours'Spa Hours</a
+      p Copyright &copy; 2009-#{Time.now.year} A Touch Of Tranquility
+
+    .col-md-2.text-center
+      p= link_to image_tag('social/facebook.png', class: 'facebook-image', alt: 'Facebook link'), 'https://www.facebook.com/ATouchOfTranquility'
+      p= render 'layouts/genbook'
+      p= image_tag 'credit-card-logos-2-no-amex.jpg', class: 'credit-cards-image', alt: 'Credit cards accepted'

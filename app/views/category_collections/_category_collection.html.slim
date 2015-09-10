@@ -1,0 +1,13 @@
+- content_for :page_title, category_collection.name
+- content_for :seo_keywords, category_collection.seo
+- content_for :seo_description, category_collection.description
+
+p= category_collection.description
+- category_collection.categories.each do |category|
+  h1.category-header
+    = link_to category.name, category_path(category.url)
+  p.category-description
+    = simple_format(category.description)
+  - if category.inline
+    - category.products.each do |product|
+      = render product

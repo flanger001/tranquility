@@ -1,0 +1,9 @@
+.product
+  h2.product-header= product.name
+  p.product-description= simple_format(product.description)
+  table.price-list
+    - product.product_attributes.each do |attribute|
+      tr
+        - if attribute.time
+          td #{attribute.time} minutes
+        td= number_to_currency(attribute.price, precision: 0)

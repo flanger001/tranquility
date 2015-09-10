@@ -1,0 +1,21 @@
+- content_for :page_title, "#{resource_class.to_s.titleize} Manager"
+
+table.table
+  thead
+    tr
+      = render 'index_row_headers'
+      th
+
+  tbody
+    - collection.each do |row|
+      tr
+        = render 'index_row_columns', row: row
+        td
+          .btn-toolbar.pull-right
+            = link_to 'Show', [:admin, row], class: 'btn btn-info btn-xs'
+            = link_to 'Edit', polymorphic_path([:edit, :admin, row]), class: 'btn btn-warning btn-xs'
+            = link_to 'Destroy', [:admin, row], data: { :confirm => 'Are you sure?' }, :method => :delete, class: 'btn btn-danger btn-xs'
+
+br
+
+= link_to "New #{resource_class.to_s.titleize}", new_polymorphic_path([:admin, resource_class]), class: 'btn btn-success btn-lg'

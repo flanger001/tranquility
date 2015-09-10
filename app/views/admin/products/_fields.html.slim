@@ -1,0 +1,20 @@
+.form-group
+  = form.label :category_id, class: 'control-label'
+  = form.collection_select :category_id, Category.all, :id, :name, {}, class: 'form-control'
+.form-group
+  = form.label :name, class: 'control-label'
+  = form.text_field :name, class: 'form-control'
+.form-group
+  = form.label :seo, 'SEO Tags', class: 'control-label'
+  = form.text_field :seo, class: 'form-control'
+.form-group
+  = form.label :description, class: 'control-label'
+  = form.text_field :description, class: 'form-control'
+/.form-group
+  = form.label :price, class: 'control-label'
+  = form.number_field :price, class: 'form-control'
+.well
+  - form.object.product_attributes.build if form.object.product_attributes.blank?
+  = form.fields_for :product_attributes do |f|
+    = render 'product_attribute_fields', form: f
+  = add_extra_fields_link('Add Price & Time', form, :product_attributes)

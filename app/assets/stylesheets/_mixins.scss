@@ -1,0 +1,39 @@
+@mixin script-font {
+  // font-family: $script-font;
+  font-size: 5em;
+}
+
+@mixin text-shadow-grow  {
+  -webkit-transition: text-shadow 0.35s;
+  -moz-transition: text-shadow 0.35s;
+  -ms-transition: text-shadow 0.35s;
+  -o-transition: text-shadow 0.35s;
+  transition: text-shadow 0.35s;
+}
+
+@mixin box-shadow-grow  {
+  -webkit-transition: box-shadow 0.35s;
+  -moz-transition: box-shadow 0.35s;
+  -ms-transition: box-shadow 0.35s;
+  -o-transition: box-shadow 0.35s;
+  transition: box-shadow 0.35s;
+}
+
+@mixin link-color {
+  text-transform: uppercase;
+  $desktop-link-color: #fff;
+  color: $desktop-link-color;
+  &:hover {
+    color: darken($desktop-link-color, 10%);
+  }
+}
+
+@mixin brown-background(){
+  background: darken($body-bg, 50%);
+}
+
+// @mixin text-overflow() {
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }

@@ -1,0 +1,5 @@
+= render 'show'
+
+.btn-toolbar
+  = link_to 'Edit', edit_polymorphic_path([:admin, resource]), class: 'btn btn-default'
+  = link_to 'Back', polymorphic_path([:admin, resource.class]), class: 'btn btn-default'

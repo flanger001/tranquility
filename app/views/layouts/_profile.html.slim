@@ -1,0 +1,5 @@
+- if user_logged_in?
+  .profile
+    ul.list-inline.pull-right
+      - user_links.each do |link|
+        li= link_to link.name, link.url

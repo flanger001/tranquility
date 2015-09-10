@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: staff
+#
+#  id          :integer          not null, primary key
+#  first_name  :string
+#  last_name   :string
+#  credentials :string
+#  photo       :string
+#  title       :text
+#  bio         :text
+#  services    :text
+#  notes       :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  credentials: MyString
+  title: MyString
+
+two:
+  name: MyString
+  credentials: MyString
+  title: MyString

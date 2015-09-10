@@ -1,0 +1,22 @@
+.row
+  .col-sm-10
+    .form-group
+      = form.label :name, class: 'control-label'
+      = form.text_field :name, class: 'form-control'
+  .col-sm-2
+    .form-group
+      = form.label :inline, class: 'checkbox' do
+        => form.check_box :inline
+        | Show categories inline?
+.form-group
+  = form.label :seo, 'SEO Tags', class: 'control-label'
+  = form.text_field :seo, class: 'form-control'
+.form-group
+  = form.label :description, class: 'control-label'
+  = form.text_field :description, class: 'form-control'
+.form-group
+  = form.label :category_ids, 'Categories in collection', class: 'control-label'
+  = form.collection_check_boxes :category_ids, Category.all, :id, :name, {} do |b|
+    .checkbox
+      = b.label { b.check_box + b.text }
+

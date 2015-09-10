@@ -1,0 +1,13 @@
+.container-fluid.hidden-sm-block.hidden-xs-block.visible-md-block.visible-lg-block#desktop
+  .row.vert-75.clearfix
+  .container-fluid#desktop-well
+    .row
+      .col-sm-12
+        .top-image.text-center
+          = link_to image_tag('weblogo-desktop.png', class: 'img-not-quite-so-responsive', alt: 'Main logo'), root_path
+          = render 'layouts/navbar'
+  .row.vert-75.clearfix
+
+.hidden-md-block.hidden-lg-block.visible-sm-block.visible-xs-block#mobile
+  .masthead
+    = render 'layouts/navbar'

@@ -1,0 +1,45 @@
+.member id="#{resource.full_name.downcase.gsub(' ', '-')}"
+  .row
+    .col-sm-4
+      h2.staff-name #{resource.first_name} #{resource.last_name}
+      p.staff-credentials= resource.credentials
+      .staff-photo
+        - staff_photo = "staff/#{resource.first_name.downcase}-#{resource.last_name.downcase}-400.png"
+        = image_tag "#{image_path(staff_photo).start_with?('/assets') ? staff_photo : 'no-photo.png' }", class: 'img-responsive img-rounded', alt: "#{resource.first_name} #{resource.last_name}"
+
+    .col-sm-4
+      h2.staff-column-title Services
+      p.staff-title
+        = simple_format(resource.title)
+      p: button.btn.btn-info data-toggle='modal' data-target="##{resource.first_name.downcase}#{resource.last_name.downcase}bio" Bio
+      p
+        b => resource.first_name
+        | is available for:
+      ul.list-unstyled.staff-services
+        - resource.services.split("\n").each do |service|
+          li= service
+      p= simple_format(resource.notes)
+
+    .col-sm-4
+      h2.staff-column-title Schedule
+      - if resource.schedule.present?
+        - if resource.schedule.events.present?
+          table.schedule
+            - resource.schedule.events.sort_by { |e| Event::DAYS.index(e.day) }.each do |event|
+              tr
+                td= event.day
+                td= event.span
+        p= simple_format(resource.schedule.notes)
+      - else
+        p TBD
+
+  .modal.fade id="#{resource.first_name.downcase}#{resource.last_name.downcase}bio" tabindex='-1' role='dialog' aria-labelledby="#{resource.first_name.downcase}#{resource.last_name.downcase}bio" aria-hidden='true'
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close data-dismiss='modal' &times;
+          h4.modal-title #{resource.first_name}'s bio
+        .modal-body
+          = simple_format(resource.bio)
+        .modal-footer
+          button.btn.btn-default type='button' data-dismiss='modal' Close
