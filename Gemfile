@@ -15,6 +15,9 @@ gem 'slim-rails'
 gem 'underscore-rails'
 gem 'bcrypt'
 gem 'annotate'
+gem 'carrierwave'
+gem 'fog'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'

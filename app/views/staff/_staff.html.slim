@@ -4,8 +4,7 @@
       h2.staff-name #{staff.first_name} #{staff.last_name}
       p.staff-credentials= staff.credentials
       .staff-photo
-        - staff_photo = "staff/#{staff.first_name.downcase}-#{staff.last_name.downcase}-400.png"
-        = image_tag "#{image_path(staff_photo).start_with?('/assets') ? staff_photo : 'no-photo.png' }", class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}"
+        = image_tag staff.photo, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}"
 
     .col-sm-4
       h2.staff-column-title Services
