@@ -5,8 +5,9 @@
       .col-sm-12
         .top-image.text-center
           = link_to image_tag('weblogo-desktop.png', class: 'img-not-quite-so-responsive', alt: 'Main logo'), root_path
-          = render 'layouts/navbar'
-          - nav.s
+          .center
+            = render 'layouts/navbar'
+            - nav.s
   .row.vert-75.clearfix
 
 .hidden-md-block.hidden-lg-block.visible-sm-block.visible-xs-block#mobile
