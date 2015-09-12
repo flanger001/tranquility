@@ -1,14 +1,14 @@
-nav.navbar.navbar-default
-  .container
+nav.navbar.navbar-default.center
+  .container-fluid
     .navbar-header
       a.navbar-brand.visible-xs-block.visible-sm-block.hidden-md.hidden-lg
         | Navigation
-        button.navbar-toggle.collapsed data-toggle='collapse' data-target="#{nav_id}"
+        button.navbar-toggle.collapsed data-toggle='collapse' data-target="##{nav.id}"
           span.icon-bar
           span.icon-bar
           span.icon-bar
     .navbar-right
-      .collapse.navbar-collapse id="#{nav_id}"
+      .collapse.navbar-collapse id="#{nav.id}"
         ul.nav.navbar-nav
           - nav_links.each do |link|
             li= link_to link.name, link.url

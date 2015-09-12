@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def nav
+    @nav_id ||= NavId.new
+  end
+
   def resource
     raise 'define a `resource`'
   end
@@ -37,6 +41,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path unless current_user.guest?
   end
 
-  helper_method :current_user, :user_logged_in?, :resource, :collection, :hours
+  helper_method :current_user, :user_logged_in?, :resource, :collection, :hours, :nav
 
 end

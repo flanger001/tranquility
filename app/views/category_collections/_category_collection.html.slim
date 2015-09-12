@@ -8,6 +8,6 @@ p= category_collection.description
     = link_to category.name, category_path(category.url)
   p.category-description
     = simple_format(category.description)
-  - if category.inline
+  - if category_collection.inline
     - category.products.each do |product|
       = render product

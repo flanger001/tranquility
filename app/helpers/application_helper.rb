@@ -1,11 +1,8 @@
 module ApplicationHelper
+
   def full_title(page_title)
     base_title = 'A Touch Of Tranquility'
     page_title.present? ? "#{page_title} | #{base_title}" : base_title
-  end
-
-  def nav_id
-    1
   end
 
   def add_extra_fields_link(name, form, association)

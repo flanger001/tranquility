@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#index'
+  root to: 'pages#index'
 
   resources :categories, only: [:index, :show] do
     resources :products, only: [:index, :show]
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :staff, only: [:index, :show]
 
   %w{about policies likes spa_hours specials}.each do |page|
-    get page.dasherize, to: "static_pages##{page}"
+    get page.dasherize, to: "pages##{page}"
   end
 
   resources :sessions
