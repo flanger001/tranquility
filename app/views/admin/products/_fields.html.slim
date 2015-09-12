@@ -10,6 +10,21 @@
 .form-group
   = form.label :description, class: 'control-label'
   = form.text_field :description, class: 'form-control'
+- if form.object.photo.present?
+  = image_tag form.object.photo.url
+  .checkbox
+    = form.label :remove_photo do
+      = form.check_box :remove_photo
+      | Remove photo?
+.row
+  .col-sm-6
+    .form-group
+      = form.label :photo, 'Upload photo', class: 'control-label'
+      = form.file_field :photo, class: 'form-control'
+  .col-sm-6
+    .form-group
+      = form.label :remote_photo_url, 'Load from URL', class: 'control-label'
+      = form.text_field :remote_photo_url, class: 'form-control'
 /.form-group
   = form.label :price, class: 'control-label'
   = form.number_field :price, class: 'form-control'

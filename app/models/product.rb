@@ -12,6 +12,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  seo           :string
+#  photo         :string
 #
 
 class Product < ActiveRecord::Base
@@ -21,4 +22,6 @@ class Product < ActiveRecord::Base
 
   include CreateUrl
   include SeoTags
+
+  mount_uploader :photo, ImageUploader
 end

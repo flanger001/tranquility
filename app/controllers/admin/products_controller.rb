@@ -7,7 +7,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def resource_params
-    params.require(:product).permit(:category_id, :name, :seo, :description, :price,
+    params.require(:product).permit(:category_id, :name, :remove_photo, :photo, :remote_photo_url, :seo, :description, :price,
           { :product_attributes_attributes => [:id, :time, :price, :_destroy] })
   end
 end

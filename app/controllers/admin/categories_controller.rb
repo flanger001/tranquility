@@ -7,7 +7,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def resource_params
-    params.require(:category).permit(:name, :description, :inline, :seo, :product_ids => [])
+    params.require(:category).permit(:name, :description, :remove_photo, :photo, :remote_photo_url, :inline, :seo, :product_ids => [])
   end
 
 end

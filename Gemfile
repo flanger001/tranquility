@@ -18,6 +18,7 @@ gem 'annotate'
 gem 'carrierwave'
 gem 'fog'
 gem 'dotenv-rails'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'

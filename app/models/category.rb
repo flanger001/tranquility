@@ -12,6 +12,7 @@
 #  updated_at             :datetime         not null
 #  category_collection_id :integer
 #  seo                    :string
+#  photo                  :string
 #
 
 class Category < ActiveRecord::Base
@@ -21,4 +22,6 @@ class Category < ActiveRecord::Base
 
   include CreateUrl
   include SeoTags
+
+  mount_uploader :photo, ImageUploader
 end
