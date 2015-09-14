@@ -20,7 +20,7 @@
   hr
   .callouts
     .row
-      - %w(skin bodywork hair-removal).each do |item|
+      - %w(skin-care bodywork hair-removal).each do |item|
         .col-sm-4
           .nav-image.vert-300 class="#{item}"
             =link_to item.titleize, category_collection_path(item), class: 'h1 nav-link'

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#internal_server_error'
+  get '/403', to: 'errors#forbidden'
+  get '/422', to: 'errors#bad_request'
+
   root to: 'pages#index'
 
   resources :categories, only: [:index, :show] do
