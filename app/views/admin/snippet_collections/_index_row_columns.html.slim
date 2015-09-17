@@ -1,0 +1,4 @@
+td= row.name
+td= row.title
+td= truncate(row.description, length: 100)
+td= row.category_collection.name if row.category_collection.present?

@@ -38,6 +38,7 @@ module ApplicationHelper
       ['Collections', admin_category_collections_path],
       ['Schedules', admin_schedules_path],
       ['Snippets', admin_snippets_path],
+      ['Snippet Collections', admin_snippet_collections_path],
       ['Staff', admin_staff_index_path],
       ['Reviews', admin_reviews_path],
       ['Log Out', logout_path, :post]

@@ -11,3 +11,10 @@ p= category_collection.description
   - if category_collection.inline
     - category.products.each do |product|
       = render product
+
+- if category_collection.snippet_collection.present?
+  h1.category-header= category_collection.snippet_collection.name
+  - category_collection.snippet_collection.snippets.each do |snippet|
+    .snippet
+      h2.category-item-header= snippet.title
+      = simple_format snippet.body

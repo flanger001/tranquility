@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :schedules
     resources :snippets
+    resources :snippet_collections
     resources :staff
     resources :users
   end

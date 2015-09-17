@@ -14,7 +14,8 @@
 
 class CategoryCollection < ActiveRecord::Base
   has_many :categories
-  accepts_nested_attributes_for :categories
+  has_one :snippet_collection
+  accepts_nested_attributes_for :categories, :snippet_collection
   include CreateUrl
   include SeoTags
 

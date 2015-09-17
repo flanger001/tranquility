@@ -2,18 +2,20 @@
 #
 # Table name: snippets
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  title       :string
-#  body        :text
-#  category_id :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  active      :boolean          default(FALSE)
+#  id                    :integer          not null, primary key
+#  name                  :string
+#  title                 :string
+#  body                  :text
+#  category_id           :integer
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  active                :boolean          default(FALSE)
+#  snippet_collection_id :integer
 #
 
 class Snippet < ActiveRecord::Base
   belongs_to :category
+  belongs_to :snippet_collection
   before_save :create_name
 
   private

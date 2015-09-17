@@ -1,0 +1,17 @@
+.form-group
+  = form.label :name, class: 'control-label'
+  = form.text_field :name, class: 'form-control'
+.form-group
+  = form.label :title, class: 'control-label'
+  = form.text_field :title, class: 'form-control'
+.form-group
+  = form.label :description, class: 'control-label'
+  = form.text_area :description, class: 'form-control', cols: 4
+.form-group
+  = form.label :snippet_ids, 'Snippets', class: 'control-label'
+  = form.collection_check_boxes :snippet_ids, Snippet.all, :id, :title, {} do |b|
+    .checkbox
+      = b.label { b.check_box + b.text }
+.form-group
+  = form.label :category_collection_id, class: 'control-label'
+  = form.collection_select :category_collection_id, CategoryCollection.all, :id, :name, { include_blank: true }, class: 'form-control'
