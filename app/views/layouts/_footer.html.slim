@@ -10,15 +10,18 @@
           li= link_to link.name, link.url
     .col-md-8.text-center
       address
-        | 83 West Pulteney St
-        br
-        | Corning, NY 14830
-        br
-        abbr title='Phone 1' P1: (607) 769-8080
-        br
-        abbr title='Email'
-          | E:
-          =< mail_to 'christina.lower@yahoo.com', 'christina.lower@yahoo.com', class: 'lowercase-override'
+        - if address_snippet
+          = simple_format address_snippet.body
+        - else
+          | 83 West Pulteney St
+          br
+          | Corning, NY 14830
+          br
+          abbr title='Phone 1' P1: (607) 769-8080
+          br
+          abbr title='Email'
+            | E:
+            =< mail_to 'christina.lower@yahoo.com', 'christina.lower@yahoo.com', class: 'lowercase-override'
       p: a href='/spa-hours'Spa Hours</a
       p Copyright &copy; 2009-#{Time.now.year} A Touch Of Tranquility
 

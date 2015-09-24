@@ -4,7 +4,7 @@
 #= require turbolinks
 #= require 'underscore'
 
-$(document).ready ->
+$(document).on 'page:load ready', ->
   $('.flash')
     .fadeOut 2000, ->
       $(@).remove()

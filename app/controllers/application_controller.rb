@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
     @hours ||= Schedule.find_by(name: 'Spa Hours')
   end
 
+  def address_snippet
+    @address_snippet ||= Snippet.find_by(title: 'Address')
+  end
+
   def user_logged_in?
     current_user.persisted?
   end
@@ -41,6 +45,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path unless current_user.guest?
   end
 
-  helper_method :current_user, :user_logged_in?, :resource, :collection, :hours, :nav
+  helper_method :current_user, :user_logged_in?, :resource, :collection, :hours, :nav, :address_snippet
 
 end
