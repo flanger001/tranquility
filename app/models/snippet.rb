@@ -18,6 +18,14 @@ class Snippet < ActiveRecord::Base
   belongs_to :snippet_collection
   before_save :create_name
 
+  def self.spa_address
+    @spa_address ||= find_by(title: 'Spa Address')
+  end
+
+  def self.announcement
+    @announcement ||= find_by(title: 'Announcement')
+  end
+
   private
 
   def create_name
