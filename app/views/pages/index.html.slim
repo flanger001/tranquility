@@ -1,7 +1,7 @@
 - content_for :page_title, 'Your sanctuary to restore you...'
 .text-center
-  - if @announcement && @announcement.active
-    p= @announcement.body
+  p= announcement.body if announcement && announcement.active
+
   .landing-text
     p Our healing spa landed in our Corning location in 2003. We have stretched, grown, and moved forward over the years because of all that has been contributed here. We have learned from you and through our practitioners, and that has brought us to a deeply centered and compassionate place with our very own identity. It is unique, thoughtful, and rich with life, details and gorgeous simplicity. We cultivate a healing sanctuary for you to feel comfortable in, enhancing you each and every time you visit.
 
@@ -24,8 +24,7 @@
         .col-sm-4
           .nav-image.vert-300 class="#{item}"
             =link_to item.titleize, category_collection_path(item), class: 'h1 nav-link'
-  .content
-    div
+    .below-fold
       /h3 See what our customers are saying about us!
       /p.text-center
       /  = render 'reviews'

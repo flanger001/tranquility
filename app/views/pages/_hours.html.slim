@@ -1,5 +1,5 @@
 table.schedule#hours
-  - hours.events.sort_by { |e| Event::DAYS.index(e.day) }.each do |event|
+  - spa_hours.events.sort_by { |e| Event::DAYS.index(e.day) }.each do |event|
     tr
       td= event.day
       td= event.span
