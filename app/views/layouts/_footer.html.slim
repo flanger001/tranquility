@@ -10,8 +10,8 @@
           li= link_to link.name, link.url
     .col-md-8.text-center
       address
-        - if address_snippet
-          = simple_format address_snippet.body
+        - if spa_address
+          = simple_format spa_address.body
         - else
           | 83 West Pulteney St
           br

@@ -70,6 +70,7 @@ module ApplicationHelper
 
   def announcement
     @announcement ||= Snippet.announcement
+    @announcement.body if @announcement && @announcement.active
   end
 
 end
