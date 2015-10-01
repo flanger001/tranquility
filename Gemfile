@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'byebug'
