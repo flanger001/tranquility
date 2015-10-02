@@ -3,4 +3,5 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
-Sitemap: http://s3.amazonaws.com/atouchoftranquility/sitemaps/sitemap.xml.gz
+
+Sitemap: https://s3.amazonaws.com/atouchoftranquility/sitemaps/sitemap.xml.gz
