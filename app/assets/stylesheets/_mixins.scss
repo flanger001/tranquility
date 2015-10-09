@@ -32,6 +32,15 @@
   background: darken($body-bg, 50%);
 }
 
+@mixin candle-bg() {
+  background: {
+    image: image-url('candles-lo-res2.jpg');
+    position: 0 -300px;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
 // @mixin text-overflow() {
 //   overflow: hidden;
 //   text-overflow: ellipsis;
@@ -70,3 +79,4 @@
     }
   }
 }
+// }
