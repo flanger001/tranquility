@@ -1,5 +1,8 @@
 .product
-  h2.product-header= product.name
+  h2.product-header
+    = product.name
+    .pull-right
+      = render 'layouts/book_now'
   p.product-description= simple_format(product.description)
   table.price-list
     - product.product_attributes.each do |attribute|
