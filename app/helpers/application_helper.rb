@@ -20,10 +20,12 @@ module ApplicationHelper
     @nav_links = {
       'Home' => '/',
       # 'Specials!' => 'specials',
-      'About Us' => '/about',
+      'About Us' => about_path,
+      'Reviews' => reviews_path,
       # 'Policies' => '/policies',
       # 'Likes!' => '/likes',
-      'Spa Hours' => '/spa-hours',
+      'Spa Hours' => spa_hours_path
+
     }
     CategoryCollection.find_each { |c| @nav_links.merge!({ c.name => category_collection_path(c.url) }) }
 

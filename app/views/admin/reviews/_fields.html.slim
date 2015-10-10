@@ -2,7 +2,7 @@
   .col-sm-10
     .form-group
       = form.label :product_id, class: 'control-label'
-      = form.collection_select :product_id, Product.all, :id, :name, { include_blank: true }, class: 'form-control'
+      = form.grouped_collection_select :product_id, Category.all, :products, :name, :id, :name, { include_blank: true }, class: 'form-control'
   .col-sm-1
     .form-group
       = form.label :active, 'Show this review?', class: 'control-label'
@@ -10,7 +10,7 @@
   .col-sm-1
     .form-group
       = form.label :rating, class: 'control-label'
-      = form.select :rating, (1..10), {}, class: 'form-control'
+      = form.select :rating, (1..5), {}, class: 'form-control'
 .form-group
   = form.label :title, class: 'control-label'
   = form.text_field :title, class: 'form-control'

@@ -9,10 +9,10 @@ p Our philosophy is to educate and treat the whole you; to help you heal from th
     .clearfix
       nav.text-center
         ul.list-inline.category-panel
-          - @staff.each do |staff|
+          - staff.each do |staff|
             li: a.btn.staff-panel data-category='staff' data-show-target="#{staff.full_name.downcase.gsub(' ', '-')}" #{staff.full_name}
 
-    - @staff.each do |staff|
+    - staff.each do |staff|
       = render staff
 
   .category#assurances

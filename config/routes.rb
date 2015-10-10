@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show] do
     resources :products, only: [:index, :show]
   end
+  get 'reviews', to: 'pages#reviews'
 
   resources :category_collections, only: [:show], path: 'collections'
   resources :staff, only: [:index, :show]
