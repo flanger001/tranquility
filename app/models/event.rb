@@ -15,6 +15,8 @@
 class Event < ActiveRecord::Base
   belongs_to :schedule, counter_cache: true
 
+  validates :day, presence: true
+
   def span
     off ? 'Off' : "#{start_time.strftime('%l:%M %P')} - #{end_time.strftime('%l:%M %P')}"
   end
