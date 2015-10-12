@@ -18,7 +18,20 @@
 require 'test_helper'
 
 class StaffTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @staff = build(:staff)
+  end
+
+  def test_should_have_first_name
+    assert @staff.first_name
+  end
+
+  def test_should_have_last_name
+    assert @staff.last_name
+  end
+
+  def test_should_have_full_name
+    assert_equal @staff.full_name, "#{@staff.first_name} #{@staff.last_name}"
+  end
+
 end

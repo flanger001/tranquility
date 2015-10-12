@@ -20,3 +20,6 @@ one:
 two:
   staff_id: 
   notes: MyString
+
+spa_hours:
+  name: 'Spa Hours'

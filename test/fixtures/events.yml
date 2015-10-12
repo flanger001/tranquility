@@ -23,3 +23,46 @@ two:
   start_time: 2015-09-01 21:35:39
   end_time: 2015-09-01 21:35:39
   day: MyString
+
+spa_hours1:
+  day: Monday
+  start_time: 9:30 am
+  end_time: 4:00 pm
+  schedule_id: spa_hours
+
+spa_hours2:
+  day: Tuesday
+  start_time: 10:00 am
+  end_time: 7:00 pm
+  schedule_id: spa_hours
+
+spa_hours3:
+  day: Wednesday
+  start_time: 9:00 am
+  end_time: 7:00 pm
+  schedule_id: spa_hours
+
+spa_hours4:
+  day: Thursday
+  start_time: 9:00 am
+  end_time: 8:00 pm
+  schedule_id: spa_hours
+
+spa_hours5:
+  day: Friday
+  start_time: 9:00 am
+  end_time: 8:00 pm
+  schedule_id: spa_hours
+
+spa_hours6:
+  day: Saturday
+  start_time: 10:00 am
+  end_time: 4:00 pm
+  schedule_id: spa_hours
+
+spa_hours7:
+  day: Sunday
+  start_time: 11:00 am
+  end_time: 4:00 pm
+  schedule_id: spa_hours
+
