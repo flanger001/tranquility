@@ -12,4 +12,10 @@ class PagesController < ApplicationController
     }
   end
 
+  def recommendations
+    render locals: {
+      recommendations: Recommendation.where(active: true)
+    }
+  end
+
 end

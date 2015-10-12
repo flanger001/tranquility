@@ -1,0 +1,16 @@
+.row
+  .col-sm-11
+    .form-group
+      = form.label :name, class: 'control-label'
+      = form.text_field :name, class: 'form-control'
+  .col-sm-1
+    .form-group
+      = form.label :active, class: 'control-label'
+      .checkbox
+        = form.check_box :active
+.form-group
+  = form.label :url, class: 'control-label'
+  = form.text_field :url, class: 'form-control'
+.form-group
+  = form.label :description, class: 'control-label'
+  = form.text_area :description, cols: 8, class: 'form-control'

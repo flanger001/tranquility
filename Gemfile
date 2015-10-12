@@ -20,10 +20,12 @@ gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
 gem 'sitemap_generator'
+# gem 'addressable'
 
 group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
+  gem 'minitest-reporters'
 end
 
 group :development do

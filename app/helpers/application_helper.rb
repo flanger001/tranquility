@@ -23,7 +23,7 @@ module ApplicationHelper
       'About Us' => about_path,
       'Reviews' => reviews_path,
       # 'Policies' => '/policies',
-      # 'Likes!' => '/likes',
+      'Recommendations' => recommendations_path,
       'Spa Hours' => spa_hours_path
 
     }
@@ -38,6 +38,7 @@ module ApplicationHelper
       ['Products', admin_products_path],
       ['Categories', admin_categories_path],
       ['Collections', admin_category_collections_path],
+      ['Recommendations', admin_recommendations_path],
       ['Schedules', admin_schedules_path],
       ['Snippets', admin_snippets_path],
       ['Snippet Collections', admin_snippet_collections_path],

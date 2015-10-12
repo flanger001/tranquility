@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :category_collections, only: [:show], path: 'collections'
   resources :staff, only: [:index, :show]
 
-  %w{about policies likes spa_hours specials}.each do |page|
+  %w{about policies recommendations spa_hours specials}.each do |page|
     get page.dasherize, to: "pages##{page}"
   end
 
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :category_collections
     resources :products
+    resources :recommendations
     resources :reviews
     resources :schedules
     resources :snippets

@@ -18,11 +18,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  first_name: MyFirstString
+  last_name: MySecondString
   credentials: MyString
   title: MyString
 
 two:
-  name: MyString
+  first_name: MyFirstString
+  last_name: MySecondString
   credentials: MyString
   title: MyString
