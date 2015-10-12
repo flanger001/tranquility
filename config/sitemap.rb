@@ -40,7 +40,7 @@ SitemapGenerator::Sitemap.create do
 
   add about_path
   add policies_path
-  add likes_path
+  add recommendations_path
   add spa_hours_path
   add specials_path
 
