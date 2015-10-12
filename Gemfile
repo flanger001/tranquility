@@ -26,6 +26,8 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'minitest-reporters'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
 end
 
 group :development do
