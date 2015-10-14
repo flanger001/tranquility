@@ -26,6 +26,8 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'minitest-reporters'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 group :development do

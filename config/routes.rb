@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/500', to: 'errors#internal_server_error'
   get '/403', to: 'errors#forbidden'
   get '/422', to: 'errors#bad_request'
+  get '/the_fish', to: 'pages#the_fish'
+  get '/no_u_cannot_haz', to: 'pages#no_u_cannot_haz'
 
   root to: 'pages#index'
 
