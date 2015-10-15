@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def broken
+    render plain: raise('broken')
+  end
+
   private
 
   def resource

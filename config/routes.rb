@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get '/404', to: 'errors#not_found'
-  get '/500', to: 'errors#internal_server_error'
-  get '/403', to: 'errors#forbidden'
-  get '/422', to: 'errors#bad_request'
+  get '404', to: 'errors#not_found'
+  get '500', to: 'errors#internal_server_error'
+  get '403', to: 'errors#forbidden'
+  get '422', to: 'errors#bad_request'
+
+  get 'broken', to: 'application#broken'
 
   root to: 'pages#index'
 
