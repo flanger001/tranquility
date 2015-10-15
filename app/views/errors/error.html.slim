@@ -1,7 +1,7 @@
 - content_for :page_title, "#{response.status} #{action_name.titleize}"
 .text-center
   p
-    | The robots that power A Touch Of Tranquility's website ha. We're sorry about that!
+    | The robots that power A Touch Of Tranquility's website have produced this message: #{message}. We're sorry about that!
   p
     | If you think you have reached this page in error, please
     =<> mail_to 'christina.lower@gmail.com', 'notify Christina',
