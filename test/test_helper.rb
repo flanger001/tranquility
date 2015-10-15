@@ -3,7 +3,12 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 Minitest::Reporters.use!
-Capybara.javascript_driver
+Capybara.javascript_driver = :webkit
+Capybara::Webkit.configure do |config|
+  config.allow_url("fonts.googleapis.com")
+  config.allow_url("www.genbook.com")
+end
+
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
