@@ -236,3 +236,7 @@ table {
   display: none;
 }
 
+.btn-book-now {
+  @include btn-styles(rgb(170,80,30));
+  margin-bottom: 5px;
+}
