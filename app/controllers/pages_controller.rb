@@ -8,7 +8,8 @@ class PagesController < ApplicationController
 
   def reviews
     render locals: {
-      products: Product.includes(:reviews).where('reviews_count > 0')
+      products: Product.includes(:reviews).where('reviews_count > 0'),
+      review_snippet: Snippet.find_by(title: 'Reviews')
     }
   end
 

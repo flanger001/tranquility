@@ -27,7 +27,7 @@ module ApplicationHelper
       'Spa Hours' => spa_hours_path
 
     }
-    CategoryCollection.find_each { |c| @nav_links.merge!({ c.name => category_collection_path(c.url) }) }
+    CategoryCollection.where(:active => true).find_each { |c| @nav_links.merge!({ c.name => category_collection_path(c.url) }) }
 
     @nav_links.map { |link| NavLink.new(*link) }
   end

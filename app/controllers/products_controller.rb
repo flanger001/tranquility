@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
+  include ProductFilters
 
   def collection
-    @collection ||= Product.include(:product_attributes)
+    @collection ||= Product.includes(:product_attributes).where(active: true)
   end
 
   def resource
-    @presource ||= Product.find(params[:id])
+    @resource ||= Product.find(params[:id])
   end
 
 end
