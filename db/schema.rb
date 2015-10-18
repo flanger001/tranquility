@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017232247) do
+ActiveRecord::Schema.define(version: 20151018140650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20151017232247) do
     t.integer  "category_collection_id"
     t.string   "seo"
     t.string   "photo"
+    t.boolean  "active",                 default: false
   end
 
   create_table "category_collections", force: :cascade do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20151017232247) do
     t.datetime "updated_at",                  null: false
     t.string   "seo"
     t.boolean  "inline",      default: false
+    t.boolean  "active",      default: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -65,11 +67,12 @@ ActiveRecord::Schema.define(version: 20151017232247) do
     t.string   "url"
     t.string   "description"
     t.integer  "price"
-    t.integer  "reviews_count", default: 0, null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "reviews_count", default: 0,     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "seo"
     t.string   "photo"
+    t.boolean  "active",        default: false
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
