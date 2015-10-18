@@ -13,6 +13,7 @@
 #  category_collection_id :integer
 #  seo                    :string
 #  photo                  :string
+#  active                 :boolean          default(FALSE)
 #
 
 class Category < ActiveRecord::Base

@@ -13,6 +13,7 @@
 #  updated_at    :datetime         not null
 #  seo           :string
 #  photo         :string
+#  active        :boolean          default(FALSE)
 #
 
 class Product < ActiveRecord::Base
