@@ -1,4 +1,5 @@
 - content_for :page_title, 'Reviews'
+
 - products.each do |product|
   h1.category-header
     = product.name
@@ -9,15 +10,5 @@
         span.glyphicon.glyphicon-star
   - product.reviews.each do |review|
     - if review.active
-      h2.category-item-header
-        = review.title
-        .pull-right
-          small.rating
-            - review.rating.times do |i|
-              span.glyphicon.glyphicon-star
-      blockquote
-        p= simple_format review.body
-        footer
-          => review.author
-          =< review.created_at.strftime('%m/%d/%Y')
+      = render partial: 'review', object: review
 
