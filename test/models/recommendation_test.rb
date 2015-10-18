@@ -54,7 +54,7 @@ class RecommendationTest < ActiveSupport::TestCase
   end
 
   def test_should_fix_bad_urls
-    skip "This is not working perfectly yet but I don't want it to blow up"
+    fail "Does not work yet"
     @recommendation.attributes = @attrs_with_invalid_url
     @recommendation.save
     assert_equal 'http://www.sadwebsite.com', @recommendation.url
