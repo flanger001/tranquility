@@ -3,11 +3,16 @@
     .form-group
       = form.label :name, class: 'control-label'
       = form.text_field :name, class: 'form-control'
-  .col-sm-2
+  .col-sm-1
     .form-group
       = form.label :inline, class: 'checkbox' do
         => form.check_box :inline
         | Show categories inline?
+  .col-sm-1
+    .form-group
+      = form.label :active, class: 'checkbox' do
+        => form.check_box :active
+        | Show this collection?
 .form-group
   = form.label :seo, 'SEO Tags', class: 'control-label'
   = form.text_field :seo, class: 'form-control'
