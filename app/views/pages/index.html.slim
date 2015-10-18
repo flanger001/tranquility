@@ -26,10 +26,10 @@
           .nav-image.vert-300 class="#{item}"
             =link_to item.titleize, category_collection_path(item), class: 'h1 nav-link'
     .below-fold
-      /h3 See what our customers are saying about us!
-      /p.text-center
-      /  = render 'reviews'
+      h3 See what our customers are saying about us!
+      p.text-center
+        = link_to 'Reviews', reviews_path, class: 'btn btn-default btn-lg'
 
       h1.text-center Spa Hours
       .center
-        = render 'hours'
+        = render 'layouts/hours'

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'pages#index'
+
   get '404', to: 'errors#not_found'
   get '500', to: 'errors#internal_server_error'
   get '403', to: 'errors#forbidden'
@@ -6,19 +9,19 @@ Rails.application.routes.draw do
 
   get 'broken', to: 'application#broken'
 
-  root to: 'pages#index'
+  get 'policies', to: 'pages#policies'
+  get 'spa-hours', to: 'pages#spa_hours'
+  get 'specials', to: 'pages#specials'
 
+  resources :reviews, only: [:index, :show]
+  resources :recommendations, only: [:index]
   resources :categories, only: [:index, :show] do
     resources :products, only: [:index, :show]
   end
-  get 'reviews', to: 'pages#reviews'
-
   resources :category_collections, only: [:show], path: 'collections'
   resources :staff, only: [:index, :show]
 
-  %w{about policies recommendations spa_hours specials}.each do |page|
-    get page.dasherize, to: "pages##{page}"
-  end
+  get 'about', to: 'staff#index'
 
   resources :sessions
   get 'login', to: 'sessions#new'

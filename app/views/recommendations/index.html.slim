@@ -1,6 +1,6 @@
 - content_for :page_title, 'A Touch Of Tranquility Recommendations'
 
-- recommendations.each do |recommendation|
+- collection.each do |recommendation|
   div
     h1.category-header
       = link_to recommendation.name, recommendation.url

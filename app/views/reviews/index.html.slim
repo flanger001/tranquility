@@ -1,6 +1,6 @@
 - content_for :page_title, 'Reviews'
 p= simple_format(review_snippet.body)
-- products.each do |product|
+- collection.each do |product|
   h1.category-header
     = product.name
   p
@@ -11,4 +11,3 @@ p= simple_format(review_snippet.body)
   - product.reviews.each do |review|
     - if review.active
       = render partial: 'review', object: review
-
