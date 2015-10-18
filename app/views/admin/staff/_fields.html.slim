@@ -28,10 +28,10 @@
       = form.text_field :remote_photo_url, class: 'form-control'
 .form-group
   = form.label :title, class: 'control-label'
-  = form.text_area :title, class: 'form-control', rows: '6'
+  = form.text_area :title, rows: 6, class: 'form-control'
 .form-group
   = form.label :services, class: 'control-label'
-  = form.text_area :services, class: 'form-control', rows: '6'
+  = form.text_area :services, rows: 6, class: 'form-control'
 .well
   h2 Schedule
   - form.object.build_schedule if form.object.schedule.blank?
@@ -40,7 +40,7 @@
 
 .form-group
   = form.label :notes, class: 'control-label'
-  = form.text_area :notes, class: 'form-control'
+  = form.text_area :notes, rows: 3, class: 'form-control'
 .form-group
   = form.label :bio, class: 'control-label'
-  = form.text_area :bio, class: 'form-control', rows: '10'
+  = form.text_area :bio, rows: 10, class: 'form-control'
