@@ -1,5 +1,2 @@
 = render 'show'
-- content_for :buttons do
-  = link_to 'Edit', edit_polymorphic_path([:admin, resource]), class: 'btn btn-default btn-lg'
-  = link_to 'Back', polymorphic_path([:admin, resource.class]), class: 'btn btn-default btn-lg'
 = render 'buttons'
