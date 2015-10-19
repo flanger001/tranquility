@@ -37,6 +37,12 @@ class Admin::BaseController < ApplicationController
     redirect_to polymorphic_path([:admin, resource_class]), notice: "#{resource.class.to_s.titleize} was successfully destroyed."
   end
 
+  def active
+    resource_class.update(params["#{resource_class.to_s.downcase.pluralize.to_sym}"].keys,
+                          params["#{resource_class.to_s.downcase.pluralize.to_sym}"].values)
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{resource_class.to_s.pluralize.titleize} updated."
+  end
+
   private
 
   def resource
@@ -44,7 +50,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def collection
-    @collection ||= resource_class.all
+    @collection ||= resource_class.order(:id)
   end
 
   def resource_class

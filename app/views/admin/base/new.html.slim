@@ -1,6 +1,7 @@
 h1 New #{resource.class.to_s.titleize}
 
 = render 'form'
-br
+- content_for :buttons do
+  = link_to "All #{resource.class.to_s.titleize.pluralize}", polymorphic_path([:admin, resource_class]), class: 'btn btn-info btn-lg'
+= render 'buttons'
 
-= link_to "All #{resource.class.to_s.titleize.pluralize}", polymorphic_path([:admin, resource_class]), class: 'btn btn-info btn-lg'

@@ -7,10 +7,7 @@
       = form.label :name, class: 'control-label'
       = form.text_field :name, class: 'form-control'
   .col-sm-1
-    .form-group
-      = form.label :active, class: 'checkbox' do
-        => form.check_box :active
-        | Show this product?
+    = active_check_box(form)
 .form-group
   = form.label :seo, 'SEO Tags', class: 'control-label'
   = form.text_field :seo, class: 'form-control'

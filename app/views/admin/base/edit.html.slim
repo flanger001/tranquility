@@ -1,8 +1,9 @@
 - content_for :page_title, "Editing #{resource.class.to_s.titleize}"
 
 = render 'form'
+- content_for :buttons do
+  = link_to 'View', [:admin, resource], class: 'btn btn-default btn-lg'
+  = link_to 'Cancel', polymorphic_path([:admin, resource.class]), class: 'btn btn-default btn-lg'
+= render 'buttons'
 
-br
-.btn-toolbar
-  = link_to 'Show', [:admin, resource], class: 'btn btn-default'
-  = link_to 'Back', polymorphic_path([:admin, resource.class]), class: 'btn btn-default'
+

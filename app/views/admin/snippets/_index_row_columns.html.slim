@@ -1,4 +1,5 @@
 td= row.title
 td= truncate(row.body, length: 100)
 td= row.category.name if row.category.present?
-td= row.active?
+td= form.check_box :active
+

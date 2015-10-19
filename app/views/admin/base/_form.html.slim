@@ -7,4 +7,6 @@
           li = message
 
   = render 'fields', form: form
-  = form.submit class: 'btn btn-success btn-lg'
+  - content_for :buttons do
+    = form.submit class: 'btn btn-success btn-lg'
+

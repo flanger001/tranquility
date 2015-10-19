@@ -4,9 +4,7 @@
       = form.label :product_id, class: 'control-label'
       = form.grouped_collection_select :product_id, Category.all, :products, :name, :id, :name, { include_blank: true }, class: 'form-control'
   .col-sm-1
-    .form-group
-      = form.label :active, 'Show this review?', class: 'control-label'
-      = form.check_box :active, class: 'checkbox'
+    = active_check_box(form)
   .col-sm-1
     .form-group
       = form.label :rating, class: 'control-label'

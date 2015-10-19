@@ -28,16 +28,11 @@ Rails.application.routes.draw do
   match 'logout', to: 'sessions#destroy', via: [:get, :post]
 
   namespace :admin do
-    resources :categories
-    resources :category_collections
-    resources :products
-    resources :recommendations
-    resources :reviews
-    resources :schedules
-    resources :snippets
-    resources :snippet_collections
-    resources :staff
-    resources :users
+    resources :categories, :category_collections, :products, :recommendations, :reviews, :schedules, :snippets, :snippet_collections, :staff, :users do
+      collection do
+        post 'active'
+      end
+    end
   end
 
 end

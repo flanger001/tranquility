@@ -9,10 +9,7 @@
         => form.check_box :inline
         | Show categories inline?
   .col-sm-1
-    .form-group
-      = form.label :active, class: 'checkbox' do
-        => form.check_box :active
-        | Show this collection?
+    = active_check_box(form)
 .form-group
   = form.label :seo, 'SEO Tags', class: 'control-label'
   = form.text_field :seo, class: 'form-control'

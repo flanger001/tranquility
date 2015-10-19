@@ -76,4 +76,13 @@ module ApplicationHelper
     @announcement.body if @announcement && @announcement.active
   end
 
+  def active_check_box(form, options={})
+    content_tag :div, class: 'form-group' do
+      label_tag form.object, :active, class: 'checkbox' do
+        check_box(form.object, :active) +
+        "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
+      end
+    end
+  end
+
 end

@@ -4,10 +4,7 @@
       = form.label :name, class: 'control-label'
       = form.text_field :name, class: 'form-control'
   .col-sm-1
-    .form-group
-      = form.label :active, class: 'control-label'
-      .checkbox
-        = form.check_box :active
+    = active_check_box(form)
 .form-group
   = form.label :url, class: 'control-label'
   = form.text_field :url, class: 'form-control'
