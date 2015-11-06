@@ -32,13 +32,4 @@
       - else
         p TBD
 
-  .modal.fade id="#{staff.first_name.downcase}#{staff.last_name.downcase}bio" tabindex='-1' role='dialog' aria-labelledby="#{staff.first_name.downcase}#{staff.last_name.downcase}bio" aria-hidden='true'
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close data-dismiss='modal' &times;
-          h4.modal-title #{staff.first_name}'s bio
-        .modal-body
-          = simple_format(staff.bio)
-        .modal-footer
-          button.btn.btn-default type='button' data-dismiss='modal' Close
+  = modal("#{staff.first_name}'s bio", "#{staff.first_name.downcase}#{staff.last_name.downcase}bio", { plain: simple_format(staff.bio) })
