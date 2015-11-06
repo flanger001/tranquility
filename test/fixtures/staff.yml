@@ -17,14 +17,145 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyFirstString
-  last_name: MySecondString
-  credentials: MyString
-  title: MyString
+christinalower:
+    first_name: Christina
+    last_name: Lower
+    credentials: LMT LE CHHC
+    photo:
+    title: |-
+      NYS Licensed Massage Therapist and Esthetician
+      Certified Infant Massage Therapist and Instructor
+      Certified Holistic Health and Nutrition Consultant
+      Nutritional education and holistic meal preparation
+    bio: "I have deep devotion and fondness toward what I do and I've been been fortunate
+      enough to be actively practicing massage therapy since 2001, esthetics since
+      2003, and lifestyle counseling, nutritional education and holistic meal preparation
+      since 2011. My goal is to fully treat the whole you, not only the physical you.
+      At this point I focus my energy specializing in the four modalities I grow to
+      love more and more daily; massage therapy, waxing, skin care and nutrition education.\r\n\r\nIf
+      I had to describe the style of bodywork I perform, I would use the word fundamental.
+      I make use of an integrative technique in a minimalist way to help relieve the
+      burden of stress accumulating in the body, the pressure and discomfort of having
+      an injury. I concentrate in NMT, deep tissue and myofascial release techniques.
+      Through these modalities and my particular isolated technique, the motivation
+      is to release tender and painful tension without more discomfort, through patience
+      and attentiveness, compassion and understanding. Developing a supportive, warm,
+      relaxing and safe setting to let go...\r\n\r\nIn esthetics, my priority is results.
+      Skin care for face and body should be simple and have outstanding efficacy.
+      Clean products, specialized services and professional education for women, men,
+      teens and even children in the proper approach to healthy skin.\r\n\r\nWith
+      waxing, you can always expect total professionalism, complete discretion, and
+      unyielding, definitive cleanliness for all waxing services including my self-taught
+      Brazilian waxing techniques.\r\n\r\nToday and what lies ahead... I now produce
+      organic, all natural, naturally derived, self-sustaining, and local-ingredient-infused
+      handmade facial and body care products, including the body treatments and massage
+      blends we use at A Touch of Tranquility. I feel it is of the utmost importance
+      to offer our guests not only a superior quality product or treatment, but one
+      that is also distinctive, effective, clean and designed specifically for you.\r\n\r\nWith
+      sincerity, I express many thanks to all who have supported us throughout the
+      years and those whom lie ahead.\r\n"
+    services: |
+      Massage Therapy
+      All Specialty Massage
+      Body Treatments
+      Massage Rituals
+      Scalp Treatments
+      Peels and Facials including all waxing services
+      Holistic Health Counseling
+      Nutrition and Meal Preparation Services
+    notes: Produces handmade organic facial and body products and blends all signature
+      essential oil blends, lotions, body treatments and oils.
 
-two:
-  first_name: MyFirstString
-  last_name: MySecondString
-  credentials: MyString
-  title: MyString
+caitlinkelce:
+    first_name: Caitlin
+    last_name: Kelce
+    credentials: ''
+    photo:
+    title: Henna Artist
+    bio: |-
+      Caitlin has been a Henna artist since 2001, and has been doing art in general for as long as she can remember, thanks to a very supportive and creatively nurturing family. She has a Bachelors in Fine Arts in Graphic Design with a minor in Web Design. She fell in love with henna as a teenager and started hennaing her friends and family, learning and practicing as much as she could. She is certified by the International Certification for Natural Henna Artists, and has studied the henna plant and its many art forms and safe practices for applying temporary body art.
+
+      <a href='http://www.fireflyhenna.com/'>FireflyHenna.com</a>
+
+      <a href='http://icnha.org/our-members/kelce-caitlin/' target='_blank'><img src='/images/henna/seal.png' alt='International Certification for Natural Henna Arts'/></a>
+    services: Henna
+    notes: ''
+
+carissamiller:
+    first_name: Carissa
+    last_name: Miller
+    credentials: ''
+    photo:
+    title: |-
+      Esthetician
+      Make-up artist
+    bio: ''
+    services: |
+      Peels and Facial Treatments
+      Make-Up application
+      Waxing services
+      Body Treatments
+      Scalp Treatments
+    notes: ''
+
+jillstephens:
+    first_name: Jill
+    last_name: Stephens
+    credentials: LMT
+    photo:
+    title: NYS Licensed Massage Therapist
+    bio: ''
+    services: |
+      Massage Therapy
+      Reiki
+      All Specialty Massage
+      Body Treatments
+      Massage Rituals
+      Scalp Treatments
+    notes: ''
+
+julierose:
+    first_name: Julie
+    last_name: Rose
+    credentials: LMT
+    photo:
+    title: Massage Therapist
+    bio: ''
+    services: |-
+      Massage Therapy
+      All Specialty Massage
+      Body Treatments
+      Massage Rituals
+      Scalp Treatments
+    notes: ''
+
+kimcudlin:
+    first_name: Kim
+    last_name: Cudlin
+    credentials: LMT
+    photo:
+    title: |-
+      Massage Therapist
+      Shiatsu Practitioner
+    bio: ''
+    services: |-
+      Massage Therapy
+      Shiatsu
+      All Specialty Massage
+      Body Treatments
+      Massage Rituals
+      Scalp Treatments
+    notes: ''
+
+kimmccallum:
+    first_name: Kim
+    last_name: McCallum
+    credentials: LMT
+    photo:
+    title: Massage Therapist
+    bio: ''
+    services: |-
+      Massage Therapy
+      Tranquility and Hot Cinnamon and Citrus Massages
+      Scalp Treatments
+    notes: ''
