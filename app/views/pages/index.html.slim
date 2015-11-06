@@ -6,10 +6,12 @@
   .landing-text
     p Our healing spa landed in our Corning location in 2003. We have stretched, grown, and moved forward over the years because of all that has been contributed here. We have learned from you and through our practitioners, and that has brought us to a deeply centered and compassionate place with our very own identity. It is unique, thoughtful, and rich with life, details and gorgeous simplicity. We cultivate a healing sanctuary for you to feel comfortable in, enhancing you each and every time you visit.
 
-    p.gifts
-      | Gift certificates are available for all services and products.
-      br
-      | For out-of-state gift certificate purchases (or if you can't visit us), please call the spa directly at (607) 769-8080
+    .gifts
+      p Gift certificates are available for all services and products.
+      p= link_to 'Click here to purchase a Gift Certificate!',
+                 'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
+                 class: 'btn btn-success btn-lg'
+      p For out-of-state gift certificate purchases (or if you can't visit us), please call the spa directly at (607) 769-8080
     button.btn.btn-default.btn-lg data-toggle='modal' data-target='#mailchimp-signup'
       | Interested in email updates?
 
