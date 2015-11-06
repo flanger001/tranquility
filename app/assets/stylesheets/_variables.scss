@@ -5,3 +5,9 @@ $link-hover-decoration: none;
 $body-bg: rgb(230, 210, 190);
 $navbar-default-bg: $body-bg;
 $navbar-default-toggle-hover-bg: darken($body-bg, 10%);
+
+$brand-primary:         darken(#449, 6.5%) !default; // #337ab7
+$brand-success:         #1A1 !default;
+$brand-info:            #AA2 !default;
+$brand-warning:         #A50 !default;
+$brand-danger:          #933 !default;
