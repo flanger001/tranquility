@@ -24,3 +24,17 @@ class UserFlowsTestTest < ActionDispatch::IntegrationTest
     assert_select 'script:match("src", ?)', '//cdn.ckeditor.com/4.5.4/basic/ckeditor.js', count: 0
   end
 end
+
+class UserLogin
+  extend Capybara::DSL
+
+  def self.run(email='admin@example.com', password='password')
+    visit '/login'
+    within '#login' do
+      fill_in 'Email', with: email
+      fill_in 'Password', with: password
+    end
+    click_button 'Sign In'
+  end
+
+end
