@@ -18,10 +18,286 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyString
+treatment_enhancements:
+  name: Treatment Enhancements
+  description: |
+    Awesome add-ons to every massage package
+  url: treatment-enhancements
+  inline: false
+  category_collection:
+  seo:
+  photo:
+  active: true
 
-two:
-  name: MyString
-  description: MyString
+massage_therapy:
+  name: Massage Therapy
+  description: Massage therapy is ideal for those with chronic muscle pain, tightness,
+    tension headaches or injuries. We will design the perfect pain reducing treatment
+    utilizing various massage modalities for your specific needs. In most cases
+    a series of sessions may be necessary to find relief within your body.
+  url: massage-therapy
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+specialty_bodywork:
+  name: Specialty Bodywork
+  description: |
+    A Touch of Tranquility's Specialty Massages are above and beyond
+    the "normal" bodywork session. With years of Massage experience we have gathered
+    and now incorporated all the highest quality elements into one opulent treatment.
+  url: specialty-bodywork
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+massage_and_pregnancy:
+  name: Massage and Pregnancy
+  description: |
+    Prenatal massage is simply massage given to an expecting mother with
+    a few changes made in positioning as her body changes. Prenatal massage also
+    requires knowledge of a pregnant woman's anatomy as her body shifts throughout
+    her pregnancy.
+  url: massage-and-pregnancy
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+foot_treatments:
+  name: Foot Treatments
+  description: |
+    From foot massage and reflexology to little body treatments to treat
+    your feet!
+  url: foot-treatments
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+body_scrubs:
+  name: Body Scrubs
+  description:
+  url: body-scrubs
+  inline: false
+  category_collection: wraps
+  seo:
+  photo:
+  active: true
+
+body_treatments:
+  name: Body Treatments
+  description: |
+    Our body treatments are all our own protocols. Most of the products
+    are designed and hand-produced on-site. We always use the very best organic
+    and all natural ingredients we can find, and we look intensely. Quality is of
+    the utmost importance to us. We currently have 3 types of 'Body Treatments',
+    which include mud wraps, salt and sugar scrubs, and our all new menu of 'Exfoliating
+    Wraps'.
+  url: body-treatments
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+scalp_treatments:
+  name: Scalp Treatments
+  description: |
+    A scalp treatment is a blend of organic oils that are all specifically
+    chosen to help with dryness, irritation, dandruff, eczema, psoriasis, etc. They
+    are all extremely nourishing and hydrating to the skin, scalp and hair. They
+    also readily absorb into the skin, you will want to leave the oil blend on the
+    hair for few hours to let it completely penetrate and condition.
+  url: scalp-treatments
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+personalized_facials:
+  name: Personalized Facials
+  description: |
+    "A Touch Of Tranquility skin care services always include skin consultation,
+    cleansing, exfoliation, warm steam, extractions (if needed), as well as a tranquil
+    scalp and facial massage.\n\nOur results driven facials are customized per your
+    concerns and needs. One of our highly trained estheticians will design your
+    facial experience just for you! \n\nOur estheticians are here to educate you
+    how to take the best care of your skin at home."
+  url: personalized-facials
+  inline: false
+  category_collection: skin_care
+  seo:
+  photo:
+  active: true
+
+signature_treatments:
+  name: Signature Treatments
+  description: |
+    Handmade therapies designed with massage therapy as the focus, performed
+    in a specific sequence.
+  url: signature-treatments
+  inline: false
+  category_collection: bodywork
+  seo:
+  photo:
+  active: true
+
+organic_skin_care:
+  name: Organic Skin Care
+  description: |
+    Our immediate visible results facials are customized per your concerns
+    and needs. One of our highly trained estheticians will design your facial experience
+    just for you with clean, nourishing organic skin care.
+  url: organic-skin-care
+  inline: false
+  category_collection: skin_care
+  seo:
+  photo:
+  active: true
+
+body_wraps:
+  name: Body Wraps
+  description:
+  url: body-wraps
+  inline: false
+  category_collection: wraps
+  seo:
+  photo:
+  active: true
+
+exfoliating_wraps:
+  name: Exfoliating Wraps
+  description:
+  url: exfoliating-wraps
+  inline: false
+  category_collection: wraps
+  seo:
+  photo:
+  active: true
+
+womens_hair_removal:
+  name: Women's Hair Removal
+  description:
+  url: women-s-hair-removal
+  inline: false
+  category_collection: hair_removal
+  seo:
+  photo:
+  active: true
+
+mens_hair_removal:
+  name: Men's Hair Removal
+  description:
+  url: men-s-hair-removal
+  inline: false
+  category_collection: hair_removal
+  seo:
+  photo:
+  active: true
+
+facial_peels:
+  name: Facial Peels
+  description: |-
+    Our peels are very active and immediate visible results can be seen. Each peel will be customized per your concerns and needs. One of our highly trained estheticians will design and modify your peel to maximize your results and guide you through a treatment plan to manage your targeted goals.
+
+    All peels are 30 minutes and include treatment plan, directions, and at home maintenance products.
+  url: facial-peels
+  inline: false
+  category_collection: skin_care
+  seo:
+  photo:
+  active: true
+
+group_and_party_henna_sessions:
+  name: Group and Party Henna Sessions
+  description: |
+    All group and party sessions include design choices from our portfolio
+    for the group or custom created designs for your theme. All guests will receive
+    embellishments, such as gems and glitter for your henna. The artist will apply
+    traditional lemon and sugar sealant to help promote a darker stain and detailed
+    instructions for each guest to take home.
+  url: group-and-party-henna-sessions
+  inline: false
+  category_collection: firefly_henna
+  seo:
+  photo:
+  active: true
+
+henna_sessions:
+  name: Henna Sessions
+  description: |
+    Stuff about henna
+  url: henna-sessions
+  inline: false
+  category_collection: firefly_henna
+  seo:
+  photo:
+  active: true
+
+special_occasion_henna:
+  name: Special Occasion Henna
+  description: |
+    We offer an array of designs for you to choose from for your big
+    event. If you have specific idea in mind we are happy to put something together
+    to make your dream design come to life. Gems and glitter can be added to embellish
+    your special design. Sealant and wrapping are provided and detailed instructions
+    for aftercare will be given for you to take home.
+  url: special-occasion-henna
+  inline: false
+  category_collection: firefly_henna
+  seo:
+  photo:
+  active: true
+
+ancient_and_healing_arts:
+  name: Ancient and Healing Arts
+  description:
+  url: ancient-and-healing-arts
+  inline: false
+  category_collection: wellness
+  seo:
+  photo:
+  active: true
+
+tranquility_membership_packages:
+  name: Tranquility Membership Packages
+  description: |-
+    By purchasing an A Touch Of Tranquility membership package, you're eligible for our sliding-fee discounted rates! These are designed for those who frequent the spa due to injuries or managing stress levels.
+
+    Packages include: emailed newsletter, discounts on services, exclusive deals and promotions, and first-to-know on events, seminar, and workshops.
+  url: tranquility-membership-packages
+  inline: false
+  category_collection: collections
+  seo:
+  photo:
+  active: true
+
+celebration_packages_coming_soon:
+  name: Celebration Packages Coming Soon
+  description: |
+    Please call (607) 769-8080 if you have special requests!
+  url: celebration-packages-coming-soon
+  inline: false
+  category_collection: collections
+  seo:
+  photo:
+  active: true
+
+shangri-la_packages:
+  name: Shangri-La Packages
+  description: |
+    The ultimate in luxury
+  url: shangri-la-packages
+  inline: false
+  category_collection: collections
+  seo:
+  photo:
+  active: true
