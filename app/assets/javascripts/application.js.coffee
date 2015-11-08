@@ -2,11 +2,11 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require turbolinks
-#= require 'underscore'
+#= require underscore
 
-$(document).on 'page:load ready', ->
+$(document).on 'page:load page:restore ready', ->
   $('.flash')
-    .fadeOut 2000, ->
+    .fadeOut 1000, ->
       $(@).remove()
 
   # Category panels
