@@ -12,17 +12,3 @@ class UserFlowsTestTest < ActionDispatch::IntegrationTest
     assert page.has_selector?('.member .modal.fade')
   end
 end
-
-class UserLogin
-  extend Capybara::DSL
-
-  def self.run(email='admin@example.com', password='password')
-    visit '/login'
-    within '#login' do
-      fill_in 'Email', with: email
-      fill_in 'Password', with: password
-    end
-    click_button 'Sign In'
-  end
-
-end
