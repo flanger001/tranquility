@@ -10,4 +10,4 @@ p= simple_format(review_snippet.body)
         span.glyphicon.glyphicon-star
   - product.reviews.each do |review|
     - if review.active
-      = render partial: 'review', object: review
+      = render review

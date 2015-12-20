@@ -8,10 +8,11 @@ class PagesControllerTest < ActionController::TestCase
     assert_select 'h1.page-title', 'Your sanctuary to restore you...'
   end
 
-  test 'should get about' do
-    get :about
-    assert_response :success
-  end
+  # /about is handled by staff controller
+  # test 'should get about' do
+  #   get :about
+  #   assert_response :success
+  # end
 
   test 'should get recommendations' do
     skip
