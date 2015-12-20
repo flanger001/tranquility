@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:te_one)
     sign_in(users(:admin))
   end
 
@@ -68,7 +68,7 @@ class Admin::ProductsControllerTest < ActionController::TestCase
   end
 
   test 'should move product up' do
-    @product_other = products(:two)
+    @product_other = products(:te_two)
     position = @product_other.position
     post :move_up, id: @product_other
     assert_equal position - 1, @product_other.reload.position

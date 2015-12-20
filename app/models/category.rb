@@ -24,7 +24,6 @@ class Category < ActiveRecord::Base
 
   include CreateUrl
   include SeoTags
-  include DsActsAsList
   acts_as_list scope: :category_collection
 
   mount_uploader :photo, ImageUploader

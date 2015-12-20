@@ -43,14 +43,12 @@ class Admin::BaseController < ApplicationController
   end
 
   def move_up
-    resource.move_up
-    resource.save
+    resource.move_higher
     redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved up."
   end
 
   def move_down
-    resource.move_down
-    resource.save
+    resource.move_lower
     redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved down."
   end
 

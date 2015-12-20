@@ -20,6 +20,5 @@ class CategoryCollection < ActiveRecord::Base
   accepts_nested_attributes_for :categories, :snippet_collection
   include CreateUrl
   include SeoTags
-  include DsActsAsList
   acts_as_list
 end
