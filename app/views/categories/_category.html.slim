@@ -8,6 +8,6 @@
   p.category-description
     = category.description
   .products
-    - category.products.each do |product|
+    - category.products.sort_by(&:position).each do |product|
       = render product
 

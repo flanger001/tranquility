@@ -26,6 +26,7 @@ class Product < ActiveRecord::Base
   include CreateUrl
   include SeoTags
   include DsActsAsList
+  acts_as_list scope: :category
 
   def average_rating
     reviews.average(:rating).to_i

@@ -3,7 +3,7 @@
 - content_for :seo_description, category_collection.description
 
 p= category_collection.description
-- category_collection.categories.each do |category|
+- category_collection.categories.sort_by(&:position).each do |category|
   h1.category-header
     = link_to category.name, category_path(category.url)
     .pull-right
@@ -11,7 +11,7 @@ p= category_collection.description
   p.category-description
     = simple_format(category.description)
   - if category_collection.inline
-    - category.products.each do |product|
+    - category.products.sort_by(&:position).each do |product|
       = render product
 
 - if category_collection.snippet_collection.present?

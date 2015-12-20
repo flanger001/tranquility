@@ -21,5 +21,5 @@ class CategoryCollection < ActiveRecord::Base
   include CreateUrl
   include SeoTags
   include DsActsAsList
-
+  acts_as_list
 end

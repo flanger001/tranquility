@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def collection
-    @collection ||= Category.where(active: true)
+    @collection ||= Category.where(active: true).order(:position => :asc)
   end
 
 end
