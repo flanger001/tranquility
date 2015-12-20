@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   include ProductFilters
 
   def collection
-    @collection ||= Product.includes(:product_attributes).where(active: true).order(:position => :asc)
+    @collection ||= Product.includes(:product_attributes).where(active: true).order(:position)
   end
 
   def resource

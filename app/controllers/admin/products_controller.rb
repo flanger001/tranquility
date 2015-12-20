@@ -11,6 +11,12 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def collection
-    @collection ||= resource_class.order(:position)
+    @collection ||= resource_class.where(search_params).order(:category_id, :position)
+  end
+
+  def search_params
+    if params[:category]
+      { category_id: params[:category] }
+    end
   end
 end
