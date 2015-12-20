@@ -14,6 +14,7 @@
 #  seo           :string
 #  photo         :string
 #  active        :boolean          default(FALSE)
+#  position      :integer
 #
 
 require 'test_helper'

@@ -14,16 +14,18 @@
 #  seo           :string
 #  photo         :string
 #  active        :boolean          default(FALSE)
+#  position      :integer
 #
 
 class Product < ActiveRecord::Base
   belongs_to :category, counter_cache: true
   has_many :product_attributes, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   accepts_nested_attributes_for :product_attributes, allow_destroy: true
 
   include CreateUrl
   include SeoTags
+  include DsActsAsList
 
   def average_rating
     reviews.average(:rating).to_i

@@ -11,6 +11,7 @@
 #  seo         :string
 #  inline      :boolean          default(FALSE)
 #  active      :boolean          default(FALSE)
+#  position    :integer
 #
 
 require 'test_helper'

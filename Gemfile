@@ -20,7 +20,7 @@ gem 'fog'
 gem 'dotenv-rails'
 gem 'mini_magick'
 gem 'sitemap_generator'
-# gem 'addressable'
+gem 'acts_as_list'
 
 group :development, :test do
   gem 'byebug'

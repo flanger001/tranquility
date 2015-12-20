@@ -32,6 +32,10 @@ Rails.application.routes.draw do
       collection do
         post 'active'
       end
+      member do
+        post 'move_up'
+        post 'move_down'
+      end
     end
   end
 

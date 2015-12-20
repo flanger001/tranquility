@@ -1,5 +1,4 @@
 class Admin::CategoryCollectionsController < Admin::BaseController
-
   private
 
   def resource_class
@@ -10,4 +9,7 @@ class Admin::CategoryCollectionsController < Admin::BaseController
     params.require(:category_collection).permit(:name, :description, :inline, :seo, { :category_ids => [] }, :active)
   end
 
+  def collection
+    @collection ||= resource_class.order(:position)
+  end
 end

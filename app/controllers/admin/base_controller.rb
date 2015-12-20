@@ -18,7 +18,7 @@ class Admin::BaseController < ApplicationController
     @resource = resource_class.new(resource_params)
 
     if resource.save
-      redirect_to [:admin, resource], notice: "#{resource.class.to_s.titleize} was successfully created."
+      redirect_to [:admin, resource], notice: "#{capital_resource_class} was successfully created."
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::BaseController < ApplicationController
 
   def update
     if resource.update(resource_params)
-      redirect_to [:admin, resource], notice: "#{resource.class.to_s.titleize} was successfully updated."
+      redirect_to [:admin, resource], notice: "#{capital_resource_class} was successfully updated."
     else
       render :edit
     end
@@ -34,13 +34,24 @@ class Admin::BaseController < ApplicationController
 
   def destroy
     resource.destroy
-    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{resource.class.to_s.titleize} was successfully destroyed."
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} was successfully destroyed."
   end
 
   def active
-    resource_class.update(params["#{resource_class.to_s.downcase.pluralize.to_sym}"].keys,
-                          params["#{resource_class.to_s.downcase.pluralize.to_sym}"].values)
+    resource_class.update(params["#{symbolized_resource_class}"].keys, params["#{symbolized_resource_class}"].values)
     redirect_to polymorphic_path([:admin, resource_class]), notice: "#{resource_class.to_s.pluralize.titleize} updated."
+  end
+
+  def move_up
+    resource.move_up
+    resource.save
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved up."
+  end
+
+  def move_down
+    resource.move_down
+    resource.save
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved down."
   end
 
   private
@@ -56,6 +67,14 @@ class Admin::BaseController < ApplicationController
   def resource_class
     raise 'Add a `resource_class` method to your controller'
     # self.class.to_s.gsub(/Admin::(.*?)Controller/, '\1').singularize.constantize
+  end
+
+  def capital_resource_class
+    resource_class.to_s.titleize
+  end
+
+  def symbolized_resource_class
+    resource_class.to_s.downcase.pluralize.to_sym
   end
 
   helper_method :resource, :collection, :resource_class

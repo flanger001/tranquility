@@ -14,6 +14,7 @@
 #  seo                    :string
 #  photo                  :string
 #  active                 :boolean          default(FALSE)
+#  position               :integer
 #
 
 class Category < ActiveRecord::Base
@@ -23,6 +24,7 @@ class Category < ActiveRecord::Base
 
   include CreateUrl
   include SeoTags
+  include DsActsAsList
 
   mount_uploader :photo, ImageUploader
 end

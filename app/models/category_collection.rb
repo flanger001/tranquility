@@ -11,6 +11,7 @@
 #  seo         :string
 #  inline      :boolean          default(FALSE)
 #  active      :boolean          default(FALSE)
+#  position    :integer
 #
 
 class CategoryCollection < ActiveRecord::Base
@@ -19,5 +20,6 @@ class CategoryCollection < ActiveRecord::Base
   accepts_nested_attributes_for :categories, :snippet_collection
   include CreateUrl
   include SeoTags
+  include DsActsAsList
 
 end

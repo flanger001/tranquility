@@ -11,6 +11,7 @@
 #  seo         :string
 #  inline      :boolean          default(FALSE)
 #  active      :boolean          default(FALSE)
+#  position    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -28,6 +29,7 @@ firefly_henna:
   seo:
   inline: false
   active: true
+  position: 1
 
 collections:
   name: Collections
@@ -36,6 +38,7 @@ collections:
   seo:
   inline: false
   active: true
+  position: 2
 
 wellness:
   name: Wellness
@@ -44,6 +47,7 @@ wellness:
   seo:
   inline: false
   active: true
+  position: 3
 
 bodywork:
   name: Bodywork
@@ -52,6 +56,7 @@ bodywork:
   seo:
   inline: false
   active: true
+  position: 4
 
 hair_removal:
   id: 3
@@ -61,6 +66,7 @@ hair_removal:
   seo:
   inline: false
   active: true
+  position: 5
 
 wraps:
   name: Wraps
@@ -69,6 +75,7 @@ wraps:
   seo:
   inline: false
   active: true
+  position: 6
 
 skin_care:
   name: Skin Care
@@ -77,3 +84,10 @@ skin_care:
   seo:
   inline: false
   active: true
+  position: 7
+
+inactive_collection:
+  name: Inactive Collection
+  description: You'll never see this because it doesn't work
+  active: false
+  url: inactive

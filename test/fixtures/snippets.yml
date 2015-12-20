@@ -17,8 +17,8 @@
 
 one:
   name: MyString
-  title: MyString
-  body: MyText
+  title: Reviews
+  body: Eat a hot dog
 
 two:
   name: MyString

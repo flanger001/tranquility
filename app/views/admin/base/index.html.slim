@@ -12,8 +12,7 @@
           tr
             = render 'index_row_columns', row: row, form: form
             td
-              .btn-toolbar.pull-right
-                = link_to 'Show', [:admin, row], class: 'btn btn-info btn-xs'
-                = link_to 'Edit', polymorphic_path([:edit, :admin, row]), class: 'btn btn-warning btn-xs'
-                = link_to 'Destroy', [:admin, row], data: { :confirm => 'Are you sure?' }, :method => :delete, class: 'btn btn-danger btn-xs'
+              .btn-toolbar.pull-right.btn-group-xs
+                = render 'index_row_actions', row: row
+                = render 'index_row_extra_actions', row: row
   = render 'buttons'

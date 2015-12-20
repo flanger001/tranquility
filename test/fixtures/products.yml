@@ -14,18 +14,27 @@
 #  seo           :string
 #  photo         :string
 #  active        :boolean          default(FALSE)
+#  position      :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category_id:
-  name: MyString
-  description: MyString
+  name: Hot towels
+  description: For extra luxury
+  active: true
+  category: treatment_enhancements
+  photo:
+  position: 1
   price: 1
+  seo:
 
 two:
-  category_id:
-  name: MyString
-  description: MyString
-  price: 1
+  name: Regular massage
+  description: Super great massages
+  active: true
+  category: massage_therapy
+  photo:
+  position: 2
+  price: 2
+  seo:
