@@ -43,7 +43,7 @@ massage_therapy:
   seo:
   photo:
   active: true
-  position: 2
+  position: 1
 
 specialty_bodywork:
   name: Specialty Bodywork
@@ -57,7 +57,7 @@ specialty_bodywork:
   seo:
   photo:
   active: true
-  position: 3
+  position: 2
 
 massage_and_pregnancy:
   name: Massage and Pregnancy
@@ -72,7 +72,7 @@ massage_and_pregnancy:
   seo:
   photo:
   active: true
-  position: 4
+  position: 3
 
 foot_treatments:
   name: Foot Treatments
@@ -85,7 +85,7 @@ foot_treatments:
   seo:
   photo:
   active: true
-  position: 5
+  position: 4
 
 body_scrubs:
   name: Body Scrubs
@@ -96,7 +96,7 @@ body_scrubs:
   seo:
   photo:
   active: true
-  position: 6
+  position: 1
 
 body_treatments:
   name: Body Treatments
@@ -113,7 +113,7 @@ body_treatments:
   seo:
   photo:
   active: true
-  position: 7
+  position: 5
 
 scalp_treatments:
   name: Scalp Treatments
@@ -129,7 +129,7 @@ scalp_treatments:
   seo:
   photo:
   active: true
-  position: 8
+  position: 6
 
 personalized_facials:
   name: Personalized Facials
@@ -146,7 +146,7 @@ personalized_facials:
   seo:
   photo:
   active: true
-  position: 9
+  position: 1
 
 signature_treatments:
   name: Signature Treatments
@@ -159,7 +159,7 @@ signature_treatments:
   seo:
   photo:
   active: true
-  position: 10
+  position: 7
 
 organic_skin_care:
   name: Organic Skin Care
@@ -173,7 +173,7 @@ organic_skin_care:
   seo:
   photo:
   active: true
-  position: 11
+  position: 2
 
 body_wraps:
   name: Body Wraps
@@ -184,7 +184,7 @@ body_wraps:
   seo:
   photo:
   active: true
-  position: 12
+  position: 2
 
 exfoliating_wraps:
   name: Exfoliating Wraps
@@ -195,7 +195,7 @@ exfoliating_wraps:
   seo:
   photo:
   active: true
-  position: 13
+  position: 3
 
 womens_hair_removal:
   name: Women's Hair Removal
@@ -206,7 +206,7 @@ womens_hair_removal:
   seo:
   photo:
   active: true
-  position: 14
+  position: 1
 
 mens_hair_removal:
   name: Men's Hair Removal
@@ -217,7 +217,7 @@ mens_hair_removal:
   seo:
   photo:
   active: true
-  position: 15
+  position: 2
 
 facial_peels:
   name: Facial Peels
@@ -231,7 +231,7 @@ facial_peels:
   seo:
   photo:
   active: true
-  position: 16
+  position: 3
 
 group_and_party_henna_sessions:
   name: Group and Party Henna Sessions
@@ -247,7 +247,7 @@ group_and_party_henna_sessions:
   seo:
   photo:
   active: true
-  position: 17
+  position: 1
 
 henna_sessions:
   name: Henna Sessions
@@ -259,7 +259,7 @@ henna_sessions:
   seo:
   photo:
   active: true
-  position: 18
+  position: 2
 
 special_occasion_henna:
   name: Special Occasion Henna
@@ -275,7 +275,7 @@ special_occasion_henna:
   seo:
   photo:
   active: true
-  position: 19
+  position: 3
 
 ancient_and_healing_arts:
   name: Ancient and Healing Arts
@@ -286,7 +286,7 @@ ancient_and_healing_arts:
   seo:
   photo:
   active: true
-  position: 20
+  position: 1
 
 tranquility_membership_packages:
   name: Tranquility Membership Packages
@@ -300,7 +300,7 @@ tranquility_membership_packages:
   seo:
   photo:
   active: true
-  position: 21
+  position: 1
 
 celebration_packages_coming_soon:
   name: Celebration Packages Coming Soon
@@ -312,7 +312,7 @@ celebration_packages_coming_soon:
   seo:
   photo:
   active: true
-  position: 22
+  position: 2
 
 shangri-la_packages:
   name: Shangri-La Packages
@@ -324,4 +324,4 @@ shangri-la_packages:
   seo:
   photo:
   active: true
-  position: 23
+  position: 3

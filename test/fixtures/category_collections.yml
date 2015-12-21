@@ -91,3 +91,4 @@ inactive_collection:
   description: You'll never see this because it doesn't work
   active: false
   url: inactive
+  position: 8
