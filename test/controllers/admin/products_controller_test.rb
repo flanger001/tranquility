@@ -75,4 +75,16 @@ class Admin::ProductsControllerTest < ActionController::TestCase
     assert_redirected_to admin_products_path
   end
 
+  test 'should move product to top of list' do
+    post :move_to_top, id: @product
+    assert_equal 1, @product.reload.position
+    assert_redirected_to admin_products_path
+  end
+
+  test 'should move product to bottom of list' do
+    category = @product.category
+    post :move_to_bottom, id: @product
+    assert_equal category.products.length, @product.reload.position
+    assert_redirected_to admin_products_path
+  end
 end

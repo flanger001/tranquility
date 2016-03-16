@@ -35,6 +35,8 @@ Rails.application.routes.draw do
       member do
         post 'move_up'
         post 'move_down'
+        post 'move_to_top'
+        post 'move_to_bottom'
       end
     end
   end

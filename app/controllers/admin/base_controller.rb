@@ -50,6 +50,16 @@ class Admin::BaseController < ApplicationController
   def move_down
     resource.move_lower
     redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved down."
+    end
+
+  def move_to_top
+    resource.move_to_top
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved to top."
+  end
+
+  def move_to_bottom
+    resource.move_to_bottom
+    redirect_to polymorphic_path([:admin, resource_class]), notice: "#{capital_resource_class} moved to bottom."
   end
 
   private

@@ -98,4 +98,17 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     assert_equal position - 1, @category_other.reload.position
     assert_redirected_to admin_categories_path
   end
+
+  test 'should move category to top of list' do
+    post :move_to_top, id: @category
+    assert_equal 1, @category.reload.position
+    assert_redirected_to admin_categories_path
+  end
+
+  test 'should move category to bottom of list' do
+    collection = @category.category_collection
+    post :move_to_bottom, id: @category
+    assert_equal collection.categories.length, @category.reload.position
+    assert_redirected_to admin_categories_path
+  end
 end

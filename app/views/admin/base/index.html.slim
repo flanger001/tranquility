@@ -12,7 +12,11 @@
           tr
             = render 'index_row_columns', row: row, form: form
             td
-              .btn-toolbar.pull-right.btn-group-xs
-                = render 'index_row_actions', row: row
-                = render 'index_row_extra_actions', row: row
+              .btn-group.btn-group-xs.pull-right
+                button.btn.btn-default.dropdown-toggle data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'
+                  | Actions
+                  span.caret<
+                ul.dropdown-menu
+                  = render 'index_row_actions', row: row
+                  = render 'index_row_extra_actions', row: row
   = render 'buttons'
