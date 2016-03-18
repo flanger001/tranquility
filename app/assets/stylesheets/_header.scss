@@ -1,0 +1,43 @@
+.header-container {
+  @include candle-bg();
+  padding: 15px;
+}
+
+.site-header {
+  background-color: rgba(178, 140, 100, 0.7);
+  padding-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  a {
+    color: #fff;
+  }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.logo {
+  //background-color: rgba(230, 210, 190, 0.2);
+  img {
+    height: 90%;
+    width: 90%;
+  }
+}
+
+.links {
+  &.navigation {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  &.navigation, &.product {
+    flex-basis: 100%;
+    a {
+      margin-right: 10px;
+      margin-left: 10px;
+      @include link-color();
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+  }
+}

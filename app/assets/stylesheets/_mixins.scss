@@ -35,9 +35,9 @@
 @mixin candle-bg() {
   background: {
     image: image-url('candles-lo-res2.jpg');
-    position: 0 0;
+    position: 0 -300px;
     repeat: no-repeat;
-    size: 100%;
+    size: cover;
     attachment: fixed;
   }
 }
@@ -49,7 +49,7 @@
 // }
 
 @mixin btn-styles($btn-color: #555) {
-  @include gradient-vertical($start-color: $btn-color, $end-color: darken($btn-color, 12%));
+  @include gradient-vertical($start-color: $btn-color, $end-color: darken($btn-color, 3%));
   @include reset-filter; // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
   background-repeat: repeat-x;
   border-color: darken($btn-color, 14%);

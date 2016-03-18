@@ -4,10 +4,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'vertical_utility_styles';
-
-body {
-  @include candle-bg();
-}
+@import 'header';
 
 .content {
   background: rgba(230, 210, 190, 0.8);
@@ -102,34 +99,6 @@ a {
   }
 }
 
-.site-header {
-  padding: 15px;
-  padding-top: 10px;
-  color: #fff;
-  text-align: center;
-  a {
-    color: #fff;
-  }
-}
-.links {
-  &.navigation {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  &.navigation, &.product {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    a {
-      margin-right: 10px;
-      margin-left: 10px;
-      @include link-color();
-      &:hover {
-        background-color: rgba(255, 255, 255, 0);
-      }
-    }
-  }
-}
 
 .footer-links {
   text-align: center;
@@ -176,17 +145,17 @@ a {
   margin-right: auto;
 }
 
-.masthead {
-  // color: #FFFFFF;
-  background-image: image-url('weblogo-mobile.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100%;
-  min-height: 150px;
-  @media (max-width: 480px) {
-    min-height: 75px;
-  }
-}
+//.masthead {
+//  // color: #FFFFFF;
+//  background-image: image-url('weblogo-mobile.png');
+//  background-repeat: no-repeat;
+//  background-position: center center;
+//  background-size: 100%;
+//  min-height: 150px;
+//  @media (max-width: 480px) {
+//    min-height: 75px;
+//  }
+//}
 
 .staff-photo {
   img {
