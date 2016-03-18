@@ -27,11 +27,15 @@ module ApplicationHelper
       'Spa Hours' => spa_hours_path
 
     }
-    CategoryCollection.where(:active => true)
-      .sort_by(&:position)
-      .each { |c| @nav_links.merge!({ c.name => category_collection_path(c.url) }) }
-
     @nav_links.map { |link| NavLink.new(*link) }
+  end
+
+  def product_links
+    @product_links = {}
+    CategoryCollection.where(active: true)
+      .sort_by(&:position)
+      .each { |c| @product_links.merge!({ c.name => category_collection_path(c.url) }) }
+    @product_links.map { |link| NavLink.new(*link) }
   end
 
   def user_links
@@ -82,7 +86,7 @@ module ApplicationHelper
     content_tag :div, class: 'form-group' do
       label_tag form.object, :active, class: 'checkbox' do
         check_box(form.object, :active) +
-        "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
+          "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
       end
     end
   end

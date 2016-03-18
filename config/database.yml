@@ -10,9 +10,3 @@ development:
 test:
   <<: *default
   database: tranquility_test
-
-production:
-  <<: *default
-  database: tranquility_production
-  username: tranquility
-  password: <%= ENV['TRANQUILITY_DATABASE_PASSWORD'] %>

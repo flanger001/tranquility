@@ -35,9 +35,10 @@
 @mixin candle-bg() {
   background: {
     image: image-url('candles-lo-res2.jpg');
-    position: 0 -300px;
+    position: 0 0;
     repeat: no-repeat;
-    size: cover;
+    size: 100%;
+    attachment: fixed;
   }
 }
 
