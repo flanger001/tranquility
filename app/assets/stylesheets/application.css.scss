@@ -6,6 +6,11 @@
 @import 'vertical_utility_styles';
 @import 'header';
 
+html {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .content {
   background: rgba(230, 210, 190, 0.8);
   padding: 15px;
@@ -102,9 +107,6 @@ a {
 
 .footer-links {
   text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
 }
 
 .footer-body {
