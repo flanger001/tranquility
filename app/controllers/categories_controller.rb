@@ -10,5 +10,4 @@ class CategoriesController < ApplicationController
   def collection
     @collection ||= Category.where(active: true).order(:position => :asc)
   end
-
 end

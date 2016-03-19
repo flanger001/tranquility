@@ -1,5 +1,4 @@
 class ErrorsController < ApplicationController
-
   def render(*args, &block)
     super 'error', *args, &block
   end
@@ -22,5 +21,4 @@ class ErrorsController < ApplicationController
 
   def error
   end
-
 end

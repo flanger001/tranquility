@@ -27,5 +27,4 @@ class SessionsController < ApplicationController
   def resource_params
     params.require(:session).permit(:email, :password)
   end
-
 end

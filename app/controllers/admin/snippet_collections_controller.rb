@@ -1,5 +1,4 @@
 class Admin::SnippetCollectionsController < Admin::BaseController
-
   private
 
   def resource_class

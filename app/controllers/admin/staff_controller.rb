@@ -1,5 +1,4 @@
 class Admin::StaffController < Admin::BaseController
-
   private
 
   def resource_class

@@ -1,5 +1,4 @@
 class Admin::ReviewsController < Admin::BaseController
-
   private
 
   def resource_class

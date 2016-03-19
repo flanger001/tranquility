@@ -8,5 +8,4 @@ class ProductsController < ApplicationController
   def resource
     @resource ||= Product.find(params[:id])
   end
-
 end

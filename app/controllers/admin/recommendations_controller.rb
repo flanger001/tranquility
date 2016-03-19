@@ -1,5 +1,4 @@
 class Admin::RecommendationsController < Admin::BaseController
-
   private
 
   def resource_class
