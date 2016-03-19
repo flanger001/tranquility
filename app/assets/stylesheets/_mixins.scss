@@ -1,9 +1,4 @@
-@mixin script-font {
-  // font-family: $script-font;
-  font-size: 5em;
-}
-
-@mixin text-shadow-grow  {
+@mixin text-shadow-grow {
   -webkit-transition: text-shadow 0.35s;
   -moz-transition: text-shadow 0.35s;
   -ms-transition: text-shadow 0.35s;
@@ -11,7 +6,7 @@
   transition: text-shadow 0.35s;
 }
 
-@mixin box-shadow-grow  {
+@mixin box-shadow-grow {
   -webkit-transition: box-shadow 0.35s;
   -moz-transition: box-shadow 0.35s;
   -ms-transition: box-shadow 0.35s;
@@ -28,7 +23,7 @@
   }
 }
 
-@mixin brown-background(){
+@mixin brown-background() {
   background: darken($body-bg, 50%);
 }
 
@@ -42,42 +37,26 @@
   }
 }
 
-// @mixin text-overflow() {
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-// }
-
 @mixin btn-styles($btn-color: #555) {
   @include gradient-vertical($start-color: $btn-color, $end-color: darken($btn-color, 3%));
   @include reset-filter; // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
   background-repeat: repeat-x;
   border-color: darken($btn-color, 14%);
 
-  &:hover,
-  &:focus  {
+  &:hover, &:focus {
     background-color: darken($btn-color, 12%);
     background-position: 0 -15px;
   }
 
-  &:active,
-  &.active {
+  &:active, &.active {
     background-color: darken($btn-color, 12%);
     border-color: darken($btn-color, 14%);
   }
 
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
+  &.disabled, &[disabled], fieldset[disabled] & {
+    &, &:hover, &:focus, &.focus, &:active, &.active {
       background-color: darken($btn-color, 12%);
       background-image: none;
     }
   }
 }
-// }
