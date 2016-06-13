@@ -27,19 +27,33 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   match 'logout', to: 'sessions#destroy', via: [:get, :post]
 
-  namespace :admin do
-    resources :categories, :category_collections, :products, :recommendations, :reviews, :schedules, :snippets, :snippet_collections, :staff, :users do
-      collection do
-        post 'active'
-      end
-      member do
-        post 'move_up'
-        post 'move_down'
-        post 'move_to_top'
-        post 'move_to_bottom'
-      end
+  concern :active do
+    collection do
+      post 'active'
     end
   end
 
+  concern :list_repositionable do
+    member do
+      post 'move_up'
+      post 'move_down'
+      post 'move_to_top'
+      post 'move_to_bottom'
+    end
+  end
+
+  namespace :admin do
+    resources :categories,
+              :category_collections,
+              :products,
+              :recommendations,
+              :reviews,
+              :schedules,
+              :snippets,
+              :snippet_collections,
+              :staff,
+              :users,
+              concerns: [:active, :list_repositionable]
+  end
 end
 

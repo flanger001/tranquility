@@ -22,11 +22,11 @@
           abbr title='Email'
             | E:
             =< mail_to 'christina.lower@yahoo.com', 'christina.lower@yahoo.com', class: 'lowercase-override'
-      p: a href='/spa-hours'Spa Hours</a
+      p = link_to 'Spa Hours', spa_hours_path
       p Copyright &copy; 2009-#{Time.now.year} A Touch Of Tranquility
 
     .col-md-2.text-center
 
       p= link_to image_tag('social/facebook.png', class: 'facebook-image', alt: 'Facebook link'), 'https://www.facebook.com/ATouchOfTranquility'
-      p= render 'layouts/book_now'
+      p= book_now_link
       p= image_tag 'credit-card-logos-2-no-amex.jpg', class: 'credit-cards-image', alt: 'Credit cards accepted'

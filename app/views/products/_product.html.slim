@@ -2,7 +2,7 @@
   h2.product-header
     = product.name
     .pull-right
-      = render 'layouts/book_now'
+      = book_now_link
   p.product-description= simple_format(product.description)
   table.price-list
     - product.product_attributes.each do |attribute|

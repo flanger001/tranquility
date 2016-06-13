@@ -26,6 +26,11 @@ class Snippet < ActiveRecord::Base
     @announcement ||= find_by(title: 'Announcement')
   end
 
+  def self.book_now_link(mobile = false)
+    title = mobile ? 'Book Now (Mobile)' : 'Book Now'
+    @book_now_link ||= find_by(title: title)
+  end
+
   private
 
   def create_name

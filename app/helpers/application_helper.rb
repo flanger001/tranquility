@@ -84,11 +84,15 @@ module ApplicationHelper
 
   def active_check_box(form, options={})
     content_tag :div, class: 'form-group' do
-      label_tag form.object, :active, class: 'checkbox' do
-        check_box(form.object, :active) +
+      form.label :active, class: 'checkbox' do
+        (form.check_box :active) +
           "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
       end
     end
   end
 
+  def book_now_link(mobile = false)
+    link = Snippet.book_now_link(mobile)
+    link_to 'Book Now', link.body, target: '_blank', class: 'btn btn-book-now'
+  end
 end
