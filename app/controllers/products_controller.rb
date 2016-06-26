@@ -6,6 +6,6 @@ class ProductsController < ApplicationController
   end
 
   def resource
-    @resource ||= Product.find(params[:id])
+    @resource ||= Product.find_by(url: params[:id])
   end
 end

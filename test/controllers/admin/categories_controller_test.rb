@@ -6,18 +6,18 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     sign_in(users(:admin))
   end
 
-  test 'should get index' do
+  test 'gets index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:collection)
   end
 
-  test 'should get new' do
+  test 'gets new' do
     get :new
     assert_response :success
   end
 
-  test 'should create category' do
+  test 'creates category' do
     category_attributes = {
       name: @category.name,
       description: @category.description,
@@ -39,17 +39,17 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to admin_category_path(assigns(:resource))
   end
 
-  test 'should show category' do
+  test 'shows a category' do
     get :show, id: @category
     assert_response :success
   end
 
-  test 'should get edit' do
+  test 'gets edit' do
     get :edit, id: @category
     assert_response :success
   end
 
-  test 'should update category' do
+  test 'updates a category' do
     category_attributes = {
       name: @category.name,
       description: @category.description,
@@ -68,7 +68,7 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to admin_category_path(assigns(:resource))
   end
 
-  test 'should destroy category' do
+  test 'destroys a category' do
     assert_difference('Category.count', -1) do
       delete :destroy, id: @category
     end
@@ -76,22 +76,14 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to admin_categories_path
   end
 
-  test 'should destroy category collection' do
-    assert_difference('Category.count', -1) do
-      delete :destroy, id: @category
-    end
-
-    assert_redirected_to admin_categories_path
-  end
-
-  test 'should move category down' do
+  test 'moves category down' do
     position = @category.position
     post :move_down, id: @category
     assert_equal position + 1, @category.reload.position
     assert_redirected_to admin_categories_path
   end
 
-  test 'should move category up' do
+  test 'moves category up' do
     @category_other = categories(:body_treatments)
     position = @category_other.position
     post :move_up, id: @category_other
@@ -99,13 +91,13 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     assert_redirected_to admin_categories_path
   end
 
-  test 'should move category to top of list' do
+  test 'moves category to top of list' do
     post :move_to_top, id: @category
     assert_equal 1, @category.reload.position
     assert_redirected_to admin_categories_path
   end
 
-  test 'should move category to bottom of list' do
+  test 'moves category to bottom of list' do
     collection = @category.category_collection
     post :move_to_bottom, id: @category
     assert_equal collection.categories.length, @category.reload.position

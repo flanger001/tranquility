@@ -9,13 +9,11 @@ Rails.application.routes.draw do
 
   get 'broken', to: 'application#broken'
 
-  get 'policies', to: 'pages#policies'
   get 'spa-hours', to: 'pages#spa_hours'
-  get 'specials', to: 'pages#specials'
 
   resources :reviews, only: [:index, :show]
   resources :recommendations, only: [:index]
-  resources :categories, only: [:index, :show] do
+  resources :categories, only: [:index, :show], shallow: true do
     resources :products, only: [:index, :show]
   end
   resources :category_collections, only: [:show], path: 'collections'

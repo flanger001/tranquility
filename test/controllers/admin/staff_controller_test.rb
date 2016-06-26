@@ -6,18 +6,18 @@ class Admin::StaffControllerTest < ActionController::TestCase
     sign_in(users(:admin))
   end
 
-  test 'should get index' do
+  test 'gets index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:collection)
   end
 
-  test 'should get new' do
+  test 'gets new' do
     get :new
     assert_response :success
   end
 
-  test 'should create staff' do
+  test 'creates staff' do
     staff_attributes = {
       credentials: @staff.credentials,
       first_name: @staff.first_name,
@@ -31,17 +31,17 @@ class Admin::StaffControllerTest < ActionController::TestCase
     assert_redirected_to admin_staff_path(assigns(:resource))
   end
 
-  test 'should show staff' do
+  test 'shows staff' do
     get :show, id: @staff
     assert_response :success
   end
 
-  test 'should get edit' do
+  test 'gets edit' do
     get :edit, id: @staff
     assert_response :success
   end
 
-  test 'should update staff' do
+  test 'update staff' do
     staff_attributes = {
       credentials: @staff.credentials,
       first_name: @staff.first_name,
@@ -52,7 +52,7 @@ class Admin::StaffControllerTest < ActionController::TestCase
     assert_redirected_to admin_staff_path(assigns(:resource))
   end
 
-  test 'should destroy staff' do
+  test 'destroys staff' do
     assert_difference('Staff.count', -1) do
       delete :destroy, id: @staff
     end

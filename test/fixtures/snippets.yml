@@ -24,3 +24,8 @@ two:
   name: MyString
   title: MyString
   body: MyText
+
+three:
+  name: Book Now
+  title: Book Now
+  body: Book now!

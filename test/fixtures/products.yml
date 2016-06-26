@@ -20,17 +20,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 te_one:
-  name: Hot towels
-  description: For extra luxury
+  name: Hot towels 1
   active: true
   category: treatment_enhancements
+  description: For extra luxury
   photo:
   position: 1
   price: 1
   seo:
+  url: 'hot-towels'
 
 te_two:
-  name: Hot towels
+  name: Hot towels 2
   description: For extra luxury
   active: true
   category: treatment_enhancements
@@ -38,9 +39,10 @@ te_two:
   position: 2
   price: 1
   seo:
+  url: 'hot-towels-2'
 
 rm_one:
-  name: Regular massage
+  name: Regular massage 1
   description: Super great massages
   active: true
   category: massage_therapy
@@ -48,9 +50,10 @@ rm_one:
   position: 1
   price: 2
   seo:
+  url: 'regular-massage-1'
 
 rm_two:
-  name: Regular massage
+  name: Regular massage 2
   description: Super great massages
   active: true
   category: massage_therapy
@@ -58,3 +61,4 @@ rm_two:
   position: 2
   price: 2
   seo:
+  url: 'regular-massage-2'

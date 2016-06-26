@@ -20,20 +20,20 @@ class EventTest < ActiveSupport::TestCase
     @event = build(:event)
   end
 
-  def test_should_create_event
+  test 'should create event' do
     assert @event.save
   end
 
-  def test_start_and_end_times_should_be_different
+  test 'start and end times should be different' do
     assert_not_equal @event.start_time, @event.end_time
   end
 
-  def test_should_have_day
+  test 'should have day' do
     @event.day = nil
     assert_not @event.save
   end
 
-  def test_should_have_correct_day
+  test 'should have correct day' do
     assert_includes %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday), @event.day
   end
 

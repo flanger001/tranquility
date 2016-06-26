@@ -6,18 +6,18 @@ class Admin::CategoryCollectionsControllerTest < ActionController::TestCase
     sign_in(users(:admin))
   end
 
-  test 'should get index' do
+  test 'gets index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:collection)
   end
 
-  test 'should get new' do
+  test 'gets new' do
     get :new
     assert_response :success
   end
 
-  test 'should create category collection' do
+  test 'creates a category collection' do
     category_collection_attributes = {
       url: @category_collection.url,
       seo: @category_collection.seo,
@@ -33,17 +33,17 @@ class Admin::CategoryCollectionsControllerTest < ActionController::TestCase
     assert_redirected_to admin_category_collection_path(assigns(:resource))
   end
 
-  test 'should show category collection' do
+  test 'shows a category collection' do
     get :show, id: @category_collection
     assert_response :success
   end
 
-  test 'should get edit' do
+  test 'gets edit' do
     get :edit, id: @category_collection
     assert_response :success
   end
 
-  test 'should update category collection' do
+  test 'updates a category collection' do
     category_collection_attributes = {
       url: @category_collection.url,
       seo: @category_collection.seo,
@@ -56,21 +56,21 @@ class Admin::CategoryCollectionsControllerTest < ActionController::TestCase
     assert_redirected_to admin_category_collection_path(assigns(:resource))
   end
 
-  test 'should destroy category collection' do
+  test 'destroys a category collection' do
     assert_difference('CategoryCollection.count', -1) do
       delete :destroy, id: @category_collection
     end
     assert_redirected_to admin_category_collections_path
   end
 
-  test 'should move category_collection down' do
+  test 'moves category_collection down' do
     position = @category_collection.position
     post :move_down, id: @category_collection
     assert_equal position + 1, @category_collection.reload.position
     assert_redirected_to admin_category_collections_path
   end
 
-  test 'should move category_collection up' do
+  test 'moves category_collection up' do
     @category_collection_other = category_collections(:wraps)
     position = @category_collection_other.position
     post :move_up, id: @category_collection_other
@@ -78,13 +78,13 @@ class Admin::CategoryCollectionsControllerTest < ActionController::TestCase
     assert_redirected_to admin_category_collections_path
   end
 
-  test 'should move category collection to top of list' do
+  test 'moves category collection to top of list' do
     post :move_to_top, id: @category_collection
     assert_equal 1, @category_collection.reload.position
     assert_redirected_to admin_category_collections_path
   end
 
-  test 'should move category collection to bottom of list' do
+  test 'moves category collection to bottom of list' do
     all_collections = CategoryCollection.all
     post :move_to_bottom, id: @category_collection
     assert_equal all_collections.length, @category_collection.reload.position
