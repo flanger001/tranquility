@@ -54,4 +54,3 @@ Rails.application.routes.draw do
               concerns: [:active, :list_repositionable]
   end
 end
-
