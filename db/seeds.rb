@@ -113,7 +113,7 @@ staff = [
 ]
 
 staff.each do |s|
-  a = Staff.find_or_create_by!(last_name: s[:last_name])
+  a = Staff.find_or_initialize_by(first_name: s[:first_name], last_name: s[:last_name])
   a.attributes = s
   a.save
 end
@@ -188,7 +188,11 @@ snippets = [
   { name: 'Spa Policies & Medical Massage', description: "Thank you for choosing A Touch of Tranquility to support and guide you through your therapy. As your professional massage therapy office we are here to help you to achieve a better quality of living for you following your accident and/or injury.\n\nClick here for a printable copy of this page for your records: <a href='forms/InsuranceClientWelcomePoliciesLetter.pdf' class='btn btn-success btn-sm'> 'Download Form'</a>\n\n", snippets: [
     Snippet.new(title: "Insurance and Worker's Compensation Policies", body: "We accept some no-fault insurance and pre-authorized worker's compensation claims, both of which you are responsible for knowing the conditions and terms of the policy (particularly if Massage Therapy is covered and under what terms). We participate in flex plan claims, United Health Care ACN United Naturally plans and various other plans. You are fully responsible for payment in the event of a denied claim. Insurance clients will also be billed a 50% time/service fee for no shows and 30% for not canceling 24 hours ahead.\n\nAgain, you are fully responsible for payment in the event of a denied claim.\n\nWe do not currently accept health insurance claims at this time.\n\nWe reserve 30 or 45 minutes for insurance clients, so please arrive a few minutes before your session start time. That way you'll be ready for your session by the time we are."),
     Snippet.new(title: "Your first session", body: "Please arrive 15 minutes early to fill out the documents we require for treatment.\n\nBring your insurance information by or before your first session.\n\nWe will evaluate you during your first massage and set up a treatment plan that we feel will provide you the most benefit.\n\nEvery session you will have at a Touch of Tranquility will be dedicated to how you are feeling each day. We will check in with you each time you arrive for a session; therefore we know better how to treat the 'you' that comes in that day and not the 'you' from a month ago."),
-    Snippet.new(title: "Cancellations", body: "We reserve a specified amount of time for each client.\n\nPlease be mindful of our time and let us know 24 hours in advance if you cannot be present, so we can book that time with another patient who may be on our waiting list.\n\nNo-show or last minute cancellations will not be tolerated.\n\nA credit card will be kept securely on file. In the the event of a no-show or cancellation at the time of a session, we reserve the right to charge the card on file for the full amount of scheduled service. If the card is denied or you do not pay another way, we will regretfully no longer be able to treat you.\n\nThank you for your cooperation.\n\nWe look forward to helping you positively progress.")
+    Snippet.new(title: "Cancellations", body: "We reserve a specified amount of time for each client.\n\nPlease be mindful of our time and let us know 24 hours in advance if you cannot be present, so we can book that time with another patient who may be on our waiting list.\n\nNo-show or last minute cancellations will not be tolerated.\n\nA credit card will be kept securely on file. In the the event of a no-show or cancellation at the time of a session, we reserve the right to charge the card on file for the full amount of scheduled service. If the card is denied or you do not pay another way, we will regretfully no longer be able to treat you.\n\nThank you for your cooperation.\n\nWe look forward to helping you positively progress."),
+    Snippet.new(title: 'Spa Address', body: ''),
+    Snippet.new(title: 'Announcement', body: ''),
+    Snippet.new(title:'Book Now (Mobile)', body: ''),
+    Snippet.new(title: 'Book Now', body: '')
   ] },
 ]
 

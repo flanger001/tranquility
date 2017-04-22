@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -59,9 +58,8 @@ ActiveRecord::Schema.define(version: 20151220153118) do
     t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_attributes_on_product_id", using: :btree
   end
-
-  add_index "product_attributes", ["product_id"], name: "index_product_attributes_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.integer  "category_id"
@@ -76,9 +74,8 @@ ActiveRecord::Schema.define(version: 20151220153118) do
     t.string   "photo"
     t.boolean  "active",        default: false
     t.integer  "position"
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
-
-  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "name"
@@ -100,9 +97,8 @@ ActiveRecord::Schema.define(version: 20151220153118) do
     t.datetime "updated_at",                                   null: false
     t.boolean  "show_customer_name"
     t.datetime "date"
+    t.index ["product_id"], name: "index_reviews_on_product_id", using: :btree
   end
-
-  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "staff_id"
@@ -111,9 +107,8 @@ ActiveRecord::Schema.define(version: 20151220153118) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "name"
+    t.index ["staff_id"], name: "index_schedules_on_staff_id", using: :btree
   end
-
-  add_index "schedules", ["staff_id"], name: "index_schedules_on_staff_id", using: :btree
 
   create_table "snippet_collections", force: :cascade do |t|
     t.string   "name"

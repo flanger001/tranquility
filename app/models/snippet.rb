@@ -39,5 +39,4 @@ class Snippet < ActiveRecord::Base
       self.name.chop! if self.name.end_with?('-')
     end
   end
-
 end
