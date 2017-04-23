@@ -6,11 +6,6 @@ p Our philosophy is to educate and treat the whole you; to help you heal from th
 .categories
   .category#staff
     h1.category-header Our Staff
-    .clearfix
-      nav.text-center
-        ul.list-inline.category-panel
-          - collection.each do |staff|
-            li= link_to staff.full_name, "##{staff.full_name.downcase.gsub(' ', '-')}", class: 'btn staff-panel'
 
     - collection.each do |staff|
       = render staff

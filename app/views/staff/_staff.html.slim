@@ -1,12 +1,12 @@
 .member id="#{staff.full_name.downcase.gsub(' ', '-')}"
   .row
-    .col-sm-4
+    .col-sm-6
       h2.staff-name #{staff.first_name} #{staff.last_name}
       p.staff-credentials= staff.credentials
       .staff-photo
         = image_tag staff.photo, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}"
 
-    .col-sm-4
+    .col-sm-6
       h2.staff-column-title Services
       p.staff-title
         = simple_format(staff.title)
@@ -19,17 +19,5 @@
           li= service
       p= simple_format(staff.notes)
 
-    .col-sm-4
-      h2.staff-column-title Schedule
-      - if staff.schedule.present?
-        - if staff.schedule.events.present?
-          table.schedule
-            - staff.schedule.events.each do |event|
-              tr
-                td= event.day
-                td= event.span
-        p= simple_format(staff.schedule.notes)
-      - else
-        p TBD
 
   = modal("#{staff.first_name}'s bio", "#{staff.first_name.downcase}#{staff.last_name.downcase}bio", { plain: simple_format(staff.bio) })
