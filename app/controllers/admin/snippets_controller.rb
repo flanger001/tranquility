@@ -1,11 +1,13 @@
-class Admin::SnippetsController < Admin::BaseController
-  private
+module Admin
+  class SnippetsController < Admin::BaseController
+    private
 
-  def resource_class
-    Snippet
-  end
+    def resource_class
+      Snippet
+    end
 
-  def resource_params
-    params.require(:snippet).permit(:name, :title, :body, :active, :category_id)
+    def resource_params
+      params.require(:snippet).permit(:name, :title, :body, :active, :category_id)
+    end
   end
 end
