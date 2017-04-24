@@ -20,13 +20,17 @@ gem 'xmlrpc'
 
 group :development, :test do
   gem 'byebug'
-  gem 'minitest-reporters'
-  gem 'factory_girl_rails', '~> 4.0'
-  gem 'faker'
-  gem 'capybara'
-  gem 'capybara-webkit'
   gem 'pry-rails'
   gem 'thin'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'minitest-reporters'
+  gem 'faker'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
+  gem 'capybara-webkit'
 end
 
 group :development do
