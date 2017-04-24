@@ -19,16 +19,16 @@ class Snippet < ActiveRecord::Base
   before_save :create_name
 
   def self.spa_address
-    @spa_address ||= find_by(title: 'Spa Address')
+    find_or_initialize_by(title: 'Spa Address')
   end
 
   def self.announcement
-    @announcement ||= find_by(title: 'Announcement')
+    find_or_initialize_by(title: 'Announcement')
   end
 
   def self.book_now_link(mobile = false)
     title = mobile ? 'Book Now (Mobile)' : 'Book Now'
-    @book_now_link ||= find_by(title: title)
+    find_or_initialize_by(title: title)
   end
 
   private
