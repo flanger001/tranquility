@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get 'spa-hours', to: 'pages#spa_hours'
 
+  get 'no_u_cannot_haz', to: 'pages#no_u_cannot_haz'
+  get 'the_fish', to: 'pages#the_fish'
+
   resources :reviews, only: [:index, :show]
   resources :recommendations, only: [:index]
   resources :categories, only: [:index, :show], shallow: true do
