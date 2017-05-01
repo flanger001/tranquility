@@ -1,0 +1,45 @@
+<div class="container-fluid footer">
+  <row>
+    <col-md-12>
+      <p class="text-center slogan">
+        <i><%= slogan %></i>
+      </p>
+    </col-md-12>
+  </row>
+  <row class="footer-body">
+    <col-md-2>
+      <ul class="list-unstyled footer-links">
+        <% nav_links.each do |link| %>
+          <li><%= link_to link.name, link.url %>
+          </li>
+        <% end %>
+      </ul>
+    </col-md-2>
+    <col-md-8 class="text-center">
+      <address>
+        <% if spa_address %>
+          <%= simple_format spa_address.body %>
+        <% else %>
+          | 83 West Pulteney St
+          <br />
+          | Corning, NY 14830
+          <br />
+          <abbr title='Phone 1'>P1: (607) 769-8080</abbr>
+          <br />
+          <abbr title='Email'>
+            | E:
+            <%= mail_to 'christina.lower@yahoo.com', 'christina.lower@yahoo.com', class: 'lowercase-override' %></abbr>
+        <% end %>
+      </address>
+      <div class="footer__bar">
+        <p> Copyright &copy; 2009-<%= Time.now.year %> A Touch Of Tranquility</p>
+        <p><%= link_to 'Spa Hours', spa_hours_path %></p>
+        <p><%= link_to 'Admin Login', login_path %></p>
+      </div>
+    </col-md-8>
+    <col-md-2 class="text-center">
+      <p><%= link_to image_tag('social/facebook.png', class: 'facebook-image', alt: 'Facebook link'), 'https://www.facebook.com/ATouchOfTranquility' %></p>
+      <p><%= book_now_link %></p>
+      <p><%= image_tag 'credit-card-logos-2-no-amex.jpg', class: 'credit-cards-image', alt: 'Credit cards accepted' %></p>
+  </row>
+</div>

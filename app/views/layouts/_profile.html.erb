@@ -1,0 +1,10 @@
+<% if user_logged_in? %>
+  <div class="profile">
+    <ul class="list-inline pull-right">
+      <% user_links.each do |link| %>
+        <li><%= link_to link.name, link.url %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
