@@ -1,0 +1,16 @@
+<%= form_for resource, url: [:admin, resource] do |form| %>
+  <% if resource.errors.any? %>
+    #error_explanation
+      <h2>
+        <%= pluralize(resource.errors.count, "error") %> prohibited this <%= resource.class.to_s.downcase.singularize %> from being saved:
+      </h2>
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  <%= render 'fields', form: form %>
+  <%= render 'buttons', form: form %>
+<% end %>
+
