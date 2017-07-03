@@ -1,0 +1,13 @@
+<div>
+  <h1 class='category-header'>
+    <%= link_to recommendation.name, recommendation.url %>
+  </h1>
+  <blockquote>
+    <p>
+      <%= simple_format recommendation.description %>
+    </p>
+    <footer>
+      <%= link_to recommendation.url, recommendation.url, target: '_blank' %>
+    </footer>
+  </blockquote>
+</div>

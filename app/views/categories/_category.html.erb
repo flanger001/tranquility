@@ -1,0 +1,17 @@
+<% content_for :page_title, category.name %>
+<% content_for :seo_keywords, category.seo %>
+<% content_for :seo_description, category.description %>
+
+<div class='category'>
+  <h1 class='category-header'>
+    <%= category.name %>
+  </h1>
+  <p class='category-description'>
+    <%= category.description %>
+  </p>
+  <div class='products'>
+    <% category.products.sort_by(&:position).each do |product| %>
+      <%= render product %>
+    <% end %>
+  </div>
+</div>
