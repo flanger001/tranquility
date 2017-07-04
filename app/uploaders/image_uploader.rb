@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "#{ENV['FOG_ASSET_URL']}/images/no-photo.png"
+     ['staff', 'no-photo.png'].join('/')
   end
 
   # Process files as they are uploaded:
