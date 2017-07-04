@@ -1,0 +1,4 @@
+<td><%= row.title %></td>
+<td><%= truncate(row.body, length: 100) %></td>
+<td><%= row.category.name if row.category.present? %></td>
+<td><%= form.check_box :active %></td>

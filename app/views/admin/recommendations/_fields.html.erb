@@ -1,0 +1,19 @@
+<div class='row'>
+  <div class='col-sm-11'>
+    <div class='form-group'>
+      <%= form.label :name, class: 'control-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='col-sm-1'>
+    <%= active_check_box(form) %>
+  </div>
+</div>
+<div class='form-group'>
+  <%= form.label :url, class: 'control-label' %>
+  <%= form.text_field :url, class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= form.label :description, class: 'control-label' %>
+  <%= form.text_area :description, rows: 4, class: 'form-control' %>
+</div>

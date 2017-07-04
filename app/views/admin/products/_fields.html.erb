@@ -1,0 +1,52 @@
+<div class='form-group'>
+  <%= form.label :category_id, class: 'control-label' %>
+  <%= form.collection_select :category_id, Category.all, :id, :name, {}, class: 'form-control' %>
+</div>
+<div class='row'>
+  <div class='col-sm-11'>
+    <div class='form-group'>
+      <%= form.label :name, class: 'control-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='col-sm-1'>
+    <%= active_check_box(form) %>
+  </div>
+</div>
+<div class='form-group'>
+  <%= form.label :seo, 'SEO Tags', class: 'control-label' %>
+  <%= form.text_field :seo, class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= form.label :description, class: 'control-label' %>
+  <%= form.text_field :description, class: 'form-control' %>
+</div>
+<% if form.object.photo.present? %>
+  <%= image_tag form.object.photo.url %>
+  <div class='checkbox'>
+    <%= form.label :remove_photo do %>
+      <%= form.check_box :remove_photo %>
+      Remove photo?
+    <% end %></div>
+<% end %>
+<div class='row'>
+  <div class='col-sm-6'>
+    <div class='form-group'>
+      <%= form.label :photo, 'Upload photo', class: 'control-label' %>
+      <%= form.file_field :photo, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='form-group'>
+      <%= form.label :remote_photo_url, 'Load from URL', class: 'control-label' %>
+      <%= form.text_field :remote_photo_url, class: 'form-control' %>
+    </div>
+  </div>
+</div>
+<div class='well'>
+  <% form.object.product_attributes.build if form.object.product_attributes.blank? %>
+  <%= form.fields_for :product_attributes do |f| %>
+    <%= render 'product_attribute_fields', form: f %>
+  <% end %>
+  <%= add_extra_fields_link('Add Price & Time', form, :product_attributes) %>
+</div>

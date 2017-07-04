@@ -1,0 +1,16 @@
+<p>
+  <b>Name:</b>
+  <%= resource.name %>
+</p>
+<p>
+  <b>Title:</b>
+  <%= resource.title %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= simple_format resource.description %>
+</p>
+<p>
+  <b>Collection:</b>
+  <%= resource.category_collection.name if resource.category_collection.present? %>
+</p>
