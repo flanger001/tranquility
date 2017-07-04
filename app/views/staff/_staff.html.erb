@@ -4,6 +4,7 @@
       <h2 class='staff-name'> <%= staff.first_name %> <%= staff.last_name %></h2>
       <p class='staff-credentials'><%= staff.credentials %></p>
       <div class='staff-photo'>
+        <% # staff_photo = staff.photo.present? ? staff.photo : 'staff/no-photo.png' %>
         <%= image_tag staff.photo, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>

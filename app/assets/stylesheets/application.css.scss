@@ -93,13 +93,13 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   &.skin-care {
-    background-image: image-url('skin-400.png');
+    background-image: image-url('home/skin-400.png');
   }
   &.bodywork {
-    background-image: image-url('lamp-400.png');
+    background-image: image-url('home/lamp-400.png');
   }
   &.hair-removal {
-    background-image: image-url('wax-400.png');
+    background-image: image-url('home/wax-400.png');
   }
 }
 
