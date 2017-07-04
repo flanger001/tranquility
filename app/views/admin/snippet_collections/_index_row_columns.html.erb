@@ -1,0 +1,4 @@
+<td><%= row.name %></td>
+<td><%= row.title %></td>
+<td><%= truncate(row.description, length: 100) %></td>
+<td><%= row.category_collection.name if row.category_collection.present? %></td>

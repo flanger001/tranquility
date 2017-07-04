@@ -1,0 +1,19 @@
+<h2 class='category-item-header'>
+  <%= review.title %>
+  <span class='pull-right'>
+    <small class='rating'>
+      <% review.rating.times do |i| %>
+      <span class='glyphicon glyphicon-star'></span>
+          <% end %>
+    </small>
+  </span>
+</h2>
+<blockquote>
+  <p>
+    <%= simple_format review.body %>
+  </p>
+  <footer>
+    <%= review.customer_name if review.show_customer_name %>
+    <%= review.date.strftime('%m/%d/%Y') %>
+  </footer>
+</blockquote>

@@ -1,4 +1,0 @@
-td= row.name
-td= truncate(row.description, length: 100)
-td= link_to_if row.category.present?, row.category.name, admin_products_path(category: row.category_id)
-td= form.check_box :active

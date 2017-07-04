@@ -1,0 +1,17 @@
+<div class='product'>
+  <h2 class='product-header'>
+    <%= product.name %>
+    <span class='pull-right'><%= book_now_link %></span>
+  </h2>
+  <p class='product-description'><%= simple_format(product.description) %></p>
+  <table class='price-list'>
+    <% product.product_attributes.each do |attribute| %>
+      <tr>
+        <% if attribute.time.present? %>
+          <td><%= attribute.time %> minutes</td>
+        <% end %>
+        <td><%= number_to_currency(attribute.price, precision: 0) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

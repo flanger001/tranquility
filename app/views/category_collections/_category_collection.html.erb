@@ -1,0 +1,32 @@
+<% content_for :page_title, category_collection.name %>
+<% content_for :seo_keywords, category_collection.seo %>
+<% content_for :seo_description, category_collection.description %>
+
+<p><%= category_collection.description  %></p>
+<% category_collection.categories.sort_by(&:position).each do |category| %>
+  <h1 class='category-header'>
+    <%= link_to category.name, category_path(category.url)  %>
+    <span class='pull-right'>
+      <%= book_now_link %>
+    </span>
+  </h1>
+  <p class='category-description'>
+    <%= simple_format(category.description)  %>
+  </p>
+  <% if category_collection.inline %>
+    <% category.products.sort_by(&:position).each do |product| %>
+      <%= render product %>
+    <% end %>
+  <% end %>
+<% end %>
+<% if category_collection.snippet_collection.present? %>
+    <h1 class='category-header'><%= category_collection.snippet_collection.name %></h1>
+    <% category_collection.snippet_collection.snippets.each do |snippet| %>
+      <% if snippet.active %>
+        <div class='snippet'>
+          <h2 class='category-item-header'><%= snippet.title %></h2>
+          <%= simple_format snippet.body %>
+        </div>
+      <% end %>
+    <% end %>
+<% end %>
