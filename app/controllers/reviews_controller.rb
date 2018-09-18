@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_snippet
-    @review_snippet ||= Snippet.find_by(title: 'Reviews')
+    @review_snippet ||= Snippet.find_or_create_by(title: 'Reviews')
   end
 
   helper_method :review_snippet

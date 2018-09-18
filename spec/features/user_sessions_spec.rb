@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User sessions', type: :feature do
+RSpec.xfeature 'User sessions', type: :feature do
   describe 'logging in' do
     it 'works' do
       @user = create(:user)

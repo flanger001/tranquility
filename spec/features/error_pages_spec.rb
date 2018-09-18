@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Error pages', type: :feature do
+RSpec.xdescribe 'Error pages', type: :feature do
   # Need to set these values like we're in production or else the controller doesn't work
   Rails.application.configure do
     config.consider_all_requests_local     = false

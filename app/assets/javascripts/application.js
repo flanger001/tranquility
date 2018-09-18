@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require underscore
 
 $(document).on( 'page:load page:restore ready', function(e) {
   $('.flash').fadeOut(1000, function(e) {
