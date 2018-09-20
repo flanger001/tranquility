@@ -15,6 +15,9 @@ Layout/ExtraSpacing:
   Exclude:
     - 'db/schema.rb'
 
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
     - 'config/environments/production.rb'

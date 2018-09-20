@@ -32,8 +32,8 @@ module ApplicationHelper
   def product_links
     @product_links = {}
     CategoryCollection.where(active: true)
-                      .sort_by(&:position)
-                      .each { |c| @product_links.merge!(c.name => category_collection_path(c.url)) }
+      .sort_by(&:position)
+      .each { |c| @product_links.merge!(c.name => category_collection_path(c.url)) }
     @product_links.map { |link| NavLink.new(*link) }
   end
 
@@ -79,8 +79,7 @@ module ApplicationHelper
   def active_check_box(form, _options = {})
     content_tag :div, class: 'form-group' do
       form.label :active, class: 'checkbox' do
-        (form.check_box :active) +
-          "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
+        (form.check_box :active) + "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
       end
     end
   end

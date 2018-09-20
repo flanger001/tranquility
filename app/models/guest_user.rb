@@ -10,5 +10,6 @@ class GuestUser
   def admin
     false
   end
+
   alias_method :admin?, :admin
 end

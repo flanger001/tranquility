@@ -1,17 +1,3 @@
-# == Schema Information
-#
-# Table name: events
-#
-#  id          :integer          not null, primary key
-#  start_time  :time
-#  end_time    :time
-#  day         :string
-#  off         :boolean
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  schedule_id :integer
-#
-
 class Event < ActiveRecord::Base
   belongs_to :schedule, counter_cache: true, optional: false
 

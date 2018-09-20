@@ -1,22 +1,3 @@
-# == Schema Information
-#
-# Table name: categories
-#
-#  id                     :integer          not null, primary key
-#  name                   :string
-#  description            :string
-#  url                    :string
-#  inline                 :boolean          default(FALSE), not null
-#  products_count         :integer          default(0), not null
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  category_collection_id :integer
-#  seo                    :string
-#  photo                  :string
-#  active                 :boolean          default(FALSE)
-#  position               :integer
-#
-
 class Category < ActiveRecord::Base
   belongs_to :category_collection, optional: true
   has_many :products, dependent: :destroy
