@@ -18,7 +18,7 @@
 #
 
 class Product < ActiveRecord::Base
-  belongs_to :category, counter_cache: true
+  belongs_to :category, counter_cache: true, optional: true
   has_many :product_attributes, dependent: :destroy
   has_many :reviews, dependent: :destroy
   accepts_nested_attributes_for :product_attributes, allow_destroy: true

@@ -1,47 +1,36 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
+ruby '2.5.1'
 
-gem 'rails', '5.0.2'
-gem 'pg'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'bootstrap-sass'
-gem 'underscore-rails'
+gem 'acts_as_list'
 gem 'bcrypt'
+gem 'bootstrap-sass'
 gem 'carrierwave-aws'
 gem 'dotenv-rails'
+gem 'jquery-rails'
 gem 'mini_magick'
+gem 'pg', '~> 0.18'
+gem 'puma', '~> 3.0'
+gem 'rails', '5.1.0'
+gem 'sass-rails'
 gem 'sitemap_generator'
-gem 'acts_as_list'
-gem 'xmlrpc'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
-  gem 'thin'
+  gem 'rubocop', '~> 0.59.1', require: false
 end
 
 group :test do
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'minitest-reporters'
-  gem 'faker'
-  gem 'factory_girl_rails', '~> 4.0'
-  gem 'capybara'
-  gem 'capybara-webkit'
+  # gem 'capybara'
+  # gem 'capybara-webkit'
   gem 'database_cleaner'
 end
 
 group :development do
+  gem 'listen'
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :production do
-  gem 'puma', '~> 3.0'
-  gem 'rails_12factor'
 end

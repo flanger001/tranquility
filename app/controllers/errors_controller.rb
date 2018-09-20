@@ -19,6 +19,5 @@ class ErrorsController < ApplicationController
     render status: 422, locals: { message: 'The change you wanted was rejected.' }
   end
 
-  def error
-  end
+  def error; end
 end

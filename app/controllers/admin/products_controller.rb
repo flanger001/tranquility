@@ -7,8 +7,24 @@ module Admin
     end
 
     def resource_params
-      params.require(:product).permit(:category_id, :name, :remove_photo, :photo, :remote_photo_url, :seo, :description, :price,
-                                      { :product_attributes_attributes => [:id, :time, :price, :_destroy] }, :active)
+      params.require(:product).permit(
+        :category_id,
+        :name,
+        :remove_photo,
+        :photo,
+        :remote_photo_url,
+        :seo,
+        :description,
+        :price,
+        {
+          product_attributes_attributes: [
+            :id,
+            :time,
+            :price,
+            :_destroy
+          ]
+        }, :active
+      )
     end
 
     def collection
@@ -16,9 +32,7 @@ module Admin
     end
 
     def search_params
-      if params[:category]
-        { category_id: params[:category] }
-      end
+      { category_id: params[:category] } if params[:category]
     end
   end
 end

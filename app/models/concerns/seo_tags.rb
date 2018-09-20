@@ -1,5 +1,4 @@
 module SeoTags
-
   def self.included(base)
     base.class_eval do
       def seo_tags

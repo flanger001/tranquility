@@ -4,10 +4,10 @@ class CategoriesController < ApplicationController
   private
 
   def resource
-    @resource ||= Category.includes(:products => [:product_attributes]).where(active: true, products: { active: true }).find_by(url: params[:id])
+    @resource ||= Category.includes(products: [:product_attributes]).where(active: true, products: { active: true }).find_by(url: params[:id])
   end
 
   def collection
-    @collection ||= Category.where(active: true).order(:position => :asc)
+    @collection ||= Category.where(active: true).order(position: :asc)
   end
 end

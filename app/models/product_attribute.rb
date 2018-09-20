@@ -11,5 +11,5 @@
 #
 
 class ProductAttribute < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :product, optional: false
 end

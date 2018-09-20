@@ -13,7 +13,7 @@
 #
 
 class Event < ActiveRecord::Base
-  belongs_to :schedule, counter_cache: true
+  belongs_to :schedule, counter_cache: true, optional: false
 
   validates :day, presence: true
 
@@ -25,10 +25,9 @@ class Event < ActiveRecord::Base
     off ? 'Off' : "#{start_time.strftime('%l:%M %P')} - #{end_time.strftime('%l:%M %P')}"
   end
 
-  DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)
+  DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday).freeze
 
   def self.days
     DAYS
   end
-
 end

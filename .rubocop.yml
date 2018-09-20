@@ -1,0 +1,130 @@
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLines:
+  Exclude:
+    - 'bin/setup'
+    - 'config/initializers/inflections.rb'
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'config/routes.rb'
+    - 'db/schema.rb'
+
+Layout/ExtraSpacing:
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+Lint/Void:
+  Enabled: false
+
+# Offense count: 3
+Metrics/AbcSize:
+  Max: 19
+
+# Offense count: 8
+# Configuration parameters: CountComments, ExcludedMethods.
+# ExcludedMethods: refine
+Metrics/BlockLength:
+  Max: 131
+
+# Offense count: 134
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 4123
+
+# Offense count: 3
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 28
+
+Naming/PredicateName:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'Rakefile'
+    - 'bin/bundle'
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Exclude:
+    - 'config/application.rb'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '()'
+    '%W': '()'
+  Exclude:
+    - 'config/spring.rb'
+    - 'db/migrate/20150910020035_add_seo_tags.rb'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/RedundantSelf:
+  Exclude:
+    - 'config/application.rb'
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StringLiterals:
+  Exclude:
+    - 'bin/yarn'
+    - 'config/environments/production.rb'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+
+Style/StringLiteralsInInterpolation:
+  Exclude:
+    - 'bin/yarn'
+
+Style/SymbolArray:
+  Exclude:
+    - 'app/controllers/admin/products_controller.rb'
+    - 'app/controllers/admin/schedules_controller.rb'
+    - 'app/controllers/admin/staff_controller.rb'
+    - 'config/routes.rb'

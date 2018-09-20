@@ -51,7 +51,6 @@ RSpec.describe Admin::CategoriesController, type: :controller do
     expect(response).to redirect_to(admin_categories_path)
   end
 
-
   it 'moves category down' do
     position = @category.position
     @category_other = create(:category, category_collection: @category.category_collection)

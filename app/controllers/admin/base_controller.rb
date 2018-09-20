@@ -2,18 +2,15 @@ module Admin
   class BaseController < ApplicationController
     before_action :require_user
 
-    def index
-    end
+    def index; end
 
-    def show
-    end
+    def show; end
 
     def new
       @resource = resource_class.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @resource = resource_class.new(resource_params)
@@ -39,7 +36,7 @@ module Admin
     end
 
     def active
-      resource_class.update(params["#{symbolized_resource_class}"].keys, params["#{symbolized_resource_class}"].values)
+      resource_class.update(params[symbolized_resource_class.to_s].keys, params[symbolized_resource_class.to_s].values)
       redirect_to polymorphic_path([:admin, resource_class]), notice: "#{resource_class.to_s.pluralize.titleize} updated."
     end
 

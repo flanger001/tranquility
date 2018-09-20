@@ -14,8 +14,8 @@
 #
 
 class Snippet < ActiveRecord::Base
-  belongs_to :category
-  belongs_to :snippet_collection
+  belongs_to :category, optional: true
+  belongs_to :snippet_collection, optional: true
   before_save :create_name
 
   def self.spa_address
@@ -34,9 +34,8 @@ class Snippet < ActiveRecord::Base
   private
 
   def create_name
-    unless self.name.present?
-      self.name = self.title.downcase.gsub(/[\W]{1,}/, '-')
-      self.name.chop! if self.name.end_with?('-')
-    end
+    return unless name.present?
+    self.name = title.downcase.gsub(/[\W]{1,}/, '-')
+    name.chop! if name.end_with?('-')
   end
 end

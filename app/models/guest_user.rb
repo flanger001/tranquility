@@ -11,5 +11,4 @@ class GuestUser
     false
   end
   alias_method :admin?, :admin
-
 end
