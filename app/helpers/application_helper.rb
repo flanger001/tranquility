@@ -63,10 +63,6 @@ module ApplicationHelper
     flashes[flash_type.to_sym] || flash_type.to_s
   end
 
-  def nav_id
-    @nav_id ||= NavId.new
-  end
-
   def spa_hours
     @spa_hours ||= Schedule.spa_hours
   end
