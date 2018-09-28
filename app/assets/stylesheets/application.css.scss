@@ -148,7 +148,10 @@ a {
 .staff-photo {
   img {
     margin-bottom: 10px;
-    width: 420px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 0;
   }
 }
 
@@ -177,6 +180,7 @@ table {
   font-size: 1.7em;
   text-transform: uppercase;
   color: #777777;
+  min-height: 1.7em;
 }
 
 .member {

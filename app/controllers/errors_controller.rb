@@ -1,6 +1,6 @@
 class ErrorsController < ApplicationController
   def render(*args, &block)
-    super 'error', *args, &block
+    super('error', *args, &block)
   end
 
   def not_found

@@ -10,17 +10,18 @@ Rails.application.routes.draw do
   get 'broken', to: 'application#broken'
 
   get 'spa-hours', to: 'pages#spa_hours'
+  get 'newsletter_signup', to: 'pages#newsletter_signup'
 
   get 'no_u_cannot_haz', to: 'pages#no_u_cannot_haz'
   get 'the_fish', to: 'pages#the_fish'
 
   resources :reviews, only: [:index, :show]
   resources :recommendations, only: [:index]
-  resources :categories, only: [:index, :show], shallow: true do
-    resources :products, only: [:index, :show]
+  resources :categories, only: [:index, :show], param: :url, shallow: true do
+    resources :products, only: [:index, :show], param: :url
   end
-  resources :category_collections, only: [:show], path: 'collections'
-  resources :staff, only: [:index, :show]
+  resources :category_collections, only: [:show], param: :url, path: 'collections'
+  resources :staff, only: [:index, :show], param: :url
 
   get 'about', to: 'staff#index'
 
@@ -44,16 +45,19 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :recommendations,
+      :reviews,
+      :schedules,
+      :snippets,
+      :snippet_collections,
+      :users,
+      concerns: [:active, :list_repositionable]
+
     resources :categories,
-              :category_collections,
-              :products,
-              :recommendations,
-              :reviews,
-              :schedules,
-              :snippets,
-              :snippet_collections,
-              :staff,
-              :users,
-              concerns: [:active, :list_repositionable]
+      :category_collections,
+      :products,
+      :staff,
+      concerns: [:active, :list_repositionable],
+      param: :url
   end
 end

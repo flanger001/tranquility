@@ -1,2 +1,2 @@
-<% content_for :page_title, resource.full_name %>
+<% content_for :page_title, "#{resource.name} #{resource.credentials}" %>
 <%= render partial: 'staff', object: resource %>

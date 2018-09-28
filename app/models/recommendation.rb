@@ -9,6 +9,6 @@ class Recommendation < ActiveRecord::Base
   end
 
   def good_url?
-    errors.add(:url, 'Please enter a valid url starting with http:// or https://') if URI.parse(url).instance_of? URI::Generic
+    errors.add(:url, 'Please enter a valid url starting with http:// or https://') if URI.parse(url).instance_of?(URI::Generic)
   end
 end

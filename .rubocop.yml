@@ -1,3 +1,6 @@
+Layout/AlignParameters:
+  Enabled: false
+
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
@@ -37,7 +40,11 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
 Metrics/BlockLength:
-  Max: 131
+  Exclude:
+    - 'db/**/*'
+    - 'config/routes.rb'
+    - 'lib/tasks/*'
+    - 'spec/**/*'
 
 # Offense count: 134
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
@@ -81,6 +88,30 @@ Style/FrozenStringLiteralComment:
 Style/IfUnlessModifier:
   Exclude:
     - 'config/application.rb'
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'config.ru'
+    - 'Gemfile'
+  IgnoredMethods:
+    - 'click_button'
+    - 'describe'
+    - 'it'
+    - 'include'
+    - 'mock_with'
+    - 'expect_with'
+    - 'link_to'
+    - 'raise'
+    - 'redirect_to'
+    - 'render'
+    - 'require'
+    - 'to'
+    - 'to_not'
+    - 'visit'
 
 Style/MixinUsage:
   Exclude:

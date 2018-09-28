@@ -1,6 +1,8 @@
-module SeoTags
-  def self.included(base)
-    base.class_eval do
+module Concerns
+  module SeoTags
+    extend ActiveSupport::Concern
+
+    included do
       def seo_tags
         seo && seo.split(',').join
       end

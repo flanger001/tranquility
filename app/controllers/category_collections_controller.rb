@@ -7,6 +7,6 @@ class CategoryCollectionsController < ApplicationController
     @collection ||= CategoryCollection
       .includes(categories: [:products])
       .where(active: true, categories: { active: true }, products: { active: true })
-      .find_by(url: params[:id])
+      .find_by(url: params[:url])
   end
 end

@@ -1,5 +1,7 @@
 module Admin
   class CategoriesController < Admin::BaseController
+    finder :url
+
     private
 
     def resource_class

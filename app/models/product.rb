@@ -4,8 +4,8 @@ class Product < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   accepts_nested_attributes_for :product_attributes, allow_destroy: true
 
-  include CreateUrl
-  include SeoTags
+  include Concerns::Url
+  include Concerns::SeoTags
   acts_as_list scope: :category
 
   def average_rating

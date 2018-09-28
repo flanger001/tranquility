@@ -4,6 +4,6 @@ class StaffController < ApplicationController
   end
 
   def resource
-    @resource ||= Staff.find(params[:id])
+    @resource ||= Staff.find_by(url: params[:url])
   end
 end

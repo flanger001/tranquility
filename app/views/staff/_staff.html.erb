@@ -1,21 +1,14 @@
-<div class='member' id='<%= staff.full_name.downcase.gsub(' ', '-') %>'>
+<div class='member' id='<%= staff.name.downcase.gsub(' ', '-') %>'>
   <div class='row'>
     <div class='col-sm-6'>
-      <h2 class='staff-name'> <%= staff.first_name %> <%= staff.last_name %></h2>
-      <p class='staff-credentials'><%= staff.credentials %></p>
-      <div class='staff-photo'>
-        <%= image_tag staff.photo.url, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}" %>
+      <div>
+        <%= image_tag staff.photo.url, class: 'staff-image-list img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>
 
     <div class='col-sm-6'>
       <h2 class='staff-column-title'> Services</h2>
       <p class='staff-title'><%= simple_format(staff.title) %></p>
-      <p>
-        <button class='btn btn-info' data-toggle='modal' data-target='#<%= "#{staff.first_name.downcase}#{staff.last_name.downcase}bio" %>'>
-          Bio
-        </button>
-      </p>
       <p>
         <b><%= staff.first_name %></b> is available for:
       </p>
@@ -27,5 +20,9 @@
       <p><%= simple_format(staff.notes) %></p>
     </div>
   </div>
-  <%= modal("#{staff.first_name}'s bio", "#{staff.first_name.downcase}#{staff.last_name.downcase}bio", { plain: simple_format(staff.bio) }) %>
+  <div class="row">
+    <blockquote>
+      <%= simple_format(staff.bio) %>
+    </blockquote>
+  </div>
 </div>

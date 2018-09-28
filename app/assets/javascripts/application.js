@@ -9,7 +9,7 @@ $(document).on('page:load page:restore ready', function (e) {
 
     // Mailchimp email signup form
     $('form[name="mc-embedded-subscribe-form"]').on('submit', function (e) {
-        $('#mailchimp-signup').modal('hide');
+        Turbolinks.visit('/');
     });
 
     $('form').on('click', '.add_fields', function (e) {

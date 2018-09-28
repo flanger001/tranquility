@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def self.finder(param)
+    define_method :resource do
+      @resource ||= resource_class.find_by(param => params[param])
+    end
+  end
+
   def broken
     render plain: raise('broken')
   end

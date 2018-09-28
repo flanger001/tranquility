@@ -16,8 +16,20 @@
 <div class='categories'>
   <div class='category' id="staff">
     <h1 class='category-header'>Our Staff</h1>
-    <% collection.each do |staff| %>
-      <%= render staff %>
+    <% collection.each_slice(3) do |staff_chunk| %>
+      <div class='row'>
+        <% staff_chunk.each do |staff| %>
+        <div class='col-sm-4'>
+          <div class='staff-photo'>
+            <%= link_to(staff) do %>
+              <%= image_tag(staff.photo.url, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}") %>
+            <% end %>
+          </div>
+          <h2 class='staff-name'> <%= staff.first_name %> <%= staff.last_name %></h2>
+          <div class='staff-credentials'><%= staff.credentials %></div>
+        </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

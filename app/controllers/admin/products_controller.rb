@@ -1,5 +1,7 @@
 module Admin
   class ProductsController < Admin::BaseController
+    finder :url
+
     private
 
     def resource_class

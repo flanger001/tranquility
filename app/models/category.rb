@@ -3,8 +3,8 @@ class Category < ActiveRecord::Base
   has_many :products, dependent: :destroy
   accepts_nested_attributes_for :products, allow_destroy: true
 
-  include CreateUrl
-  include SeoTags
+  include Concerns::Url
+  include Concerns::SeoTags
   acts_as_list scope: :category_collection
 
   mount_uploader :photo, ImageUploader

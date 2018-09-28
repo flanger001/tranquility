@@ -1,4 +1,4 @@
-<% content_for :page_title, 'Your sanctuary to restore you...' %>
+<% content_for :page_title, 'A sanctuary to restore you' %>
 
 <div class='text-center'>
   <p><%= announcement %></p>
@@ -10,30 +10,14 @@
       It is unique, thoughtful, and rich with life, details and gorgeous simplicity.
       We cultivate a healing sanctuary for you to feel comfortable in, enhancing you each and every time you visit.
     </p>
-    <div class='gifts'>
-      <p>Gift certificates are available for all services and products.</p>
-      <p><%= link_to 'Click here to purchase a Gift Certificate!',
-                     'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
-                     target: '_blank', class: 'btn btn-success btn-lg' %>
-      </p>
+    <div class='lead gifts'>
+      <p>Gift certificates are available for all services and products. <%= link_to 'Click here to purchase a Gift Certificate!',
+          'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
+          target: '_blank' %></p>
     </div>
   </div>
   <hr/>
-  <p class='lead'>Interested in email updates?</p>
-  <p>
-    <button class='btn btn-default btn-lg' data-toggle='modal' data-target='#mailchimp-signup'>
-      Click here to sign up!
-    </button>
-  </p>
-  <div class='modal fade' id='mailchimp-signup'>
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-body'>
-          <%= render 'layouts/mailchimp' %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p class='lead'>Interested in email updates? <%= link_to 'Click here to sign up!', newsletter_signup_path, html: { class: 'underline' } %></p>
   <hr/>
   <div class='callouts'>
     <div class='row'>

@@ -14,6 +14,6 @@ RSpec.describe Staff, type: :model do
   end
 
   it 'should have full name' do
-    expect(@staff.full_name).to eq("#{@staff.first_name} #{@staff.last_name}")
+    expect(@staff.name).to eq("#{@staff.first_name} #{@staff.last_name}")
   end
 end
