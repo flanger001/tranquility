@@ -1,5 +1,5 @@
 class Schedule < ActiveRecord::Base
-  belongs_to :staff, optional: false
+  belongs_to :staff, optional: true
   has_many :events
   accepts_nested_attributes_for :events, allow_destroy: true
 

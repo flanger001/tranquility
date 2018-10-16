@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday).freeze
+
   belongs_to :schedule, counter_cache: true, optional: false
 
   validates :day, presence: true
@@ -9,11 +11,5 @@ class Event < ActiveRecord::Base
 
   def span
     off ? 'Off' : "#{start_time.strftime('%l:%M %P')} - #{end_time.strftime('%l:%M %P')}"
-  end
-
-  DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday).freeze
-
-  def self.days
-    DAYS
   end
 end

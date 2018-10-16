@@ -1,23 +1,30 @@
-<% content_for :page_title, 'A sanctuary to restore you' %>
+<% content_for :page_title, 'A Sanctuary To Restore You' %>
 
 <div class='text-center'>
   <p><%= announcement %></p>
 
   <div class='landing-text'>
-    <p>Our healing spa landed in our Corning location in 2003.
+    <p>
+      Our healing spa landed in our Corning location in 2003.
       We have stretched, grown, and moved forward over the years because of all that has been contributed here.
       We have learned from you and through our practitioners, and that has brought us to a deeply centered and compassionate place with our very own identity.
       It is unique, thoughtful, and rich with life, details and gorgeous simplicity.
       We cultivate a healing sanctuary for you to feel comfortable in, enhancing you each and every time you visit.
     </p>
-    <div class='lead gifts'>
-      <p>Gift certificates are available for all services and products. <%= link_to 'Click here to purchase a Gift Certificate!',
-          'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
-          target: '_blank' %></p>
-    </div>
   </div>
   <hr/>
-  <p class='lead'>Interested in email updates? <%= link_to 'Click here to sign up!', newsletter_signup_path, html: { class: 'underline' } %></p>
+  <div class='lead gifts'>
+    <p class="gifts'">
+      Gift certificates are available for all services and products.
+      <%= link_to 'Purchase a Gift Certificate here!',
+                  'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
+                  target: '_blank' %>
+    </p>
+    <p class='lead newsletter'>
+      Interested in email updates?
+      <%= link_to 'Sign up here!', newsletter_signup_path, html: { class: 'underline' } %>
+    </p>
+  </div>
   <hr/>
   <div class='callouts'>
     <div class='row'>
@@ -29,7 +36,7 @@
         </div>
       <% end %>
     </div>
-    <div class='below-fold'>
+    <div class='row'>
       <h3>See what our customers are saying about us!</h3>
       <p class='text-center'>
         <%= link_to 'Reviews', reviews_path, class: 'btn btn-default btn-lg' %>
