@@ -1,15 +1,9 @@
 class ContactInformation
   class << self
-    def address
+    def address; end
 
-    end
+    def phone; end
 
-    def phone
-
-    end
-
-    def email
-
-    end
+    def email; end
   end
 end

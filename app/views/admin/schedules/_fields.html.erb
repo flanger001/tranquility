@@ -1,12 +1,12 @@
-<div class='form-group'>
-  <%= form.label :name, class: 'control-label' %>
-  <%= form.text_field :name, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :name, class: "control-label" %>
+  <%= form.text_field :name, class: "form-control" %>
 </div>
 <%= form.fields_for :events do |event| %>
-  <%= render 'event_fields', form: event %>
+  <%= render "event_fields", form: event %>
 <% end %>
-<%= add_extra_fields_link 'Add Day', form, :events %>
-<div class='form-group'>
-  <%= form.label :notes, 'Schedule notes', class: 'control-label' %>
-  <%= form.text_area :notes, rows: 4, class: 'form-control' %>
+<%= add_extra_fields_link "Add Day", form, :events %>
+<div class="form-group">
+  <%= form.label :notes, "Schedule notes", class: "control-label" %>
+  <%= form.text_area :notes, rows: 4, class: "form-control" %>
 </div>

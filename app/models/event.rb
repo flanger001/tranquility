@@ -10,6 +10,22 @@ class Event < ActiveRecord::Base
   end
 
   def span
-    off ? 'Off' : "#{start_time.strftime('%l:%M %P')} - #{end_time.strftime('%l:%M %P')}"
+    Span.new(self)
+  end
+
+  class Span
+    attr_reader :event
+
+    def initialize(event)
+      @event = event
+    end
+
+    def to_s
+      if event.off
+        "Off"
+      else
+        "#{event.start_time.strftime("%l:%M %P")} - #{event.end_time.strftime("%l:%M %P")}"
+      end
+    end
   end
 end

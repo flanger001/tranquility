@@ -1,5 +1,6 @@
-<% content_for :page_title, 'About Us' %>
-<p class='lead'>
+<% content_for :page_title, "About Us" %>
+
+<p class="lead">
   A Touch of Tranquility Spa is a sanctuary for restorative health; as a holistic spa for massage therapy, skin care, and expert hair removal services.
 </p>
 <p>
@@ -8,55 +9,56 @@
   We are staffed by NYS licensed professionals with over 25 years of combined experience and we continue to educate ourselves in all areas of expertise.
 </p>
 <p>
-  Our philosophy is: to educate and treat the whole you; to help you heal from the inside out; with massage as a medical therapy for injury and pain management, rejuvenation massage, signature bodywork as a truly relaxing, unique, organic and healing experience, to holistic nutrition education all the way to expert waxing service and healing skin imbalances with superb care and education, all designed around your specific needs.
+  Our philosophy is: to educate and treat the whole you; to help you heal from the inside out; with massage as a medical therapy for injury and pain management,
+  rejuvenation massage, signature bodywork as a truly relaxing, unique, organic and healing experience, to holistic nutrition education all the way to expert
+  waxing service and healing skin imbalances with superb care and education, all designed around your specific needs.
 </p>
-<p>By way of this philosophy we can encourage and support you through healthful, mindful decisions leading to better health happiness and well-being.
+<p>
+  By way of this philosophy we can encourage and support you through healthful, mindful decisions leading to better health happiness and well-being.
 </p>
 
-<div class='categories'>
-  <div class='category' id="staff">
-    <h1 class='category-header'>Our Staff</h1>
-    <% collection.each_slice(3) do |staff_chunk| %>
-      <div class='row'>
-        <% staff_chunk.each do |staff| %>
-        <div class='col-sm-4'>
-          <div class='staff-photo'>
-            <%= link_to(staff) do %>
-              <%= image_tag(staff.photo.url, class: 'img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}") %>
+<div class="staff-grid category">
+  <h1 class="category__header">Our Staff</h1>
+  <% collection.each_slice(3) do |staff_chunk| %>
+    <div class="staff-grid__item row">
+      <% staff_chunk.each do |staff| %>
+        <div class="col-sm-4">
+          <div class="staff__photo">
+            <%= link_to(staff, class: "staff__link") do %>
+              <%= image_tag(staff.photo.url, class: "staff__image--grid img-responsive img-rounded", alt: "#{staff.first_name} #{staff.last_name}") %>
             <% end %>
           </div>
-          <h2 class='staff-name'> <%= staff.first_name %> <%= staff.last_name %></h2>
-          <div class='staff-credentials'><%= staff.credentials %></div>
+          <h2 class="staff__name"><%= staff.first_name %> <%= staff.last_name %></h2>
+          <div class="staff__credentials"><%= staff.credentials %></div>
         </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-  <div class='category' id='assurances'>
-    <h1 class='category-header'>Take Comfort In Us</h1>
-    <p class='assurance-text'>
-      You can expect complete professionalism, privacy and discretion with every service provided.
-    </p>
-    <p class='assurance-text'>
-      We pay close attention to your allergies and sensitivities to create an environment of personal comfort and peace of mind.
-    </p>
-    <p class='assurance-text'>
-      We always utilize proper draping techniques.
-    </p>
-    <p class='assurance-text'>
-      We only use the highest quality products including but not limited to:
-    </p>
-    <ul>
-      <li><b>Chemical-free</b> and <b>paraben-free</b> skin care products</li>
-      <li><b>Pure essential oils</b> which are completely unadulterated, wild crafted and/or organic, hand-blended oils (never using nut oils or irritants)</li>
-      <li><b>Biotone Professional Massage Products</b></li>
-    </ul>
-    <p class='assurance-text'>
-      We are always looking for new and introducing other great products.
-    </p>
-    <p class='assurance-text'>
-      We would be happy to help you customize the perfect package for any occasion!
-    </p>
-  </div>
+<div class="assurance">
+  <h1 class="category__header">Take Comfort In Us</h1>
+  <p class="assurance__text">
+    You can expect complete professionalism, privacy and discretion with every service provided.
+  </p>
+  <p class="assurance__text">
+    We pay close attention to your allergies and sensitivities to create an environment of personal comfort and peace of mind.
+  </p>
+  <p class="assurance__text">
+    We always utilize proper draping techniques.
+  </p>
+  <p class="assurance__text">
+    We only use the highest quality products including but not limited to:
+  </p>
+  <ul>
+    <li><b>Chemical-free</b> and <b>paraben-free</b> skin care products</li>
+    <li><b>Pure essential oils</b> which are completely unadulterated, wild crafted and/or organic, hand-blended oils (never using nut oils or irritants)</li>
+    <li><b>Biotone Professional Massage Products</b></li>
+  </ul>
+  <p class="assurance__text">
+    We are always looking for new and introducing other great products.
+  </p>
+  <p class="assurance__text">
+    We would be happy to help you customize the perfect package for any occasion!
+  </p>
 </div>

@@ -4,7 +4,7 @@ module Concerns
 
     included do
       def seo_tags
-        seo && seo.split(',').join
+        seo && seo.split(",").join
       end
     end
   end

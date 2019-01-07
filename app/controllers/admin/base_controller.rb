@@ -71,7 +71,7 @@ module Admin
     end
 
     def resource_class
-      raise 'Add a `resource_class` method to your controller'
+      raise "Add a `resource_class` method to your controller"
       # self.class.to_s.gsub(/Admin::(.*?)Controller/, '\1').singularize.constantize
     end
 

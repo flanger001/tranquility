@@ -1,9 +1,11 @@
-<% content_for :page_title, 'A Sanctuary To Restore You' %>
+<%= image_tag("logos/desktop-new.png") %>
 
-<div class='text-center'>
-  <p><%= announcement %></p>
+<% content_for :page_title, "A Sanctuary To Restore You" %>
 
-  <div class='landing-text'>
+<div class="text-center">
+  <p><%= Snippet[:announcement] %></p>
+
+  <div class="landing-text">
     <p>
       Our healing spa landed in our Corning location in 2003.
       We have stretched, grown, and moved forward over the years because of all that has been contributed here.
@@ -13,39 +15,35 @@
     </p>
   </div>
   <hr/>
-  <div class='lead gifts'>
-    <p class="gifts'">
+  <div class="lead gifts">
+    <p class="gifts">
       Gift certificates are available for all services and products.
-      <%= link_to 'Purchase a Gift Certificate here!',
-                  'http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx',
-                  target: '_blank' %>
+      <%= link_to "Purchase a Gift Certificate here!",
+          "http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx",
+          target: "_blank" %>
     </p>
-    <p class='lead newsletter'>
+    <p class="lead newsletter">
       Interested in email updates?
-      <%= link_to 'Sign up here!', newsletter_signup_path, html: { class: 'underline' } %>
+      <%= link_to "Sign up here!", newsletter_signup_path, html: { class: "underline" } %>
     </p>
   </div>
   <hr/>
-  <div class='callouts'>
-    <div class='row'>
-      <% %w(skin-care bodywork hair-removal).each do |item| %>
-        <div class='col-sm-4'>
-          <div class='nav-image <%= item %>'>
-            <%= link_to item.titleize, category_collection_path(item), class: 'h1 nav-link' %>
-          </div>
-        </div>
-      <% end %>
+  <div class="callouts">
+    <div class="row">
+      <div class="jumbotron">
+        <%= render Review.random if Review.exists? %>
+        <p class="lead reviews">
+          Want to see what else our customers are saying about us?
+          <%= link_to "Click here!", reviews_path %>
+        </p>
+      </div>
     </div>
-    <div class='row'>
-      <h3>See what our customers are saying about us!</h3>
-      <p class='text-center'>
-        <%= link_to 'Reviews', reviews_path, class: 'btn btn-default btn-lg' %>
-      </p>
-      <h1 class='text-center'>
+    <div class="row">
+      <h1 class="text-center">
         Spa Hours
       </h1>
-      <div class='center'>
-        <%= render 'layouts/hours' %>
+      <div class="center">
+        <%= render "layouts/hours" %>
       </div>
     </div>
   </div>

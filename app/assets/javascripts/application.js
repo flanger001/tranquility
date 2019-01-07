@@ -7,12 +7,16 @@ function App() {
 }
 
 App.prototype.visitHome = function(e) {
-    // Mailchimp email signup form
-    Turbolinks.visit('/');
+    return (function(e) {
+        // Mailchimp email signup form
+        Turbolinks.visit('/');
+    }).bind(this);
 };
 
-App.prototype.removeElement = function(e) {
-    $(e.currentTarget).remove();
+App.prototype.removeElement = function() {
+    return (function(e) {
+        $(e.currentTarget).remove();
+    }).bind(this);
 };
 
 App.prototype.addFields = function() {
@@ -24,15 +28,17 @@ App.prototype.addFields = function() {
     }).bind(this);
 };
 
-App.prototype.slidePasswordField = function(e) {
-    $('.password-form').slideToggle();
+App.prototype.slidePasswordField = function() {
+    return (function(e) {
+        $('.password-form').slideToggle();
+    }).bind(this);
 };
 
 $(document).on('turbolinks:load', function(load) {
     var app = new App();
 
     $('.flash').fadeOut(1000, app.removeElement());
-    $('form[name="mc-embedded-subscribe-form"]').on('submit', app.visitHome);
+    $('form[name="mc-embedded-subscribe-form"]').on('submit', app.visitHome());
     $('form').on('click', '.add_fields', app.addFields());
-    $('input[name="change_password"]').on('change', app.slidePasswordField);
+    $('input[name="change_password"]').on('change', app.slidePasswordField());
 });

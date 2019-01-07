@@ -7,28 +7,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def broken
-    render plain: raise('broken')
-  end
-
   private
 
   def resource
-    raise 'define a `resource`'
+    raise "define a `resource`"
   end
 
   def collection
-    raise 'define a `collection`'
+    raise "define a `collection`"
   end
 
   def current_user
-    @current_user ||= begin
-      if session[:user_id]
-        User.find(session[:user_id])
-      else
-        GuestUser.new
-      end
-    end
+    @current_user ||= User.from_session(session)
   end
 
   def user_logged_in?

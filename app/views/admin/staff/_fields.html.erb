@@ -1,66 +1,66 @@
-<div class='row'>
-  <div class='col-sm-4'>
-    <div class='form-group'>
-      <%= form.label :first_name, class: 'control-label' %>
-      <%= form.text_field :first_name, class: 'form-control' %>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= form.label :first_name, class: "control-label" %>
+      <%= form.text_field :first_name, class: "form-control" %>
     </div>
   </div>
-  <div class='col-sm-4'>
-    <div class='form-group'>
-      <%= form.label :last_name, class: 'control-label' %>
-      <%= form.text_field :last_name, class: 'form-control' %>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= form.label :last_name, class: "control-label" %>
+      <%= form.text_field :last_name, class: "form-control" %>
     </div>
   </div>
-  <div class='col-sm-4'>
-    <div class='form-group'>
-      <%= form.label :credentials, class: 'control-label' %>
-      <%= form.text_field :credentials, class: 'form-control' %>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= form.label :credentials, class: "control-label" %>
+      <%= form.text_field :credentials, class: "form-control" %>
     </div>
   </div>
 </div>
 <% if form.object.photo.present? %>
   <%= image_tag form.object.photo.thumb.url %>
-  <div class='checkbox'>
+  <div class="checkbox">
     <%= form.label :remove_photo do
     %><%= form.check_box :remove_photo %>
       Remove photo?
     <% end %>
   </div>
 <% end %>
-<div class='row'>
-  <div class='col-sm-6'>
-    <div class='form-group'>
-      <%= form.label :photo, 'Upload photo', class: 'control-label' %>
-      <%= form.file_field :photo, class: 'form-control' %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :photo, "Upload photo", class: "control-label" %>
+      <%= form.file_field :photo, class: "form-control" %>
     </div>
   </div>
-  <div class='col-sm-6'>
-    <div class='form-group'>
-      <%= form.label :remote_photo_url, 'Load from URL', class: 'control-label' %>
-      <%= form.text_field :remote_photo_url, class: 'form-control' %>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :remote_photo_url, "Load from URL", class: "control-label" %>
+      <%= form.text_field :remote_photo_url, class: "form-control" %>
     </div>
   </div>
 </div>
-<div class='form-group'>
-  <%= form.label :title, class: 'control-label' %>
-  <%= form.text_area :title, rows: 6, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :title, class: "control-label" %>
+  <%= form.text_area :title, rows: 6, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :services, class: 'control-label' %>
-  <%= form.text_area :services, rows: 6, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :services, class: "control-label" %>
+  <%= form.text_area :services, rows: 6, class: "form-control" %>
 </div>
-<div class='well'>
+<div class="well">
   <h2>Schedule</h2>
   <% form.object.build_schedule if form.object.schedule.blank? %>
   <%= form.fields_for :schedule do |schedule| %>
-    <%= render 'schedule_fields', form: schedule %>
+    <%= render "schedule_fields", form: schedule %>
   <% end %>
 </div>
-<div class='form-group'>
-  <%= form.label :notes, class: 'control-label' %>
-  <%= form.text_area :notes, rows: 3, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :notes, class: "control-label" %>
+  <%= form.text_area :notes, rows: 3, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :bio, class: 'control-label' %>
-  <%= form.text_area :bio, rows: 10, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :bio, class: "control-label" %>
+  <%= form.text_area :bio, rows: 10, class: "form-control" %>
 </div>

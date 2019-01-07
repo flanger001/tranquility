@@ -1,23 +1,32 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Recommendation, type: :model do
-  it 'is valid with a valid http url' do
-    recommendation = build(:recommendation, :valid_http_url)
-    expect(recommendation.valid?).to be(true)
-  end
+RSpec.describe Recommendation do
+  describe "validations" do
+    let(:recommendation) { described_class.new(url: url) }
+    subject { recommendation.valid? }
 
-  it 'is valid with a valid https url' do
-    recommendation = build(:recommendation, :valid_https_url)
-    expect(recommendation.valid?).to be(true)
-  end
+    context "with a valid http url" do
+      let(:url) { "http://www.greatwebsite.com" }
 
-  it 'is invalid with a bad url' do
-    recommendation = build(:recommendation, :invalid_url)
-    expect(recommendation.valid?).to be(false)
-  end
+      it { is_expected.to be(true) }
+    end
 
-  it 'is invalid with an incomplete url' do
-    recommendation = build(:recommendation, :incomplete_url)
-    expect(recommendation.valid?).to be(false)
+    context "with a valid https url" do
+      let(:url) { "https://www.awesomewebsite.com" }
+
+      it { is_expected.to be(true) }
+    end
+
+    context "with a bad url" do
+      let(:url) { "hrps:-//www.sadwebsite.com" }
+
+      it { is_expected.to be(false) }
+    end
+
+    context "with an incomplete url" do
+      let(:url) { "www.okwebsite.com" }
+
+      it { is_expected.to be(false) }
+    end
   end
 end
