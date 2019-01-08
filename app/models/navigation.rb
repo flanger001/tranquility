@@ -1,4 +1,6 @@
 module Navigation
+  Link = Struct.new(:name, :url)
+
   class << self
     delegate :url_helpers, to: "Rails.application.routes"
 
@@ -36,15 +38,6 @@ module Navigation
         "Log Out" => url_helpers.logout_path
       }
       user_links.map { |link| Link.new(*link) }
-    end
-  end
-
-  class Link
-    attr_reader :name, :url
-
-    def initialize(name, url)
-      @name = name
-      @url = url
     end
   end
 
