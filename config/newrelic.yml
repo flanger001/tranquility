@@ -1,0 +1,21 @@
+common: &default_settings
+  # Required license key associated with your New Relic account.
+  license_key: <%= ENV.fetch("NEW_RELIC_LICENSE_KEY") %>
+  app_name: A Touch Of Tranquility
+  log_level: info
+
+development:
+  <<: *default_settings
+  app_name: A Touch Of Tranquility (Development)
+
+test:
+  <<: *default_settings
+  # It doesn't make sense to report to New Relic from automated test runs.
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  app_name: A Touch Of Tranquility (Staging)
+
+production:
+  <<: *default_settings
