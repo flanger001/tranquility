@@ -49,5 +49,5 @@
   <%= form.fields_for :product_attributes do |f| %>
     <%= render "product_attribute_fields", form: f %>
   <% end %>
-  <%= add_extra_fields_link("Add Price & Time", form, :product_attributes) %>
+  <%= form.add_additional :product_attributes, "Add Price & Time" %>
 </div>
