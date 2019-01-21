@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 
 function App() {
 }
@@ -9,7 +8,7 @@ function App() {
 App.prototype.visitHome = function(e) {
     return (function(e) {
         // Mailchimp email signup form
-        Turbolinks.visit('/');
+        window.location.href = "/";
     }).bind(this);
 };
 
@@ -21,10 +20,11 @@ App.prototype.removeElement = function() {
 
 App.prototype.addFields = function() {
     return (function(e) {
-        var time = new Date().getTime();
-        var regexp = new RegExp($(this).data('id'), 'g');
-        $(this).before($(this).data('fields').replace(regexp, time));
         e.preventDefault();
+        var target = e.currentTarget;
+        var time = new Date().getTime();
+        var regexp = new RegExp($(target).data('id'), 'g');
+        $(target).before($(target).data('fields').replace(regexp, time));
     }).bind(this);
 };
 
@@ -34,7 +34,7 @@ App.prototype.slidePasswordField = function() {
     }).bind(this);
 };
 
-$(document).on('turbolinks:load', function(load) {
+$(function() {
     var app = new App();
 
     $('.flash').fadeOut(1000, app.removeElement());

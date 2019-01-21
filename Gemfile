@@ -15,7 +15,6 @@ gem "puma", "~> 3.0"
 gem "rails", "5.2.1"
 gem "sass-rails"
 gem "sitemap_generator"
-gem "turbolinks"
 gem "uglifier"
 
 group :development, :test do
