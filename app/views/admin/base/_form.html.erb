@@ -1,4 +1,4 @@
-<%= form_for resource, url: [:admin, resource] do |form| %>
+<%= form_for resource, url: [:admin, resource], builder: TranquilityForm do |form| %>
   <% if resource.errors.any? %>
     #error_explanation
       <h2>
