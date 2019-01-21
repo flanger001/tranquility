@@ -17,12 +17,4 @@ module ApplicationHelper
     flashes = { success: "alert-success", error: "alert-danger", alert: "alert-block", notice: "alert-info" }
     flashes[flash_type.to_sym] || flash_type.to_s
   end
-
-  def active_check_box(form, _options = {})
-    tag.div(class: "form-group") do
-      form.label(:active, class: "checkbox") do
-        form.check_box(:active) + "Show this #{form.object.class.to_s.underscore.humanize.downcase}?"
-      end
-    end
-  end
 end
