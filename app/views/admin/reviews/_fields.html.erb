@@ -2,11 +2,11 @@
   <div class="col-sm-10">
     <div class="form-group">
       <%= form.label :product_id, class: "control-label" %>
-      <%= form.grouped_collection_select :product_id, Category.all, :products, :name, :id, :name, { include_blank: true }, class: "form-control" %>
+      <%= form.grouped_collection_select :product_id, Category.includes(:products).all, :products, :name, :id, :name, { include_blank: true }, class: "form-control" %>
     </div>
   </div>
   <div class="col-sm-1">
-    <%= active_check_box(form) %>
+    <%= form.active_check_box %>
   </div>
   <div class="col-sm-1">
     <div class="form-group">
