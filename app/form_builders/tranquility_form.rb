@@ -6,4 +6,14 @@ class TranquilityForm < ActionView::Helpers::FormBuilder
       end
     end
   end
+
+  def add_additional(association, label = nil)
+    label ||= association
+    new_object = @object.send(association).klass.new
+    id = new_object.object_id
+    fields = fields_for(association, new_object, child_index: id) do |f|
+      ApplicationController.render(partial: "admin/#{@object_name.pluralize}/#{association.to_s.singularize}_fields", locals: { form: f })
+    end
+    ApplicationController.helpers.link_to(label, "#", class: "btn btn-default add_fields", data: { id: id, fields: fields.delete("\n") })
+  end
 end
