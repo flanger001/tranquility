@@ -5,6 +5,7 @@ gem 'acts_as_list'
 gem 'bcrypt'
 gem 'bootsnap'
 gem 'bootstrap-sass'
+gem "bugsnag", "~> 6.11"
 gem 'carrierwave-aws'
 gem 'dotenv-rails'
 gem 'jquery-rails'
