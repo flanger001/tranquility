@@ -37,8 +37,8 @@ App.prototype.slidePasswordField = function() {
 $(function() {
     var app = new App();
 
-    $('.flash').fadeOut(1000, app.removeElement());
-    $('form[name="mc-embedded-subscribe-form"]').on('submit', app.visitHome());
+    $('.flash').fadeOut(2000, app.removeElement());
+    $('form[name="mailchimp_signup"]').on('submit', app.visitHome());
     $('form').on('click', '.add_fields', app.addFields());
     $('input[name="change_password"]').on('change', app.slidePasswordField());
 });
