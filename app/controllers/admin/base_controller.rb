@@ -76,11 +76,11 @@ module Admin
     end
 
     def capital_resource_class
-      resource_class.to_s.titleize
+      resource_class.name.titleize
     end
 
     def symbolized_resource_class
-      resource_class.to_s.downcase.pluralize.to_sym
+      resource_class.name.tableize.to_sym
     end
 
     helper_method :resource, :collection, :resource_class
