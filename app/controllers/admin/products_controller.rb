@@ -25,12 +25,13 @@ module Admin
             :price,
             :_destroy
           ]
-        }, :active
+        },
+        :active
       )
     end
 
     def collection
-      @collection ||= resource_class.where(search_params).order(:category_id, :position)
+      @collection ||= resource_class.includes(:category).where(search_params).order(:category_id, :position)
     end
 
     def search_params
