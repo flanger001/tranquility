@@ -5,8 +5,10 @@ class CategoryCollectionsController < ApplicationController
 
   def collection
     @collection ||= CategoryCollection
-      .includes(categories: [:products])
-      .where(active: true, categories: { active: true }, products: { active: true })
+      .eager_load(categories: [:products => :product_attributes])
+      .active
+      .merge(Category.active)
+      .merge(Product.active)
       .find_by(url: params[:url])
   end
 end

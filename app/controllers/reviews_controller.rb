@@ -6,10 +6,4 @@ class ReviewsController < ApplicationController
   def resource
     @resource ||= Review.find(params[:id])
   end
-
-  def review_snippet
-    @review_snippet ||= Snippet.find_or_create_by(title: "Reviews")
-  end
-
-  helper_method :review_snippet
 end

@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
 
   include Concerns::Url
   include Concerns::SeoTags
+  include Concerns::Active
   acts_as_list scope: :category
 
   def average_rating
