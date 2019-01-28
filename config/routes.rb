@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:index, :show]
   resources :recommendations, only: [:index]
-  resources :categories, only: [:index, :show], param: :url, shallow: true do
+  resources :categories, only: [:show], param: :url, shallow: true do
     resources :products, only: [:index, :show], param: :url
   end
   resources :category_collections, only: [:show], param: :url, path: "collections"
