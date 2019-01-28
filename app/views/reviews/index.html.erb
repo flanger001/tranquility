@@ -1,5 +1,5 @@
-<% content_for :page_title, 'Reviews' %>
-<p><%= simple_format(review_snippet.body) %></p>
+<% content_for :page_title, "Reviews" %>
+<p><%= simple_format(Snippet[:reviews]) %></p>
 <% collection.each do |product| %>
   <h1 class="category__header">
     <%= product.name %>
