@@ -1,5 +1,5 @@
 class RecommendationsController < ApplicationController
   def collection
-    @collection ||= Recommendation.all
+    @collection ||= Recommendation.active
   end
 end
