@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - "db/**/*"
+
 Layout/AlignParameters:
   Enabled: false
 
@@ -34,7 +38,7 @@ Lint/Void:
 
 # Offense count: 3
 Metrics/AbcSize:
-  Max: 19
+  Max: 26
 
 # Offense count: 8
 # Configuration parameters: CountComments, ExcludedMethods.
@@ -112,6 +116,7 @@ Style/MethodCallWithArgsParentheses:
     - 'to'
     - 'to_not'
     - 'visit'
+    - "post"
 
 Style/MixinUsage:
   Exclude:
@@ -154,6 +159,7 @@ Style/StringLiterals:
     - 'db/seeds.rb'
 
 Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
   Exclude:
     - 'bin/yarn'
 
@@ -163,3 +169,15 @@ Style/SymbolArray:
     - 'app/controllers/admin/schedules_controller.rb'
     - 'app/controllers/admin/staff_controller.rb'
     - 'config/routes.rb'
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/WordArray:
+  EnforcedStyle: brackets

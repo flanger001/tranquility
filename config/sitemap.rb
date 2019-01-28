@@ -1,7 +1,7 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.atouchoftranquilityspa.com"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3.amazonaws.com/#{ENV["FOG_DIRECTORY"]}/"
 SitemapGenerator::Sitemap.public_path = "tmp/"
 SitemapGenerator::Sitemap.sitemaps_path = "sitemaps/"
 
@@ -29,12 +29,12 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
   CategoryCollection.find_each do |collection|
-    add category_collection_path(collection), lastmod: collection.updated_at
+    add category_collection_path(collection), :lastmod => collection.updated_at
 
     collection.categories.find_each do |category|
-      add category_path(category.url), lastmod: category.updated_at
+      add category_path(category.url), :lastmod => category.updated_at
       category.products.each do |product|
-        add product_path(product.url), lastmod: product.updated_at
+        add product_path(product.url), :lastmod => product.updated_at
       end
     end
   end

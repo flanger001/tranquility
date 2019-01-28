@@ -3,7 +3,7 @@ FactoryBot.define do
     first_name { "John" }
     last_name { "Doe" }
     email { "user@example.com" }
-    password_digest { BCrypt::Password.create("password", cost: 4) }
+    password_digest { BCrypt::Password.create("password", :cost => 4) }
 
     trait :admin do
       admin { true }

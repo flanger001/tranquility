@@ -25,7 +25,7 @@ RSpec.describe Admin::ProductsController do
 
     it "creates product" do
       expect {
-        post admin_products_path, params: { product: product_attributes }
+        post admin_products_path, :params => { :product => product_attributes }
       }.to change { Product.count }.by(1)
       expect(response).to redirect_to(admin_product_path(Product.last))
     end
@@ -33,14 +33,14 @@ RSpec.describe Admin::ProductsController do
 
   describe "#show" do
     it "shows a product" do
-      get admin_product_path(url: product.url)
+      get admin_product_path(:url => product.url)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "#edit" do
     it "returns an edit product form" do
-      get edit_admin_product_path(url: product.url)
+      get edit_admin_product_path(:url => product.url)
       expect(response).to have_http_status(:success)
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe Admin::ProductsController do
     let(:product_attributes) { attributes_for(:product) }
 
     it "updates a product" do
-      patch admin_product_path(url: product.url), params: { product: product_attributes }
+      patch admin_product_path(:url => product.url), :params => { :product => product_attributes }
       expect(response).to redirect_to(admin_product_path(product))
     end
   end
@@ -59,21 +59,21 @@ RSpec.describe Admin::ProductsController do
 
     it "destroys a product" do
       expect {
-        delete admin_product_path(url: product.url)
+        delete admin_product_path(:url => product.url)
       }.to change { Product.count }.by(-1)
       expect(response).to redirect_to(admin_products_path)
     end
   end
 
   context "moving products" do
-    let!(:product) { create(:product, position: 1) }
-    let!(:product_other) { create(:product, position: 2, name: "Hotter towels", category: product.category) }
+    let!(:product) { create(:product, :position => 1) }
+    let!(:product_other) { create(:product, :position => 2, :name => "Hotter towels", :category => product.category) }
 
     describe "#move_down" do
       let!(:position) { product.position }
 
       it "moves product down" do
-        post move_down_admin_product_path(url: product.url)
+        post move_down_admin_product_path(:url => product.url)
         expect(product.reload.position).to eq(position + 1)
         expect(response).to redirect_to(admin_products_path)
       end
@@ -83,7 +83,7 @@ RSpec.describe Admin::ProductsController do
       let!(:position) { product_other.position }
 
       it "moves product up" do
-        post move_up_admin_product_path(url: product_other.url)
+        post move_up_admin_product_path(:url => product_other.url)
         expect(product_other.reload.position).to eq(position - 1)
         expect(response).to redirect_to(admin_products_path)
       end
@@ -91,17 +91,17 @@ RSpec.describe Admin::ProductsController do
 
     describe "#move_to_top" do
       it "moves product to top of list" do
-        post move_to_top_admin_product_path(url: product.url)
+        post move_to_top_admin_product_path(:url => product.url)
         expect(product.reload.position).to eq(1)
         expect(response).to redirect_to(admin_products_path)
       end
     end
 
     describe "#move_to_bottom" do
-      before { create_list(:product, 2, category: product.category) }
+      before { create_list(:product, 2, :category => product.category) }
 
       it "moves product to bottom of list" do
-        post move_to_bottom_admin_product_path(url: product.url)
+        post move_to_bottom_admin_product_path(:url => product.url)
         expect(product.reload.position).to eq(4)
         expect(response).to redirect_to(admin_products_path)
       end

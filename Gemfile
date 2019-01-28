@@ -20,7 +20,7 @@ gem "uglifier"
 group :development, :test do
   gem "byebug"
   gem "pry-rails"
-  gem "rubocop", "~> 0.61.1", require: false
+  gem "rubocop", "~> 0.61.1", :require => false
 end
 
 group :test do

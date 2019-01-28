@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery :with => :exception
 
   def self.finder(param)
     define_method :resource do
