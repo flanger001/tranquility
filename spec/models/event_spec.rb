@@ -17,6 +17,6 @@ RSpec.describe Event do
   end
 
   it "should have correct day" do
-    expect(%w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday)).to include(event.day)
+    expect(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]).to include(event.day)
   end
 end

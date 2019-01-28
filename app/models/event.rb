@@ -1,9 +1,9 @@
 class Event < ActiveRecord::Base
-  DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday).freeze
+  DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].freeze
 
-  belongs_to :schedule, counter_cache: true, optional: false
+  belongs_to :schedule, :counter_cache => true, :optional => false
 
-  validates :day, presence: true
+  validates :day, :presence => true
 
   before_save do
     self.off = true unless start_time.present? && end_time.present?

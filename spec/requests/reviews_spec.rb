@@ -9,7 +9,7 @@ RSpec.describe ReviewsController do
   end
 
   it "gets one review" do
-    get review_path(id: review.id)
+    get review_path(:id => review.id)
     expect(response).to have_http_status(:success)
   end
 end

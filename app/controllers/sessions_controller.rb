@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :require_no_user, except: :destroy
+  before_action :require_no_user, :except => :destroy
 
   def create
     user = SessionForm.new(resource_params).submit!

@@ -17,7 +17,7 @@ RSpec.describe StaffController do
 
   describe "#show" do
     it "shows a staff" do
-      get staff_path(url: staff.first.url)
+      get staff_path(:url => staff.first.url)
       expect(response).to have_http_status(:success)
     end
   end

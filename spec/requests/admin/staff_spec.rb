@@ -25,7 +25,7 @@ RSpec.describe Admin::StaffController do
 
     it "creates staff" do
       expect {
-        post admin_staff_index_path, params: { staff: staff_attributes }
+        post admin_staff_index_path, :params => { :staff => staff_attributes }
       }.to change { Staff.count }.by(1)
 
       expect(response).to redirect_to(admin_staff_path(Staff.last))
@@ -34,14 +34,14 @@ RSpec.describe Admin::StaffController do
 
   describe "#show" do
     it "shows staff" do
-      get admin_staff_path(url: staff.url)
+      get admin_staff_path(:url => staff.url)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "#edit" do
     it "gets edit" do
-      get edit_admin_staff_path(url: staff.url)
+      get edit_admin_staff_path(:url => staff.url)
       expect(response).to have_http_status(:success)
     end
   end
@@ -50,7 +50,7 @@ RSpec.describe Admin::StaffController do
     let(:staff_attributes) { attributes_for(:staff) }
 
     it "updates staff" do
-      patch admin_staff_path(url: staff.url), params: { staff: staff_attributes }
+      patch admin_staff_path(:url => staff.url), :params => { :staff => staff_attributes }
       expect(response).to redirect_to(admin_staff_path(staff))
     end
   end
@@ -60,7 +60,7 @@ RSpec.describe Admin::StaffController do
 
     it "destroys staff" do
       expect {
-        delete admin_staff_path(url: staff.url)
+        delete admin_staff_path(:url => staff.url)
       }.to change { Staff.count }.by(-1)
 
       expect(response).to redirect_to(admin_staff_index_path)
