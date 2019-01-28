@@ -5,14 +5,9 @@ class CategoriesController < ApplicationController
 
   def resource
     @resource ||= Category
-      .includes(products: [:product_attributes])
-      .where(active: true, products: { active: true })
+      .eager_load(products: [:product_attributes])
+      .active
+      .merge(Product.active)
       .find_by(url: params[:url])
-  end
-
-  def collection
-    @collection ||= Category
-      .where(active: true)
-      .order(position: :asc)
   end
 end

@@ -5,8 +5,8 @@ class ProductsController < ApplicationController
 
   def collection
     @collection ||= Product
-      .includes(:product_attributes)
-      .where(active: true)
+      .eager_load(:product_attributes)
+      .active
       .order(:position)
   end
 
