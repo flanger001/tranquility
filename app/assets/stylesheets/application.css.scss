@@ -227,14 +227,22 @@ a {
 }
 
 .profile {
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 10000;
-  width: 100%;
+  background: $body-bg-old;
+  margin: 10px auto;
+  width: 90%;
+  padding: 5px;
   text-align: center;
 
+  &__list {
+    &-item {
+      display: inline-block;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
   &__link {
+    padding: 10px;
     color: #fff;
 
     &:hover {
@@ -250,4 +258,10 @@ a {
 .book-now-link {
   padding: 5px;
   color: #fff;
+}
+
+.site-logo {
+  &__image {
+    width: 100%;
+  }
 }
