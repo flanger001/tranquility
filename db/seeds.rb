@@ -5,8 +5,10 @@ users = [
 
 users.each do |u|
   b = User.find_or_initialize_by(last_name: u[:last_name])
-  b.attributes = u
-  b.save!
+  if b.persisted?
+    b.attributes = u
+    b.save!
+  end
 end
 
 staff = [
@@ -49,74 +51,14 @@ staff = [
           ],
         notes: 'Other special appointments may be arranged.'
       ) },
-  { first_name: 'Carissa',
-    last_name: 'Miller',
-    credentials: '',
-    title: "Esthetician\nMake-up artist",
-    services: "Peels and Facial Treatments\nMake-Up application\nWaxing services\nBody Treatments\nScalp Treatments\n",
-    notes: "",
-    bio: '' },
-  { first_name: 'Jill',
-    last_name: 'Stephens',
-    credentials: 'LMT',
-    title: 'NYS Licensed Massage Therapist',
-    services: "Massage Therapy\nReiki\nAll Specialty Massage\nBody Treatments\nMassage Rituals\nScalp Treatments\n",
-    notes: "",
-    bio: '',
-    schedule:
-      Schedule.new(
-        events:
-          [
-            Event.new(day: 'Monday', start_time: '10:00 am', end_time: '5:00 pm'),
-            Event.new(day: 'Tuesday', start_time: '10:00 am', end_time: '7:00 pm'),
-            Event.new(day: 'Wednesday', start_time: '10:00 am', end_time: '7:00 pm'),
-            Event.new(day: 'Thursday', start_time: '10:00 am', end_time: '7:00 pm'),
-            Event.new(day: 'Friday', start_time: '10:00 am', end_time: '4:00 pm'),
-            Event.new(day: 'Saturday', start_time: '11:00 am', end_time: '4:00 pm'),
-            Event.new(day: 'Sunday', off: true)
-          ],
-        notes: 'Other special appointments may be arranged.'
-      ) },
-  { first_name: 'Julie',
-    last_name: 'Rose',
-    credentials: 'LMT',
-    title: 'Massage Therapist',
-    services: "Massage Therapy\nAll Specialty Massage\nBody Treatments\nMassage Rituals\nScalp Treatments",
-    notes: "",
-    bio: '',
-    schedule:
-      Schedule.new(
-        events:
-          [
-            Event.new(day: 'Monday', off: true),
-            Event.new(day: 'Tuesday', start_time: '9:00 am', end_time: '3:00 pm'),
-            Event.new(day: 'Wednesday', start_time: '11:00 am', end_time: '7:00 pm'),
-            Event.new(day: 'Thursday', start_time: '11:00 am', end_time: '7:00 pm'),
-            Event.new(day: 'Friday', start_time: '1:00 pm', end_time: '7:00 pm'),
-            Event.new(day: 'Saturday', start_time: '10:00 am', end_time: '5:00 pm'),
-            Event.new(day: 'Sunday', off: true)
-          ]
-      ) },
-  { first_name: 'Kim',
-    last_name: 'Cudlin',
-    credentials: 'LMT',
-    title: "Massage Therapist\nShiatsu Practitioner",
-    services: "Massage Therapy\nShiatsu\nAll Specialty Massage\nBody Treatments\nMassage Rituals\nScalp Treatments",
-    notes: "",
-    bio: '' },
-  { first_name: 'Kim',
-    last_name: 'McCallum',
-    credentials: 'LMT',
-    title: 'Massage Therapist',
-    services: "Massage Therapy\nTranquility and Hot Cinnamon and Citrus Massages\nScalp Treatments",
-    notes: "",
-    bio: '' }
 ]
 
 staff.each do |s|
   a = Staff.find_or_initialize_by(first_name: s[:first_name], last_name: s[:last_name])
-  a.attributes = s
-  a.save
+  if a.persisted?
+    a.attributes = s
+    a.save
+  end
 end
 
 Category.create(name: 'Treatment Enhancements', description: 'Awesome add-ons to every massage package', products: [Product.new(name: "Mini-Mint Scalp Treatment", description: "Warm and particularly luxurious little add on will no-doubt leave you drooling...Includes Peppermint and grapefruit Mango butter...", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "Mini-Tranquility Foot Treatment", description: "Who doesn't want more time on their feet? Add this little 'extra' to any service; There's nothing like Herbal Hot towels on the feet in unison with the Tranquility foot balm and more...", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "Hydrating Hand Treatment", description: "Who knew you could have EXTRA time on your hands? Yes YOU can! Give yourself a little treat to moisturize and relax your very busy hands too!", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "Herbal Hot Towels", description: "There are 'Hot Towels', and then there are 'Tranquility Hot Towels' that are enhanced to be therapeutic as well as serenely blissful...", product_attributes: [ProductAttribute.new(price: 5)]), Product.new(name: "Hot Packs", description: "If you feel you need a hot pack added because of muscle tightness or... You just love the comfort and warmth - let us know!", product_attributes: [ProductAttribute.new(price: 0)]), Product.new(name: "30 Minute Signature Scalp Treatment", description: "Enjoy this deeply relaxing, luxurious treatment with any service - Effectively eases stress in the head and neck using hot oil. Any headaches or pain in muscles and joints will be merely a memory after this... serenity is the only description.", product_attributes: [ProductAttribute.new(price: 45)]), Product.new(name: "50 Minute Signature Scalp Treatment", description: "Enjoy this deeply relaxing, luxurious treatment with any service - Effectively eases stress in the head and neck using hot oil. Any headaches or pain in muscles and joints will be merely a memory after this... serenity is the only description.", product_attributes: [ProductAttribute.new(price: 65)]), Product.new(name: "Hand Rejuvenation Treatment", description: "Mini facial/peel for the hands! Helps reduce pigmented discolorations and dry skin!", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "2-Layer Eye Lift Treatment", description: "Great for tired/puffy eyes, fine lines, and dark circles. Add to a facial or select as a stand alone service.", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "Aromatherapy", description: "We'll be happy to add aromatherapy of your choice or blend one up especially just for you, to enhance your service!", product_attributes: [ProductAttribute.new(price: 5)]), Product.new(name: "Signature Aromatherapy Blend", description: "We'll be happy to add either of our signature aromatherapy blends to enhance your service! * 'Hot Cinnamon and Citrus' (most popular!) or try our 'Tranquility Blend' (deeply relaxing and meditative).", product_attributes: [ProductAttribute.new(price: 10)]), Product.new(name: "Immune Boost", description: "Our handmade immune-enhancement packs - add during any treatment", product_attributes: [ProductAttribute.new(price: 20)]), Product.new(name: "30 Minute Reflexology DURING Session", description: "Add Reflexology DURING another session!\n\nStimulation of reflex points on the feet that correspond to organs and specific areas of the body to strengthen the immune system, control stress and improve overall health and well-being.", product_attributes: [ProductAttribute.new(price: 30)])])
