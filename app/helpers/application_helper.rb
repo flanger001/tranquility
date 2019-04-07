@@ -31,6 +31,7 @@ module ApplicationHelper
       'Home' => '/',
       # 'Specials!' => 'specials',
       'About Us' => about_path,
+      'Newsletter' => newsletter_signup_path,
       'Reviews' => reviews_path,
       # 'Policies' => '/policies',
       'Recommendations' => recommendations_path,
