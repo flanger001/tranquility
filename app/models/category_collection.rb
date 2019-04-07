@@ -9,4 +9,6 @@ class CategoryCollection < ActiveRecord::Base
   include Concerns::Url
   include Concerns::SeoTags
   acts_as_list
+
+  scope :active, -> { where(active: true) }
 end
