@@ -2,8 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 
-function App() {
-}
+function App() {}
 
 App.prototype.visitHome = function(e) {
     return (function(e) {
@@ -38,7 +37,7 @@ $(function() {
     var app = new App();
 
     $('.flash').fadeOut(2000, app.removeElement());
-    $('form[name="mailchimp_signup"]').on('submit', app.visitHome());
-    $('form').on('click', '.add_fields', app.addFields());
-    $('input[name="change_password"]').on('change', app.slidePasswordField());
+    $(document).on('submit', 'form[name="mailchimp_signup"]', app.visitHome());
+    $(document).on('click', 'form .add_fields', app.addFields());
+    $(document).on('change', 'input[name="change_password"]', app.slidePasswordField());
 });
