@@ -1,34 +1,34 @@
-<div class='row'>
-  <div class='col-sm-10'>
-    <div class='form-group'>
-      <%= form.label :name, class: 'control-label' %>
-      <%= form.text_field :name, class: 'form-control' %>
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <%= form.label :name, class: "control-label" %>
+      <%= form.text_field :name, class: "form-control" %>
     </div>
   </div>
-  <div class='col-sm-1'>
-    <div class='form-group'>
-      <%= form.label :inline, class: 'checkbox' do %>
+  <div class="col-sm-1">
+    <div class="form-group">
+      <%= form.label :inline, class: "checkbox" do %>
         <%= form.check_box :inline %>
         Show categories inline?
       <% end %>
     </div>
   </div>
-  <div class='col-sm-1'>
+  <div class="col-sm-1">
     <%= active_check_box(form) %>
   </div>
 </div>
-<div class='form-group'>
-  <%= form.label :seo, 'SEO Tags', class: 'control-label' %>
-  <%= form.text_field :seo, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :seo, "SEO Tags", class: "control-label" %>
+  <%= form.text_field :seo, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :description, class: 'control-label' %>
-  <%= form.text_field :description, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :description, class: "control-label" %>
+  <%= form.text_field :description, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :category_ids, 'Categories in collection', class: 'control-label' %>
+<div class="form-group">
+  <%= form.label :category_ids, "Categories in collection", class: "control-label" %>
   <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, {} do |b| %>
-    <div class='checkbox'>
+    <div class="checkbox">
       <%= b.label { b.check_box + b.text } %>
     </div>
   <% end %>

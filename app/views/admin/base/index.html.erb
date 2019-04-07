@@ -3,7 +3,7 @@
 <table class="table">
   <thead>
     <tr>
-      <%= render 'index_row_headers' %>
+      <%= render "index_row_headers" %>
       <th></th>
     </tr>
   </thead>
@@ -11,16 +11,16 @@
     <% collection.each do |row| %>
       <%= fields_for "#{resource_class.name.downcase.pluralize}[]", row do |form| %>
         <tr>
-          <%= render 'index_row_columns', row: row, form: form %>
+          <%= render "index_row_columns", row: row, form: form %>
           <td>
             <div class="btn-group btn-group-xs pull-right">
-              <button class="btn btn-default dropdown-toggle" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Actions
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <%= render 'index_row_actions', row: row %>
-                <%= render 'index_row_extra_actions', row: row %>
+                <%= render "index_row_actions", row: row %>
+                <%= render "index_row_extra_actions", row: row %>
               </ul>
             </div>
           </td>
@@ -29,4 +29,4 @@
     <% end %>
   </tbody>
 </table>
-<%= render 'buttons' %>
+<%= render "buttons" %>

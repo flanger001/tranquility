@@ -1,23 +1,24 @@
-<div class='form-group'>
-  <%= form.label :name, class: 'control-label' %>
-  <%= form.text_field :name, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :name, class: "control-label" %>
+  <%= form.text_field :name, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :title, class: 'control-label' %>
-  <%= form.text_field :title, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :title, class: "control-label" %>
+  <%= form.text_field :title, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :description, class: 'control-label' %>
-  <%= form.text_area :description, rows: 4, class: 'form-control' %>
+<div class="form-group">
+  <%= form.label :description, class: "control-label" %>
+  <%= form.text_area :description, rows: 4, class: "form-control" %>
 </div>
-<div class='form-group'>
-  <%= form.label :snippet_ids, 'Snippets', class: 'control-label' %>
+<div class="form-group">
+  <%= form.label :snippet_ids, "Snippets", class: "control-label" %>
   <%= form.collection_check_boxes :snippet_ids, Snippet.all, :id, :title, {} do |b| %>
-    <div class='checkbox'>
+    <div class="checkbox">
       <%= b.label { b.check_box + b.text } %>
     </div>
-  <% end %></div>
-<div class='form-group'>
-  <%= form.label :category_collection_id, class: 'control-label' %>
-  <%= form.collection_select :category_collection_id, CategoryCollection.all, :id, :name, { include_blank: true }, class: 'form-control' %>
+  <% end %>
+</div>
+<div class="form-group">
+  <%= form.label :category_collection_id, class: "control-label" %>
+  <%= form.collection_select :category_collection_id, CategoryCollection.all, :id, :name, { include_blank: true }, class: "form-control" %>
 </div>

@@ -1,19 +1,24 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Staff, type: :model do
-  before do
-    @staff = build(:staff)
-  end
+RSpec.describe Staff do
+  it { is_expected.to respond_to(:name) }
 
-  it 'should have first name' do
-    expect(@staff.first_name).to_not be_empty
-  end
+  describe "validations" do
+    let(:staff) { build(:staff) }
+    subject { staff.valid? }
 
-  it 'should have last name' do
-    expect(@staff.last_name).to_not be_empty
-  end
+    context "without first_name" do
+      it "is invalid" do
+        staff.first_name = nil
+        expect(subject).to be(false)
+      end
+    end
 
-  it 'should have full name' do
-    expect(@staff.name).to eq("#{@staff.first_name} #{@staff.last_name}")
+    context "without last_name" do
+      it "is invalid" do
+        staff.last_name = nil
+        expect(subject).to be(false)
+      end
+    end
   end
 end
