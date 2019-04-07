@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def broken
-    render plain: raise('broken')
-  end
-
   private
 
   def resource
