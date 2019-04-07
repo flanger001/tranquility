@@ -1,17 +1,69 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 @import 'mixins';
 @import 'variables';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'header';
 
 html {
   width: 100%;
   box-sizing: border-box;
 }
 
+.header-container {
+  @include candle-bg();
+  padding: 15px;
+}
+
+.site-header {
+  background-color: rgba(178, 140, 100, 0.7);
+  padding-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  a {
+    color: #fff;
+  }
+  @include flex-parent();
+}
+
+.logo {
+  @include flex-parent();
+  text-align: center;
+  height: 345px;
+  width: 90%;
+  a {
+    display: inline-block;
+    height: 100%;
+  }
+
+  img {
+    height: inherit;
+  }
+
+  @media (max-width: 480px) {
+    height: 150px;
+  }
+}
+
+.links {
+  @include flex-parent();
+  &.navigation {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  &.navigation, &.product {
+    flex-basis: 100%;
+    a {
+      margin-right: 10px;
+      margin-left: 10px;
+      @include link-color();
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+  }
+}
+
 .content {
-  background: rgba(230, 210, 190, 0.8);
   padding: 15px;
 }
 
@@ -25,8 +77,8 @@ a {
 
 .page-title {
   padding: 15px;
-  background: desaturate(darken($body-bg, 20%), 10%);
-  color: lighten($body-bg, 15%);
+  background: $teal;
+  color: #fff;
 
   @media (max-width: 480px) {
     margin-top: 0;
@@ -34,8 +86,8 @@ a {
 }
 
 .category-header {
-  @include brown-background();
-  color: lighten($body-bg, 10%);
+  background: $brown;
+  color: #fff;
   padding: 5px;
   a {
     color: lighten($body-bg, 10%);
@@ -44,11 +96,11 @@ a {
 
 .category-item-header, .product-header {
   // border-bottom: 5px solid;
-  background: desaturate(darken($body-bg, 20%), 10%);
-  color: lighten($body-bg, 15%);
+  background: $brown;
+  color: #fff;
   padding: 5px;
   &.dark {
-    @include brown-background();
+    background: $brown;
   }
 }
 
@@ -58,17 +110,36 @@ a {
 }
 
 .footer {
+  font-size: $font-size-small;
+  background-color: $body-bg-old;
   position: relative;
   bottom: 0;
 }
 
-.super-huge {
-  font-size: $font-size-h1 * 2;
-  line-height: $headings-line-height * 0.75;
-}
+.credit-cards {
+  height: 60px;
+  background-image: image-url('logos/credit-cards-no-amex.jpg');
+  background-size: cover;
+  display: inline-block;
 
-.credit-cards-image {
-  width: 180px;
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  &.visa {
+    width: 72px;
+    background-position: 0 0;
+  }
+
+  &.mastercard {
+    width: 63px;
+    background-position: 132px 0;
+  }
+
+  &.discover {
+    width: 70px;
+    background-position: 69px 0;
+  }
 }
 
 .nav-link {
@@ -103,13 +174,10 @@ a {
   }
 }
 
-.footer-links {
-  text-align: center;
-}
+.footer-links {}
 
 .footer-body {
   padding-top: 10px;
-  background-color: rgba(125, 87, 80, .59);
   color: #fff;
   a {
     @include link-color();
