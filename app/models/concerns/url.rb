@@ -11,7 +11,7 @@ module Concerns
       private
 
       def create_url
-        self.url = NavigationUrl.create(self)
+        self.url = Navigation::Url.create(self)
       end
     end
   end
