@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - "db/**/*"
+
 Layout/AlignParameters:
   Enabled: false
 
@@ -34,7 +38,7 @@ Lint/Void:
 
 # Offense count: 3
 Metrics/AbcSize:
-  Max: 19
+  Max: 26
 
 # Offense count: 8
 # Configuration parameters: CountComments, ExcludedMethods.
@@ -112,6 +116,7 @@ Style/MethodCallWithArgsParentheses:
     - 'to'
     - 'to_not'
     - 'visit'
+    - "post"
 
 Style/MixinUsage:
   Exclude:
@@ -164,3 +169,6 @@ Style/SymbolArray:
     - 'app/controllers/admin/schedules_controller.rb'
     - 'app/controllers/admin/staff_controller.rb'
     - 'config/routes.rb'
+
+Style/MutableConstant:
+  Enabled: false
