@@ -12,17 +12,13 @@ gem "jquery-rails"
 gem "mini_magick"
 gem "newrelic_rpm"
 gem "pg", "~> 0.18"
+gem "pry-rails"
 gem "puma", "~> 3.0"
 gem "rails", "5.2.1"
+gem "rubocop", "~> 0.61.1", :require => false
 gem "sass-rails"
 gem "sitemap_generator"
 gem "uglifier"
-
-group :development, :test do
-  gem "byebug"
-  gem "pry-rails"
-  gem "rubocop", "~> 0.61.1", :require => false
-end
 
 group :test do
   gem "capybara"
