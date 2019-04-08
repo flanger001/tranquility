@@ -17,7 +17,8 @@ gem "pg", "~> 1.1"
 gem "pry-rails"
 gem "puma", "~> 3.1"
 gem "rails", "5.2.3"
-gem "rubocop", "~> 0.61.1", :require => false
+gem "rubocop", "~> 0.67.2", :require => false
+gem "rubocop-performance", "~> 1.1"
 gem "sass-rails"
 gem "sitemap_generator"
 gem "uglifier"
