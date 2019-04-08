@@ -1,9 +1,9 @@
-<table class="schedule" id="hours">
-  <% spa_hours.events.sort_by { |e| Event::DAYS.index(e.day) }.each do |event| %>
-    <tr>
-      <td><%= event.day %></td>
-      <td><%= event.span %></td>
+<table class="schedule schedule--spa-hours">
+  <% Schedule.spa_hours.events.sort_by { |e| Event::DAYS.index(e.day) }.each do |event| %>
+    <tr class="event">
+      <td class="event__day"><%= event.day %></td>
+      <td class="event__span"><%= event.span %></td>
     </tr>
   <% end %>
 </table>
-<p class="lead"><%= spa_hours.notes %></p>
+<p class="lead"><%= Schedule.spa_hours.notes %></p>

@@ -9,20 +9,43 @@ html {
   box-sizing: border-box;
 }
 
+a {
+  @include text-shadow-grow();
+
+  &:hover {
+    text-shadow: 0 0 40px rgba(255, 32, 32, 1);
+    @include text-shadow-grow();
+  }
+}
+
+// Containers
+
+.price-list {
+  margin-bottom: 15px;
+
+  &__time {
+    font-weight: bold;
+    padding-right: 10px;
+  }
+}
+
+.event {
+  &__day {
+    text-align: left;
+  }
+}
+
 .header-container {
+  position: relative;
   @include candle-bg();
   padding: 15px;
 }
 
 .site-header {
   background-color: rgba(178, 140, 100, 0.7);
-  padding-bottom: 10px;
+  padding: 10px 0 10px 0;
   color: #fff;
   text-align: center;
-  a {
-    color: #fff;
-  }
-  @include flex-parent();
 }
 
 .logo {
@@ -30,6 +53,7 @@ html {
   text-align: center;
   height: 345px;
   width: 90%;
+
   a {
     display: inline-block;
     height: 100%;
@@ -44,69 +68,124 @@ html {
   }
 }
 
-.links {
-  @include flex-parent();
-  &.navigation {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.navigation {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &__link-site {
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+    @include link-color();
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0);
+    }
   }
-  &.navigation, &.product {
-    flex-basis: 100%;
-    a {
-      margin-right: 10px;
-      margin-left: 10px;
-      @include link-color();
-      &:hover {
-        background-color: rgba(255, 255, 255, 0);
-      }
+
+  &__link-product {
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+    @include link-color();
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0);
     }
   }
 }
 
-.content {
+.page {
   padding: 15px;
-}
 
-a {
-  @include text-shadow-grow();
-  &:hover {
-    text-shadow: 0 0 40px rgba(255, 32, 32, 1);
-    @include text-shadow-grow();
+  &__title {
+    padding: 15px;
+    background: $teal;
+    color: #fff;
+    text-align: center;
+
+    @media (max-width: 480px) {
+      margin-top: 0;
+    }
   }
 }
 
-.page-title {
-  padding: 15px;
-  background: $teal;
-  color: #fff;
-
-  @media (max-width: 480px) {
-    margin-top: 0;
+.collection {
+  &__header {
+    background: $brown;
+    color: #fff;
+    padding: 5px;
   }
 }
 
-.category-header {
-  background: $brown;
-  color: #fff;
-  padding: 5px;
-  a {
+.category {
+  &__header {
+    background: $brown;
+    color: #fff;
+    padding: 5px;
+  }
+
+  &__link {
     color: lighten($body-bg, 10%);
   }
 }
 
-.category-item-header, .product-header {
-  // border-bottom: 5px solid;
-  background: $brown;
-  color: #fff;
-  padding: 5px;
-  &.dark {
+.product {
+  &__header {
     background: $brown;
+    color: #fff;
+    padding: 5px;
   }
 }
 
-.no-photo {
-  margin-left: auto;
-  margin-right: auto;
+.review {
+  &__title {
+    background: $brown;
+    color: #fff;
+    padding: 5px;
+    position: relative;
+  }
+
+  &__rating {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.snippet {
+  &__title {
+    background: $brown;
+    color: #fff;
+    padding: 5px
+  }
+}
+
+.staff {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+
+  &__credentials {
+    margin-top: -10px;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    color: #777777;
+    min-height: 1.7em;
+  }
+
+  &__title {
+    margin-top: 53px;
+  }
+
+  &__image {
+    margin-bottom: 10px;
+
+    &--grid {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      object-position: center 0;
+    }
+  }
 }
 
 .footer {
@@ -114,152 +193,22 @@ a {
   background-color: $body-bg-old;
   position: relative;
   bottom: 0;
-}
 
-.credit-cards {
-  height: 60px;
-  background-image: image-url('logos/credit-cards-no-amex.jpg');
-  background-size: cover;
-  display: inline-block;
-
-  &:not(:last-of-type) {
-    margin-bottom: 10px;
-  }
-
-  &.visa {
-    width: 72px;
-    background-position: 0 0;
-  }
-
-  &.mastercard {
-    width: 63px;
-    background-position: 132px 0;
-  }
-
-  &.discover {
-    width: 70px;
-    background-position: 69px 0;
-  }
-}
-
-.nav-link {
-  text-align: right;
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  text-decoration: none;
-  color: #fff;
-  &:hover {
+  &__body {
+    padding-top: 10px;
     color: #fff;
   }
-  text-shadow: 0 0 10px #000;
-}
 
-.nav-image {
-  background-size: cover;
-  position: relative;
-  border-radius: 12px;
-  padding: 50px;
-  height: 300px;
-  background-position: center;
-  background-repeat: no-repeat;
-  &.skin-care {
-    background-image: image-url('home/skin-400.png');
-  }
-  &.bodywork {
-    background-image: image-url('home/lamp-400.png');
-  }
-  &.hair-removal {
-    background-image: image-url('home/wax-400.png');
-  }
-}
-
-.footer-links {}
-
-.footer-body {
-  padding-top: 10px;
-  color: #fff;
-  a {
+  &__link {
     @include link-color();
   }
 }
 
-.lowercase-override {
-  text-transform: lowercase !important;
-}
-
-.normal-case {
-  text-transform: initial !important;
-}
-
-.slogan {
-  color: #fff;
-  font-size: 1.1em;
-  text-shadow: 2px 2px 6px #000;
-}
-
-.top-image {
-  padding-top: 10px;
-}
-
-.img-not-quite-so-responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-.center {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.staff-photo {
-  img {
-    margin-bottom: 10px;
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    object-position: center 0;
-  }
-}
-
-.gifts {
-  @media (max-width: 768px) {
-    .btn-lg {
-      font-size: 16px;
-    }
-  }
-}
-
-table {
-  &.staff-schedule, &.price-list, &.spa-hours {
-    td {
-      &:first-child {
-        font-weight: bold;
-        padding-right: 10px;
-      }
-    }
-    margin-bottom: 15px;
-  }
-}
-
-.staff-credentials {
-  margin-top: -10px;
-  font-size: 1.7em;
-  text-transform: uppercase;
-  color: #777777;
-  min-height: 1.7em;
-}
-
-.member {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.staff-title, .schedule {
+.schedule {
   margin-top: 53px;
-  &#hours {
-    margin-top: 10px;
+
+  &--spa-hours {
+    margin: 10px auto 0 auto;
   }
 }
 
@@ -271,6 +220,7 @@ table {
   z-index: 10000;
   width: 100%;
   height: 100%;
+
   div {
     max-width: 50%;
   }
@@ -282,20 +232,22 @@ table {
   position: absolute;
   z-index: 10000;
   width: 100%;
-  a {
+  text-align: center;
+
+  &__link {
     color: #fff;
+
     &:hover {
       color: #fff;
     }
   }
-
 }
 
 .password-form {
   display: none;
 }
 
-.btn-book-now {
-  @include btn-styles(rgb(170, 80, 30));
-  margin-bottom: 5px;
+.book-now-link {
+  padding: 5px;
+  color: #fff;
 }

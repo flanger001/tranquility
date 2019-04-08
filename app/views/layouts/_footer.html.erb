@@ -1,52 +1,19 @@
-<div class="container footer text-center">
-  <div class="row footer-body">
+<div class="container text-center footer">
+  <div class="row footer__body">
     <%= simple_format(Snippet[:spa_address]) %>
   </div>
-  <div class="row footer-body">
-    <p> Copyright &copy; 2009-<%= Time.now.year %> A Touch Of Tranquility</p>
+  <div class="row footer__body">
+    <p> Copyright &copy; 2001-<%= Time.now.year %> A Touch Of Tranquility</p>
   </div>
-<!--  <div class='row'>-->
-<!--    <div class='col-md-12'>-->
-<!--      <p class='text-center slogan'>-->
-<!--        <i><%#= slogan %></i>-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="row footer-body">-->
-<!--    <div class='col-md-4'>-->
-<!--      <address>-->
-        <%#= simple_format spa_address.body %>
-<!--      </address>-->
-<!--      <div class="footer__bar">-->
-<!--        <p> Copyright &copy; 2009-<%#= Time.now.year %> A Touch Of Tranquility</p>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class='col-md-4'>-->
-<!--      <ul class="list-unstyled footer-links">-->
-        <%# nav_links.each do |link| %>
-<!--          <li><%#= link_to link.name, link.url %></li>-->
-        <%# end %>
-<!--      </ul>-->
-<!--    </div>-->
-<!--    <div class="col-md-4">-->
-      <%#= render 'layouts/hours' %>
-<!--    </div>-->
-<!--    <div class='col-md-4 hidden'>-->
-<!--      <p><%#= link_to image_tag('social/facebook.png', class: 'facebook-image', alt: 'Facebook link'), 'https://www.facebook.com/ATouchOfTranquility' %></p>-->
-<!--      <p><%#= book_now_link %></p>-->
-<!--      <p>-->
-<!--      <ul class="list-unstyled">-->
-<!--        <li><%#= tag.span(class: 'credit-cards visa', alt: 'Visa credit cards accepted') %></li>-->
-<!--        <li><%#= tag.span(class: 'credit-cards mastercard', alt: 'Mastercard credit cards accepted') %></li>-->
-<!--        <li><%#= tag.span(class: 'credit-cards discover', alt: 'Discover credit cards accepted') %></li>-->
-<!--      </ul>-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="row footer-body">-->
-<!--    <div class="col-md-12">-->
-<!--      <p><%#= link_to 'Admin Login', login_path %></p>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="row footer__body">
+    <div class="col-md-12">
+      <p>
+        <% if user_logged_in? %>
+          <%= link_to 'Log Out', logout_path, class: 'footer__link' %>
+        <% else %>
+          <%= link_to 'Admin Login', login_path, class: 'footer__link' %>
+        <% end %>
+      </p>
+    </div>
+  </div>
 </div>
