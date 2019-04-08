@@ -16,23 +16,9 @@
 
 @mixin link-color {
   text-transform: uppercase;
-  $desktop-link-color: #fff;
-  color: $desktop-link-color;
+  color: $desktop-link-color-light;
   &:hover {
-    color: darken($desktop-link-color, 10%);
-  }
-}
-
-@mixin brown-background() {
-  background: darken($body-bg, 50%);
-}
-
-@mixin candle-bg() {
-  background: {
-    image: image-url('home/candles-lo-res2.jpg');
-    position: -100px;
-    repeat: no-repeat;
-    //attachment: fixed;
+    color: darken($desktop-link-color-light, 10%);
   }
 }
 

@@ -15,17 +15,17 @@ $font-size-tiny: ceil(($font-size-base * 0.65));
 
 $link-hover-decoration: none;
 
-$body-bg-new: rgba(230, 230, 230, 0.8);
-$body-bg-old: rgba(178, 140, 100, 0.7);
-$footer-bg-old: rgba(125, 87, 80, .59);
-$header-bg-old: rgba(178, 140, 100, 0.5);
+$body-bg-new: rgb(230, 230, 230);
+$body-bg-old: rgb(178, 140, 100);
+$footer-bg-old: rgb(125, 87, 80);
+$header-bg-old: rgb(178, 140, 100);
 
 $header-bg: $header-bg-old;
 $body-bg: $body-bg-new;
 $footer-bg: $footer-bg-old;
 
-$desktop-link-color: #333;
-
+$desktop-link-color-dark: #333;
+$desktop-link-color-light: #fff;
 $text-color: #333;
 
 $navbar-default-bg: $body-bg;

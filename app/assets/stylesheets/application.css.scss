@@ -37,7 +37,11 @@ a {
 
 .header-container {
   position: relative;
-  @include candle-bg();
+  background: {
+    image: image-url('home/candles-lo-res2.jpg');
+    position: -100px;
+    repeat: no-repeat;
+  }
   padding: 15px;
 }
 
@@ -190,13 +194,13 @@ a {
 
 .footer {
   font-size: $font-size-small;
-  background-color: $body-bg-old;
+  background-color: $body-bg-new;
   position: relative;
   bottom: 0;
 
   &__body {
     padding-top: 10px;
-    color: #fff;
+    color: $text-color;
   }
 
   &__link {
