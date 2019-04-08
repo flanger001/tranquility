@@ -7,13 +7,8 @@ Rails.application.routes.draw do
   get '403', to: 'errors#forbidden'
   get '422', to: 'errors#bad_request'
 
-  get 'broken', to: 'application#broken'
-
-  get 'spa-hours', to: 'pages#spa_hours'
+  get "contact_us", to: "pages#contact_us"
   get 'newsletter_signup', to: 'pages#newsletter_signup'
-
-  get 'no_u_cannot_haz', to: 'pages#no_u_cannot_haz'
-  get 'the_fish', to: 'pages#the_fish'
 
   resources :reviews, only: [:index, :show]
   resources :recommendations, only: [:index]
