@@ -8,6 +8,7 @@ linters:
     enabled: true
     only:
       - Style/StringLiterals
+      - Style/HashSyntax
     rubocop_config:
       inherit_from:
         - .rubocop.yml

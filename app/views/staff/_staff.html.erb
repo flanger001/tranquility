@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="staff__photo">
-        <%= image_tag staff.photo.url, class: "staff__image img-responsive img-rounded", alt: "#{staff.first_name} #{staff.last_name}" %>
+        <%= image_tag staff.photo.url, :class => "staff__image img-responsive img-rounded", :alt => "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>
 
     <div class="col-sm-6">
       <div class="services">
         <h2 class="services__header">Services</h2>
-        <%= simple_format(staff.title, class: "staff__title") %>
+        <%= simple_format(staff.title, :class => "staff__title") %>
         <p>
           <b><%= staff.first_name %></b> is available for:
         </p>
@@ -21,14 +21,14 @@
         <% end %>
         </ul>
         <div class="notes">
-          <%= simple_format(staff.notes, class: "notes__body") %>
+          <%= simple_format(staff.notes, :class => "notes__body") %>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <blockquote class="bio">
-      <%= simple_format(staff.bio, class: "bio__body") %>
+      <%= simple_format(staff.bio, :class => "bio__body") %>
     </blockquote>
   </div>
 </div>

@@ -2,7 +2,7 @@
   <div class="profile">
     <ul class="profile__list list-unstyled">
       <% Navigation.user_links(current_user).each do |link| %>
-        <li class="profile__list-item"><%= link_to link.name, link.url, class: "profile__link" %></li>
+        <li class="profile__list-item"><%= link_to link.name, link.url, :class => "profile__link" %></li>
       <% end %>
     </ul>
   </div>

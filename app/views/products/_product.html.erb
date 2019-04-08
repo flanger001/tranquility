@@ -5,14 +5,14 @@
       <%= render "layouts/book_now" %>
     </span>
   </h2>
-  <%= simple_format(product.description, class: "product__description") %>
+  <%= simple_format(product.description, :class => "product__description") %>
   <table class="price-list">
     <% product.product_attributes.each do |attribute| %>
       <tr class="price-list__item">
         <% if attribute.time.present? %>
           <td class="price-list__time"><%= attribute.time %> minutes</td>
         <% end %>
-        <td class="price-list__price"><%= number_to_currency(attribute.price, precision: 0) %></td>
+        <td class="price-list__price"><%= number_to_currency(attribute.price, :precision => 0) %></td>
       </tr>
     <% end %>
   </table>

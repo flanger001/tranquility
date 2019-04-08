@@ -8,7 +8,7 @@
       <ul class="navigation__list list-inline">
         <% Navigation.site_links.each do |link| %>
           <li class="navigation__list-item">
-            <%= link_to link.name, link.url, class: "navigation__link-site" %>
+            <%= link_to link.name, link.url, :class => "navigation__link-site" %>
           </li>
         <% end %>
       </ul>
@@ -17,7 +17,7 @@
       <ul class="navigation__list list-inline">
         <% Navigation.product_links.each do |link| %>
           <li class="navigation__list-item">
-            <%= link_to link.name, link.url, class: "navigation__link-product" %>
+            <%= link_to link.name, link.url, :class => "navigation__link-product" %>
           </li>
         <% end %>
       </ul>

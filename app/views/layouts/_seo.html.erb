@@ -1,3 +1,3 @@
-<%= tag "meta", name: "title", content: full_title(yield(:page_title)) %>
-<%= tag "meta", name: "description", content: yield(:seo_description) %>
-<%= tag "meta", name: "keywords", content: yield(:seo_keywords) %>
+<%= tag "meta", :name => "title", :content => full_title(yield(:page_title)) %>
+<%= tag "meta", :name => "description", :content => yield(:seo_description) %>
+<%= tag "meta", :name => "keywords", :content => yield(:seo_keywords) %>

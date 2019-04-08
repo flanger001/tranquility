@@ -4,7 +4,7 @@
       <h2 class="staff__name"><%= resource.first_name %> <%= resource.last_name %></h2>
       <p class="staff__credentials"><%= resource.credentials %></p>
       <div class="staff-photo">
-        <%= image_tag resource.photo.url, class: "img-responsive img-rounded", alt: "#{resource.first_name} #{resource.last_name}" %>
+        <%= image_tag resource.photo.url, :class => "img-responsive img-rounded", :alt => "#{resource.first_name} #{resource.last_name}" %>
       </div>
     </div>
     <div class="col-sm-4">

@@ -1,5 +1,5 @@
 <div class="site-logo">
-  <%= image_tag("logos/desktop-new.png", class: "site-logo__image") %>
+  <%= image_tag("logos/desktop-new.png", :class => "site-logo__image") %>
 </div>
 
 <% content_for :page_title, "A Sanctuary To Restore You" %>
@@ -22,11 +22,11 @@
       Gift certificates are available for all services and products.
       <%= link_to "Purchase a Gift Certificate here!",
           "http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx",
-          target: "_blank" %>
+          :target => "_blank" %>
     </p>
     <p class="lead newsletter">
       Interested in email updates?
-      <%= link_to "Sign up here!", newsletter_signup_path, html: { class: "underline" } %>
+      <%= link_to "Sign up here!", newsletter_signup_path, :html => { :class => "underline" } %>
     </p>
   </div>
   <hr />
