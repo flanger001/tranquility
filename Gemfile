@@ -22,15 +22,14 @@ gem 'uglifier'
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
-  gem 'rubocop', '~> 0.59.1', require: false
+  gem 'rubocop', '~> 0.61.1', require: false
 end
 
 group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  # gem 'capybara'
-  # gem 'capybara-webkit'
-  gem 'database_cleaner'
 end
 
 group :development do
