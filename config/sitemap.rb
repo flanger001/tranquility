@@ -28,19 +28,18 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  Category.find_each do |category|
-    add category_path(category.url), lastmod: category.updated_at
-    category.products.each do |product|
-      add category_product_path(category.url, product.url)
-    end
-  end
   CategoryCollection.find_each do |collection|
     add category_collection_path(collection), lastmod: collection.updated_at
+
+    collection.categories.find_each do |category|
+      add category_path(category.url), lastmod: category.updated_at
+      category.products.each do |product|
+        add product_path(product.url), lastmod: product.updated_at
+      end
+    end
   end
 
   add about_path
-  add policies_path
   add recommendations_path
-  add spa_hours_path
-  add specials_path
+  add contact_us_path
 end
