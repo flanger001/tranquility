@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
   include Concerns::Active
   acts_as_list :scope => :category
 
+  scope :with_reviews, -> { includes(:reviews).where(arel_table[:reviews_count].gt(0)) }
+
   def average_rating
     reviews.average(:rating).to_i
   end
