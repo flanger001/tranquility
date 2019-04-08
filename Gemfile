@@ -10,6 +10,7 @@ gem "carrierwave-aws"
 gem "dotenv-rails"
 gem "erb_lint", :require => false
 gem "jquery-rails"
+gem "kaminari", "~> 1.1"
 gem "mini_magick"
 gem "newrelic_rpm"
 gem "pg", "~> 0.18"
