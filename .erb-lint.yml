@@ -1,0 +1,11 @@
+linters:
+  ErbSafety:
+    enabled: false
+#    better_html_config: .better-html.yml
+  FinalNewline:
+    enabled: true
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml

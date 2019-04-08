@@ -8,6 +8,7 @@ gem "bootstrap-sass"
 gem "bugsnag", "~> 6.11"
 gem "carrierwave-aws"
 gem "dotenv-rails"
+gem "erb_lint", :require => false
 gem "jquery-rails"
 gem "mini_magick"
 gem "newrelic_rpm"
