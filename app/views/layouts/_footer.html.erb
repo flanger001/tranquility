@@ -9,9 +9,9 @@
     <div class="col-md-12">
       <p>
         <% if user_logged_in? %>
-          <%= link_to 'Log Out', logout_path, class: 'footer__link' %>
+          <%= link_to "Log Out", logout_path, class: "footer__link" %>
         <% else %>
-          <%= link_to 'Admin Login', login_path, class: 'footer__link' %>
+          <%= link_to "Admin Login", login_path, class: "footer__link" %>
         <% end %>
       </p>
     </div>

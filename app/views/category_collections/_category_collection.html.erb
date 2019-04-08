@@ -7,12 +7,12 @@
   <% category_collection.categories.sort_by(&:position).each do |category| %>
     <div class="category">
       <h1 class="category__header">
-        <%= link_to category.name, category_path(category.url), class: 'category__link' %>
+        <%= link_to category.name, category_path(category.url), class: "category__link" %>
         <span class="pull-right">
-          <%= render 'layouts/book_now' %>
+          <%= render "layouts/book_now" %>
         </span>
       </h1>
-      <%= simple_format(category.description, class: 'category__description') %>
+      <%= simple_format(category.description, class: "category__description") %>
       <% if category_collection.inline %>
         <% category.products.sort_by(&:position).each do |product| %>
           <%= render product %>
@@ -26,7 +26,7 @@
       <% if snippet.active %>
         <div class="snippet">
           <h2 class="snippet__title"><%= snippet.title %></h2>
-          <%= simple_format snippet.body, class: 'snippet__body' %>
+          <%= simple_format snippet.body, class: "snippet__body" %>
         </div>
       <% end %>
     <% end %>

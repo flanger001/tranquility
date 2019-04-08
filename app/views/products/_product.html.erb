@@ -2,10 +2,10 @@
   <h2 class="product__header">
     <%= product.name %>
     <span class="pull-right">
-      <%= render 'layouts/book_now' %>
+      <%= render "layouts/book_now" %>
     </span>
   </h2>
-  <%= simple_format(product.description, class: 'product__description') %>
+  <%= simple_format(product.description, class: "product__description") %>
   <table class="price-list">
     <% product.product_attributes.each do |attribute| %>
       <tr class="price-list__item">

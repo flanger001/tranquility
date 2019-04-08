@@ -6,6 +6,8 @@ linters:
     enabled: true
   Rubocop:
     enabled: true
+    only:
+      - Style/StringLiterals
     rubocop_config:
       inherit_from:
         - .rubocop.yml
