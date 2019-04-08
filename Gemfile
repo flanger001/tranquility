@@ -15,7 +15,7 @@ gem "mini_magick"
 gem "newrelic_rpm"
 gem "pg", "~> 1.1"
 gem "pry-rails"
-gem "puma", "~> 3.0"
+gem "puma", "~> 3.1"
 gem "rails", "5.2.3"
 gem "rubocop", "~> 0.61.1", :require => false
 gem "sass-rails"
