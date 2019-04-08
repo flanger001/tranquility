@@ -181,3 +181,6 @@ Style/WordArray:
 
 Layout/DotPosition:
   EnforcedStyle: trailing
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
