@@ -7,6 +7,6 @@ class Review < ActiveRecord::Base
   include Concerns::Active
 
   def self.random
-    order(Arel.sql("random()")).first
+    order(Arel::Nodes::NamedFunction.new("RANDOM", [])).first
   end
 end
