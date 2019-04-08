@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Recommendation do
   describe "validations" do
-    let(:recommendation) { described_class.new(url: url) }
+    let(:recommendation) { described_class.new(:url => url) }
     subject { recommendation.valid? }
 
     context "with a valid http url" do

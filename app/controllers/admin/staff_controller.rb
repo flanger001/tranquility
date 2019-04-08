@@ -20,9 +20,9 @@ module Admin
         :bio,
         :services,
         :notes,
-        schedule_attributes: [
+        :schedule_attributes => [
           {
-            events_attributes: [
+            :events_attributes => [
               :id,
               :start_time,
               :end_time,

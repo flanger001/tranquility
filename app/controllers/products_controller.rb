@@ -11,6 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def resource
-    @resource ||= Product.find_by(url: params[:url])
+    @resource ||= Product.find_by(:url => params[:url])
   end
 end

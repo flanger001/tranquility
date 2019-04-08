@@ -2,7 +2,7 @@ module CategoryFilters
   extend ActiveSupport::Concern
 
   included do
-    around_action :verify_collection, only: :show
+    around_action :verify_collection, :only => :show
 
     def verify_collection
       if collection.present?

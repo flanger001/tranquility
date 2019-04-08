@@ -2,7 +2,7 @@ module Navigation
   Link = Struct.new(:name, :url)
 
   class << self
-    delegate :url_helpers, to: "Rails.application.routes"
+    delegate :url_helpers, :to => "Rails.application.routes"
 
     def site_links
       site_links = {
@@ -19,7 +19,7 @@ module Navigation
     def product_links
       CategoryCollection
         .active
-        .order(position: :asc)
+        .order(:position => :asc)
         .map { |link| Link.new(link.name, url_helpers.category_collection_path(link.url)) }
     end
 
