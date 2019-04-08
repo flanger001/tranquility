@@ -1,6 +1,6 @@
 <% content_for :page_title, "Newsletter Signup" %>
 
-<%= form_with :model => @form, :url => @form.url, :authenticity_token => false, :html => { :name => "mailchimp_signup", :target => "_blank" } do |form| %>
+<%= form_with :model => @form, :url => @form.url, :authenticity_token => false, :html => { :name => "mailchimp_signup" } do |form| %>
   <h2>Sign up for email updates from A Touch Of Tranquility!</h2>
 
   <div class="form-group">
@@ -25,7 +25,7 @@
   <div>
     <%= form.hidden_field @form.token, :value => true, :name => @form.token %>
     <%= form.submit "Subscribe", :name => "subscribe", :class => "btn btn-success btn-lg" %>
-    <span>(Clicking will open a new window)</span>
+    <span>(Clicking will take you to the newsletter site)</span>
   </div>
 <% end %>
 
