@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
   private
 
   def resource
-    raise 'define a `resource`'
+    raise "define a `resource`"
   end
 
   def collection
-    raise 'define a `collection`'
+    raise "define a `collection`"
   end
 
   def current_user

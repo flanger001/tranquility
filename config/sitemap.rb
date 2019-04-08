@@ -1,9 +1,9 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = 'http://www.atouchoftranquilityspa.com'
+SitemapGenerator::Sitemap.default_host = "http://www.atouchoftranquilityspa.com"
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
-SitemapGenerator::Sitemap.sitemaps_host = "https://s3.amazonaws.com/#{ENV['FOG_DIRECTORY']}/"
-SitemapGenerator::Sitemap.public_path = 'tmp/'
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3.amazonaws.com/#{ENV["FOG_DIRECTORY"]}/"
+SitemapGenerator::Sitemap.public_path = "tmp/"
+SitemapGenerator::Sitemap.sitemaps_path = "sitemaps/"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

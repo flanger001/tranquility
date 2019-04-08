@@ -17,5 +17,5 @@
 
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.uncountable 'staff'
+  inflect.uncountable "staff"
 end

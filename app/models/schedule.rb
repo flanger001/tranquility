@@ -4,6 +4,6 @@ class Schedule < ActiveRecord::Base
   accepts_nested_attributes_for :events, allow_destroy: true
 
   def self.spa_hours
-    find_or_initialize_by(name: 'Spa Hours')
+    find_or_initialize_by(name: "Spa Hours")
   end
 end

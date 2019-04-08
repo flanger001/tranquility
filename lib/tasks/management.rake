@@ -1,5 +1,5 @@
 namespace :management do
-  desc 'Creates default positions (should only need to run this once)'
+  desc "Creates default positions (should only need to run this once)"
   task assign_positions: :environment do
     Category.find_each.with_index(1) do |c, idx|
       c.position = idx

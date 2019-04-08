@@ -146,6 +146,7 @@ Style/StderrPuts:
     - 'bin/yarn'
 
 Style/StringLiterals:
+  EnforcedStyle: double_quotes
   Exclude:
     - 'bin/yarn'
     - 'config/environments/production.rb'
@@ -153,6 +154,7 @@ Style/StringLiterals:
     - 'db/seeds.rb'
 
 Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
   Exclude:
     - 'bin/yarn'
 
