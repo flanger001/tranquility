@@ -8,7 +8,7 @@ class MailchimpForm
     :id => "597d51beae"
   }
   EMAIL_TYPES = [
-    ["html", "HTML"],
+    %w(html HTML),
     ["text", "Plain text"]
   ]
 

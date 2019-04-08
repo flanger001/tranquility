@@ -175,3 +175,6 @@ Style/MutableConstant:
 
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
+
+Style/WordArray:
+  EnforcedStyle: percent
