@@ -5,7 +5,6 @@ gem "acts_as_list"
 gem "bcrypt"
 gem "bootsnap"
 gem "bootstrap-sass"
-gem "bugsnag", "~> 6.11"
 gem "carrierwave-aws"
 gem "dotenv-rails"
 gem "erb_lint", :require => false
@@ -20,6 +19,7 @@ gem "rails", "5.2.3"
 gem "rubocop", "~> 0.67.2", :require => false
 gem "rubocop-performance", "~> 1.1"
 gem "sass-rails"
+gem "sentry-raven"
 gem "sitemap_generator"
 gem "uglifier"
 

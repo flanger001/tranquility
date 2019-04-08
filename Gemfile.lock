@@ -81,8 +81,6 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
-    bugsnag (6.11.1)
-      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     capybara (3.16.1)
       addressable
@@ -122,6 +120,8 @@ GEM
     factory_bot_rails (5.0.1)
       factory_bot (~> 5.0.0)
       railties (>= 4.2.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -167,6 +167,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.9)
+    multipart-post (2.0.0)
     newrelic_rpm (6.2.0.354)
     nio4r (2.3.1)
     nokogiri (1.10.2)
@@ -259,6 +260,8 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    sentry-raven (2.9.0)
+      faraday (>= 0.7.6, < 1.0)
     sitemap_generator (6.0.2)
       builder (~> 3.0)
     smart_properties (1.13.1)
@@ -296,7 +299,6 @@ DEPENDENCIES
   bcrypt
   bootsnap
   bootstrap-sass
-  bugsnag (~> 6.11)
   capybara
   carrierwave-aws
   database_cleaner
@@ -316,6 +318,7 @@ DEPENDENCIES
   rubocop (~> 0.67.2)
   rubocop-performance (~> 1.1)
   sass-rails
+  sentry-raven
   sitemap_generator
   uglifier
   web-console
