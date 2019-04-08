@@ -17,10 +17,10 @@ module Navigation
     end
 
     def product_links
-      CategoryCollection
-        .active
-        .order(:position => :asc)
-        .map { |link| Link.new(link.name, url_helpers.category_collection_path(link.url)) }
+      CategoryCollection.
+        active.
+        order(:position => :asc).
+        map { |link| Link.new(link.name, url_helpers.category_collection_path(link.url)) }
     end
 
     def user_links(current_user)

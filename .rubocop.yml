@@ -178,3 +178,6 @@ Style/HashSyntax:
 
 Style/WordArray:
   EnforcedStyle: percent
+
+Layout/DotPosition:
+  EnforcedStyle: trailing

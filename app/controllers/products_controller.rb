@@ -4,10 +4,10 @@ class ProductsController < ApplicationController
   private
 
   def collection
-    @collection ||= Product
-      .eager_load(:product_attributes)
-      .active
-      .order(:position)
+    @collection ||= Product.
+      eager_load(:product_attributes).
+      active.
+      order(:position)
   end
 
   def resource
