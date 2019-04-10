@@ -3,6 +3,3 @@ Raven.configure do |config|
   config.environments = %w(production staging)
   config.ssl_verification = false
 end
-
-
-
