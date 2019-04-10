@@ -1,5 +1,5 @@
 class ProductAttribute < ActiveRecord::Base
   belongs_to :product, :optional => false
 
-  validates :time, :price, :presence => true
+  validates :price, :presence => true
 end
