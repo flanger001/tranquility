@@ -154,16 +154,9 @@ Style/StderrPuts:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-  Exclude:
-    - 'bin/yarn'
-    - 'config/environments/production.rb'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
-  Exclude:
-    - 'bin/yarn'
 
 Style/SymbolArray:
   Exclude:
