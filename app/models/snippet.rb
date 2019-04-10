@@ -3,6 +3,8 @@ class Snippet < ActiveRecord::Base
   belongs_to :snippet_collection, :optional => true
   before_save :create_name
 
+  validates :title, :uniqueness => true
+
   class << self
     def [](value)
       o = find_or_initialize_by(:title => value.to_s.titleize)
