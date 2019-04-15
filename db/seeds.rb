@@ -1,5 +1,5 @@
+# noinspection RubyScope
 ActiveRecord::Base.transaction do
-
   users = [
     {
       :first_name => "Dave", :last_name => "Shaffer", :email => "dave.shaffer@gmail.com", :password => ENV["ADMIN_PASS"], :password_confirmation => ENV["ADMIN_PASS"], :admin => true
@@ -817,35 +817,46 @@ ActiveRecord::Base.transaction do
   end
 
   Schedule.create(
-    :name => "Spa Hours", :events => [
-    Event.new(:day => "Monday", :start_time => "9:30 am", :end_time => "4:00 pm"),
-    Event.new(:day => "Tuesday", :start_time => "10:00 am", :end_time => "7:00 pm"),
-    Event.new(:day => "Wednesday", :start_time => "9:00 am", :end_time => "7:00 pm"),
-    Event.new(:day => "Thursday", :start_time => "9:00 am", :end_time => "8:00 pm"),
-    Event.new(:day => "Friday", :start_time => "9:00 am", :end_time => "8:00 pm"),
-    Event.new(:day => "Saturday", :start_time => "10:00 am", :end_time => "4:00 pm"),
-    Event.new(:day => "Sunday", :start_time => "11:00 am", :end_time => "4:00 pm")
-  ]
+    :name => "Spa Hours",
+    :events => [
+      Event.new(:day => "Monday", :start_time => "9:30 am", :end_time => "4:00 pm"),
+      Event.new(:day => "Tuesday", :start_time => "10:00 am", :end_time => "7:00 pm"),
+      Event.new(:day => "Wednesday", :start_time => "9:00 am", :end_time => "7:00 pm"),
+      Event.new(:day => "Thursday", :start_time => "9:00 am", :end_time => "8:00 pm"),
+      Event.new(:day => "Friday", :start_time => "9:00 am", :end_time => "8:00 pm"),
+      Event.new(:day => "Saturday", :start_time => "10:00 am", :end_time => "4:00 pm"),
+      Event.new(:day => "Sunday", :start_time => "11:00 am", :end_time => "4:00 pm")
+    ]
   )
 
-  snippets = [
+  snippet_collections = [
     {
       :name => "Spa Policies & Medical Massage",
-      :description => "Thank you for choosing A Touch of Tranquility to support and guide you through your therapy. As your professional massage therapy office we are here to help you to achieve a better quality of living for you following your accident and/or injury.\n\nClick here for a printable copy of this page for your records: <a href='forms/InsuranceClientWelcomePoliciesLetter.pdf' class='btn btn-success btn-sm'> 'Download Form'</a>\n\n", :snippets => [
-      Snippet.new(:title => "Insurance and Worker's Compensation Policies", :body => "We accept some no-fault insurance and pre-authorized worker's compensation claims, both of which you are responsible for knowing the conditions and terms of the policy (particularly if Massage Therapy is covered and under what terms). We participate in flex plan claims, United Health Care ACN United Naturally plans and various other plans. You are fully responsible for payment in the event of a denied claim. Insurance clients will also be billed a 50% time/service fee for no shows and 30% for not canceling 24 hours ahead.\n\nAgain, you are fully responsible for payment in the event of a denied claim.\n\nWe do not currently accept health insurance claims at this time.\n\nWe reserve 30 or 45 minutes for insurance clients, so please arrive a few minutes before your session start time. That way you'll be ready for your session by the time we are."),
-      Snippet.new(:title => "Your first session", :body => "Please arrive 15 minutes early to fill out the documents we require for treatment.\n\nBring your insurance information by or before your first session.\n\nWe will evaluate you during your first massage and set up a treatment plan that we feel will provide you the most benefit.\n\nEvery session you will have at a Touch of Tranquility will be dedicated to how you are feeling each day. We will check in with you each time you arrive for a session; therefore we know better how to treat the 'you' that comes in that day and not the 'you' from a month ago."),
-      Snippet.new(:title => "Cancellations", :body => "We reserve a specified amount of time for each client.\n\nPlease be mindful of our time and let us know 24 hours in advance if you cannot be present, so we can book that time with another patient who may be on our waiting list.\n\nNo-show or last minute cancellations will not be tolerated.\n\nA credit card will be kept securely on file. In the the event of a no-show or cancellation at the time of a session, we reserve the right to charge the card on file for the full amount of scheduled service. If the card is denied or you do not pay another way, we will regretfully no longer be able to treat you.\n\nThank you for your cooperation.\n\nWe look forward to helping you positively progress."),
-      Snippet.new(:title => "Spa Address", :body => ""),
-      Snippet.new(:title => "Announcement", :body => ""),
-      Snippet.new(:title => "Book Now (Mobile)", :body => ""),
-      Snippet.new(:title => "Book Now", :body => "")
-    ]
+      :description => "Thank you for choosing A Touch of Tranquility to support and guide you through your therapy. As your professional massage therapy office we are here to help you to achieve a better quality of living for you following your accident and/or injury.\n\nClick here for a printable copy of this page for your records: <a href='forms/InsuranceClientWelcomePoliciesLetter.pdf' class='btn btn-success btn-sm'> 'Download Form'</a>\n\n",
     }
   ]
 
-  snippets.each do |s|
+  snippet_collections.each do |s|
     a = SnippetCollection.find_or_create_by!(:title => s[:title])
     puts "Saving #{a.class} #{a.name}"
+    a.attributes = s
+    a.save!
+  end
+
+  snippets = [
+    { :title => "Insurance and Worker's Compensation Policies", :active => true, :body => "We accept some no-fault insurance and pre-authorized worker's compensation claims, both of which you are responsible for knowing the conditions and terms of the policy (particularly if Massage Therapy is covered and under what terms). We participate in flex plan claims, United Health Care ACN United Naturally plans and various other plans. You are fully responsible for payment in the event of a denied claim. Insurance clients will also be billed a 50% time/service fee for no shows and 30% for not canceling 24 hours ahead.\n\nAgain, you are fully responsible for payment in the event of a denied claim.\n\nWe do not currently accept health insurance claims at this time.\n\nWe reserve 30 or 45 minutes for insurance clients, so please arrive a few minutes before your session start time. That way you'll be ready for your session by the time we are." },
+    { :title => "Your first session", :active => true, :body => "Please arrive 15 minutes early to fill out the documents we require for treatment.\n\nBring your insurance information by or before your first session.\n\nWe will evaluate you during your first massage and set up a treatment plan that we feel will provide you the most benefit.\n\nEvery session you will have at a Touch of Tranquility will be dedicated to how you are feeling each day. We will check in with you each time you arrive for a session; therefore we know better how to treat the 'you' that comes in that day and not the 'you' from a month ago." },
+    { :title => "Cancellations", :active => true, :body => "We reserve a specified amount of time for each client.\n\nPlease be mindful of our time and let us know 24 hours in advance if you cannot be present, so we can book that time with another patient who may be on our waiting list.\n\nNo-show or last minute cancellations will not be tolerated.\n\nA credit card will be kept securely on file. In the the event of a no-show or cancellation at the time of a session, we reserve the right to charge the card on file for the full amount of scheduled service. If the card is denied or you do not pay another way, we will regretfully no longer be able to treat you.\n\nThank you for your cooperation.\n\nWe look forward to helping you positively progress." },
+    { :title => "Spa Address", :active => true, :body => "" },
+    { :title => "Announcement", :active => false, :body => "" },
+    { :title => "Book Now (Mobile)", :active => true, :body => "" },
+    { :title => "Book Now", :active => true, :body => "" },
+    { :title => "Landing", :active => true, :body => "Our healing spa landed in our Corning location in 2003. We have stretched, grown, and moved forward over the years because of all that has been contributed here. We have learned from you and through our practitioners, and that has brought us to a deeply centered and compassionate place with our very own identity. It is unique, thoughtful, and rich with life, details and gorgeous simplicity. We cultivate a healing sanctuary for you to feel comfortable in, enhancing you each and every time you visit." },
+  ]
+
+  snippets.each do |s|
+    a = Snippet.find_or_create_by!(:title => s[:title])
+    puts "Saving #{a.class} #{a.title}"
     a.attributes = s
     a.save!
   end
