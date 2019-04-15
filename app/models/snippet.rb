@@ -1,26 +1,20 @@
 class Snippet < ActiveRecord::Base
-  belongs_to :category, optional: true
-  belongs_to :snippet_collection, optional: true
+  belongs_to :category, :optional => true
+  belongs_to :snippet_collection, :optional => true
   before_save :create_name
 
-  def self.spa_address
-    find_or_initialize_by(title: 'Spa Address')
-  end
+  validates :title, :uniqueness => true
 
-  def self.announcement
-    find_or_initialize_by(title: 'Announcement')
-  end
-
-  def self.book_now_link(mobile = false)
-    title = mobile ? 'Book Now (Mobile)' : 'Book Now'
-    find_or_initialize_by(title: title)
+  class << self
+    def [](value)
+      o = find_or_initialize_by(:title => value.to_s.titleize)
+      o.body if o.active
+    end
   end
 
   private
 
   def create_name
-    return unless name.present?
-    self.name = title.downcase.gsub(/[\W]{1,}/, '-')
-    name.chop! if name.end_with?('-')
+    self.name = title.downcase.strip.gsub(/[\W]+/, "-")
   end
 end

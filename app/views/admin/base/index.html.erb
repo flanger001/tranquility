@@ -1,26 +1,26 @@
 <% content_for :page_title, "#{resource_class.to_s.titleize} Manager" %>
-<%= form_tag polymorphic_path([:active, :admin, resource_class]) %>
+<%= form_with :model => resource_class, :url => [:active, :admin, resource_class] do |form| %>
 <table class="table">
   <thead>
     <tr>
-      <%= render 'index_row_headers' %>
+      <%= render "index_row_headers" %>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% collection.each do |row| %>
-      <%= fields_for "#{resource_class.name.downcase.pluralize}[]", row do |form| %>
+      <%= fields_for row do |fields| %>
         <tr>
-          <%= render 'index_row_columns', row: row, form: form %>
+          <%= render "index_row_columns", :row => row, :form => fields %>
           <td>
             <div class="btn-group btn-group-xs pull-right">
-              <button class="btn btn-default dropdown-toggle" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Actions
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <%= render 'index_row_actions', row: row %>
-                <%= render 'index_row_extra_actions', row: row %>
+                <%= render "index_row_actions", :row => row %>
+                <%= render "index_row_extra_actions", :row => row %>
               </ul>
             </div>
           </td>
@@ -29,4 +29,5 @@
     <% end %>
   </tbody>
 </table>
-<%= render 'buttons' %>
+<%= render "buttons" %>
+<% end %>

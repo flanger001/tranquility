@@ -1,14 +1,14 @@
-<% content_for :page_title, 'Reviews' %>
-<p><%= simple_format(review_snippet.body) %></p>
+<% content_for :page_title, "Reviews" %>
+<p><%= simple_format(Snippet[:reviews]) %></p>
 <% collection.each do |product| %>
-  <h1 class='category-header'>
+  <h1 class="category__header">
     <%= product.name %>
   </h1>
   <p>
     Rating:
-    <span class='rating'>
+    <span class="rating">
       <% product.average_rating.times do |i| %>
-        <span class='glyphicon glyphicon-star'></span>
+        <span class="glyphicon glyphicon-star"></span>
       <% end %>
     </span>
   </p>
@@ -18,3 +18,4 @@
     <% end %>
   <% end %>
 <% end %>
+<%= paginate(collection) %>

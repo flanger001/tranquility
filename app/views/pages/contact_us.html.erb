@@ -1,0 +1,10 @@
+<% content_for :page_title, "Contact Us" %>
+<div class="site-logo">
+  <%= image_tag("logos/desktop-new.png", :class => "site-logo__image") %>
+</div>
+<hr />
+<div class="text-center">
+  <%= simple_format(Snippet[:spa_address]) %>
+  <hr />
+  <%= render "layouts/hours" %>
+</div>

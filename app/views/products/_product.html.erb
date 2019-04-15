@@ -1,16 +1,18 @@
-<div class='product'>
-  <h2 class='product-header'>
+<div class="product">
+  <h2 class="product__header">
     <%= product.name %>
-    <span class='pull-right'><%= book_now_link %></span>
+    <span class="book-now">
+      <%= render "layouts/book_now" %>
+    </span>
   </h2>
-  <p class='product-description'><%= simple_format(product.description) %></p>
-  <table class='price-list'>
+  <%= simple_format(product.description, :class => "product__description") %>
+  <table class="price-list">
     <% product.product_attributes.each do |attribute| %>
-      <tr>
+      <tr class="price-list__item">
         <% if attribute.time.present? %>
-          <td><%= attribute.time %> minutes</td>
+          <td class="price-list__time"><%= attribute.time %> minutes</td>
         <% end %>
-        <td><%= number_to_currency(attribute.price, precision: 0) %></td>
+        <td class="price-list__price"><%= number_to_currency(attribute.price, :precision => 0) %></td>
       </tr>
     <% end %>
   </table>

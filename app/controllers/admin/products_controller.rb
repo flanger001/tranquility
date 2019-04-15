@@ -19,22 +19,23 @@ module Admin
         :description,
         :price,
         {
-          product_attributes_attributes: [
+          :product_attributes_attributes => [
             :id,
             :time,
             :price,
             :_destroy
           ]
-        }, :active
+        },
+        :active
       )
     end
 
     def collection
-      @collection ||= resource_class.where(search_params).order(:category_id, :position)
+      @collection ||= resource_class.includes(:category).where(search_params).order(:category_id, :position)
     end
 
     def search_params
-      { category_id: params[:category] } if params[:category]
+      { :category_id => params[:category] } if params[:category]
     end
   end
 end

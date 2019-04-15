@@ -1,28 +1,34 @@
-<div class='member' id='<%= staff.name.downcase.gsub(' ', '-') %>'>
-  <div class='row'>
-    <div class='col-sm-6'>
-      <div>
-        <%= image_tag staff.photo.url, class: 'staff-image-list img-responsive img-rounded', alt: "#{staff.first_name} #{staff.last_name}" %>
+<div class="staff" id="<%= staff.name.downcase.gsub(" ", "-") %>">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="staff__photo">
+        <%= image_tag staff.photo.url, :class => "staff__image img-responsive img-rounded", :alt => "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>
 
-    <div class='col-sm-6'>
-      <h2 class='staff-column-title'> Services</h2>
-      <p class='staff-title'><%= simple_format(staff.title) %></p>
-      <p>
-        <b><%= staff.first_name %></b> is available for:
-      </p>
-      <ul class='list-unstyled staff-services'>
-        <% staff.services.split("\n").each do |service| %>
-          <li><%= service %></li>
+    <div class="col-sm-6">
+      <div class="services">
+        <h2 class="services__header">Services</h2>
+        <%= simple_format(staff.title, :class => "staff__title") %>
+        <p>
+          <b><%= staff.first_name %></b> is available for:
+        </p>
+        <% if staff.services.present? %>
+          <ul class="services-list list-unstyled">
+            <% staff.services.split("\n").each do |service| %>
+              <li class="services-list__item"><%= service %></li>
+            <% end %>
         <% end %>
-      </ul>
-      <p><%= simple_format(staff.notes) %></p>
+        </ul>
+        <div class="notes">
+          <%= simple_format(staff.notes, :class => "notes__body") %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
-    <blockquote>
-      <%= simple_format(staff.bio) %>
+    <blockquote class="bio">
+      <%= simple_format(staff.bio, :class => "bio__body") %>
     </blockquote>
   </div>
 </div>

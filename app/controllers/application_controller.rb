@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  before_action :set_raven_context
+
+  protect_from_forgery :with => :exception
 
   def self.finder(param)
     define_method :resource do
@@ -7,28 +9,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def broken
-    render plain: raise('broken')
-  end
-
   private
 
+  def set_raven_context
+    Raven.user_context(:id => session[:user_id])
+    Raven.extra_context(:params => params.to_unsafe_h, :url => request.url)
+  end
+
   def resource
-    raise 'define a `resource`'
+    raise "define a `resource`"
   end
 
   def collection
-    raise 'define a `collection`'
+    raise "define a `collection`"
   end
 
   def current_user
-    @current_user ||= begin
-      if session[:user_id]
-        User.find(session[:user_id])
-      else
-        GuestUser.new
-      end
-    end
+    @current_user ||= User.from_session(session)
   end
 
   def user_logged_in?

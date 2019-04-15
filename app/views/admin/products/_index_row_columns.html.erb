@@ -1,4 +1,4 @@
 <td><%= row.name %></td>
-<td><%= truncate(row.description, length: 100) %></td>
-<td><%= link_to_if row.category.present?, row.category.name, admin_products_path(category: row.category_id) %></td>
-<td><%= form.check_box :active %></td>
+<td><%= truncate(row.description, :length => 100) %></td>
+<td><%= link_to_if row.category.present?, row.category.name, admin_products_path(:category => row.category_id) %></td>
+<td><%= form.check_box :active, { :id => "#{row.class.name.tableize}_#{row.id}_active", :name => "#{row.class.name.tableize}[#{row.id}][active]" } %>

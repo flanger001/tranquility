@@ -2,31 +2,33 @@
 <% content_for :seo_keywords, category_collection.seo %>
 <% content_for :seo_description, category_collection.description %>
 
-<p><%= category_collection.description  %></p>
-<% category_collection.categories.sort_by(&:position).each do |category| %>
-  <h1 class='category-header'>
-    <%= link_to category.name, category_path(category.url)  %>
-    <span class='pull-right'>
-      <%= book_now_link %>
-    </span>
-  </h1>
-  <p class='category-description'>
-    <%= simple_format(category.description)  %>
-  </p>
-  <% if category_collection.inline %>
-    <% category.products.sort_by(&:position).each do |product| %>
-      <%= render product %>
-    <% end %>
+<div class="collection">
+  <p class="collection__description"><%= category_collection.description %></p>
+  <% category_collection.categories.sort_by(&:position).each do |category| %>
+    <div class="category">
+      <h1 class="category__header">
+        <%= link_to category.name, category_path(category.url), :class => "category__link" %>
+        <span class="book-now">
+          <%= render "layouts/book_now" %>
+        </span>
+      </h1>
+      <%= simple_format(category.description, :class => "category__description") %>
+      <% if category_collection.inline %>
+        <% category.products.sort_by(&:position).each do |product| %>
+          <%= render product %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-<% if category_collection.snippet_collection.present? %>
-    <h1 class='category-header'><%= category_collection.snippet_collection.name %></h1>
+  <% if category_collection.snippet_collection.present? %>
+    <h1 class="snippet-collection__header"><%= category_collection.snippet_collection.name %></h1>
     <% category_collection.snippet_collection.snippets.each do |snippet| %>
       <% if snippet.active %>
-        <div class='snippet'>
-          <h2 class='category-item-header'><%= snippet.title %></h2>
-          <%= simple_format snippet.body %>
+        <div class="snippet">
+          <h2 class="snippet__title"><%= snippet.title %></h2>
+          <%= simple_format snippet.body, :class => "snippet__body" %>
         </div>
       <% end %>
     <% end %>
-<% end %>
+  <% end %>
+</div>

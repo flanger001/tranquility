@@ -1,26 +1,43 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 
-$(document).on('page:load page:restore ready', function (e) {
-    $('.flash').fadeOut(1000, function (e) {
-        $(this).remove();
-    });
+function App() {}
 
-    // Mailchimp email signup form
-    $('form[name="mc-embedded-subscribe-form"]').on('submit', function (e) {
-        Turbolinks.visit('/');
-    });
+App.prototype.visitHome = function(e) {
+    return (function(e) {
+        // Mailchimp email signup form
+        window.location.href = "/";
+    }).bind(this);
+};
 
-    $('form').on('click', '.add_fields', function (e) {
+App.prototype.removeElement = function() {
+    return (function(e) {
+        $(e.currentTarget).remove();
+    }).bind(this);
+};
+
+App.prototype.addFields = function() {
+    return (function(e) {
+        e.preventDefault();
+        var target = e.currentTarget;
         var time = new Date().getTime();
-        var regexp = new RegExp($(this).data('id'), 'g');
-        $(this).before($(this).data('fields').replace(regexp, time));
-        event.preventDefault();
-    });
+        var regexp = new RegExp($(target).data('id'), 'g');
+        $(target).before($(target).data('fields').replace(regexp, time));
+    }).bind(this);
+};
 
-    $(document).on('change', '[name="change_password"]', function (e) {
-        $('.password-form').slideToggle()
-    })
+App.prototype.slidePasswordField = function() {
+    return (function(e) {
+        $('.password-form').slideToggle();
+    }).bind(this);
+};
+
+$(function() {
+    var app = new App();
+
+    $('.flash').fadeOut(2000, app.removeElement());
+    $(document).on('submit', 'form[name="mailchimp_signup"]', app.visitHome());
+    $(document).on('click', 'form .add_fields', app.addFields());
+    $(document).on('change', 'input[name="change_password"]', app.slidePasswordField());
 });

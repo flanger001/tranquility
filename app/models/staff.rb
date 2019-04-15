@@ -1,9 +1,9 @@
 class Staff < ActiveRecord::Base
-  has_one :schedule, dependent: :destroy
-  accepts_nested_attributes_for :schedule, allow_destroy: true
+  has_one :schedule, :dependent => :destroy
+  accepts_nested_attributes_for :schedule, :allow_destroy => true
   mount_uploader :photo, ImageUploader
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :presence => true
 
   include Concerns::Person
   include Concerns::Url

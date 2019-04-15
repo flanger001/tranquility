@@ -1,13 +1,42 @@
 $link-color: #555;
-$font-family-sans-serif: 'Source Sans Pro';
-$font-size-base: 18px;
+$font-family-sans-serif: 'Nanum Gothic';
+$font-size-base: 16px;
+
+$font-size-h1: floor(($font-size-base * 1.96));
+$font-size-h2: floor(($font-size-base * 1.69));
+$font-size-h3: ceil(($font-size-base * 1.42));
+$font-size-h4: ceil(($font-size-base * 1.15));
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85));
+
+$font-size-large: ceil(($font-size-base * 1.15));
+$font-size-small: ceil(($font-size-base * 0.85));
+$font-size-tiny: ceil(($font-size-base * 0.65));
+
 $link-hover-decoration: none;
-$body-bg: rgb(230, 210, 190);
+
+$body-bg-new: rgb(230, 230, 230);
+$body-bg-old: rgb(178, 140, 100);
+$footer-bg-old: rgb(125, 87, 80);
+$header-bg-old: rgb(178, 140, 100);
+
+$header-bg: $header-bg-old;
+$body-bg: $body-bg-new;
+$footer-bg: $footer-bg-old;
+
+$desktop-link-color-dark: #333;
+$desktop-link-color-light: #fff;
+$text-color: #333;
+
 $navbar-default-bg: $body-bg;
 $navbar-default-toggle-hover-bg: darken($body-bg, 10%);
 
-$brand-primary:         darken(#449, 6.5%) !default; // #337ab7
+$brand-primary:         #449 !default;
 $brand-success:         #1A1 !default;
 $brand-info:            #AA2 !default;
 $brand-warning:         #A50 !default;
 $brand-danger:          #933 !default;
+
+$teal: rgb(24, 188, 180); // #18bcb4
+$orange: rgb(225, 123, 42); // #e17b2a
+$brown: rgb(183, 88, 39); // #b75827

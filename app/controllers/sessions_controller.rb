@@ -1,23 +1,21 @@
 class SessionsController < ApplicationController
-  before_action :require_no_user, except: :destroy
-
-  def new; end
+  before_action :require_no_user, :except => :destroy
 
   def create
-    user = User.find_by_email(resource_params[:email].strip)
-    if user && user.authenticate(resource_params[:password])
+    user = SessionForm.new(resource_params).submit!
+    if user
       session[:user_id] = user.id
-      flash[:success] = 'Logged in!'
+      flash[:success] = "Logged in!"
       redirect_to root_path
     else
-      flash[:error] = 'Unable to log in. Please try again.'
+      flash[:error] = "Unable to log in. Please try again."
       redirect_to login_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = 'Logged out!'
+    flash[:success] = "Logged out!"
     redirect_to root_path
   end
 

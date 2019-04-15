@@ -1,4 +1,4 @@
 <td><%= row.name %></td>
-<td><%= truncate(row.description, length: 100) %></td>
+<td><%= truncate(row.description, :length => 100) %></td>
 <td><%= row.products_count %></td>
-<td><%= form.check_box :active %></td>
+<td><%= form.check_box :active, { :id => "#{row.class.name.tableize}_#{row.id}_active", :name => "#{row.class.name.tableize}[#{row.id}][active]" } %>
