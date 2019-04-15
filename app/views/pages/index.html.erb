@@ -14,11 +14,11 @@
   <hr />
   <div class="lead gifts">
     <p class="gifts">
-      Gift certificates are available for all services and products.
+      Gift certificates are available for all services and products.<br />
       <%= link_to "Purchase a Gift Certificate here!", "http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx", :class => "cta-link" %>
     </p>
     <p class="lead newsletter">
-      Interested in email updates?
+      Interested in email updates?<br />
       <%= link_to "Sign up here!", newsletter_signup_path, :class => "cta-link" %>
     </p>
   </div>
@@ -28,7 +28,7 @@
       <div class="jumbotron">
         <%= render Review.random if Review.exists? %>
         <p class="lead reviews">
-          Want to see what else our customers are saying about us?
+          Want to see what else our customers are saying about us?<br />
           <%= link_to "Click here!", reviews_path, :class => "cta-link" %>
         </p>
       </div>
