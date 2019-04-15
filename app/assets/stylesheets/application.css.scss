@@ -8,6 +8,9 @@ html {
   width: 100%;
   box-sizing: border-box;
 }
+body {
+  overflow-y: scroll;
+}
 
 a {
   @include text-shadow-grow();
