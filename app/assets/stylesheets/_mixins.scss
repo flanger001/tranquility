@@ -15,7 +15,6 @@
 }
 
 @mixin link-color {
-  text-transform: uppercase;
   color: $desktop-link-color-light;
   &:hover {
     color: darken($desktop-link-color-light, 10%);
