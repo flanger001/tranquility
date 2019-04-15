@@ -80,8 +80,10 @@ a {
 .navigation {
   margin-top: 15px;
   margin-bottom: 15px;
+  @include flex-parent();
 
   &__link-site {
+    flex-basis: 100%;
     color: #fff;
     margin-right: 10px;
     margin-left: 10px;
@@ -93,6 +95,7 @@ a {
   }
 
   &__link-product {
+    flex-basis: 100%;
     color: #fff;
     margin-right: 10px;
     margin-left: 10px;
