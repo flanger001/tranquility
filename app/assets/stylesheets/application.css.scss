@@ -37,19 +37,24 @@ a {
 
 .header-container {
   position: relative;
+  text-align: center;
   background: {
-    image: image-url('home/candles-lo-res2.jpg');
-    position: -100px;
+    image: image-url("home/candles-banner.jpg");
+    size: cover;
     repeat: no-repeat;
   }
-  padding: 15px;
+  min-height: 100px;
+  max-height: 400px;
 }
 
 .site-header {
-  background-color: rgba(178, 140, 100, 0.7);
-  padding: 10px 0 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
   color: #fff;
   text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .logo {
