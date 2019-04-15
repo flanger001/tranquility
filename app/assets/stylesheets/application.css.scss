@@ -64,6 +64,10 @@ a {
   }
 }
 
+.cta-link {
+  color: $teal;
+}
+
 .logo {
   @include flex-parent();
   text-align: center;

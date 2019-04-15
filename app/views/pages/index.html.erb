@@ -8,16 +8,18 @@
       <%= Snippet[:landing] %>
     </p>
   </div>
+  <div class="site-logo">
+    <%= image_tag("logos/desktop-new.png", :class => "site-logo__image") %>
+  </div>
   <hr />
   <div class="lead gifts">
     <p class="gifts">
       Gift certificates are available for all services and products.
-      <%= link_to "Purchase a Gift Certificate here!",
-          "http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx" %>
+      <%= link_to "Purchase a Gift Certificate here!", "http://www.secure-booker.com/ATouchofTranquilitySpa/InstantGiftCertificate.aspx", :class => "cta-link" %>
     </p>
     <p class="lead newsletter">
       Interested in email updates?
-      <%= link_to "Sign up here!", newsletter_signup_path, :html => { :class => "underline" } %>
+      <%= link_to "Sign up here!", newsletter_signup_path, :class => "cta-link" %>
     </p>
   </div>
   <hr />
@@ -27,7 +29,7 @@
         <%= render Review.random if Review.exists? %>
         <p class="lead reviews">
           Want to see what else our customers are saying about us?
-          <%= link_to "Click here!", reviews_path %>
+          <%= link_to "Click here!", reviews_path, :class => "cta-link" %>
         </p>
       </div>
     </div>
