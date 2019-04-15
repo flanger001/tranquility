@@ -143,6 +143,9 @@ a {
     background: $brown;
     color: #fff;
     padding: 5px;
+    @media all and (max-width: 768px) {
+      font-size: 1.3em;
+    }
   }
 }
 
@@ -151,6 +154,9 @@ a {
     background: $brown;
     color: #fff;
     padding: 5px;
+    @media all and (max-width: 768px) {
+      font-size: 1.3em;
+    }
   }
 
   &__link {
@@ -163,6 +169,9 @@ a {
     background: $brown;
     color: #fff;
     padding: 5px;
+    @media all and (max-width: 768px) {
+      font-size: 1.3em;
+    }
   }
 }
 
@@ -282,9 +291,14 @@ a {
   display: none;
 }
 
-.book-now-link {
-  padding: 5px;
-  color: #fff;
+.book-now {
+  float: right;
+
+  &__link {
+    padding: 5px;
+    font-size: 0.7em;
+    color: #fff;
+  }
 }
 
 .site-logo {
