@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :set_raven_context
+
   protect_from_forgery :with => :exception
 
   def self.finder(param)
@@ -8,6 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_raven_context
+    Raven.user_context(:id => session[:user_id])
+    Raven.extra_context(:params => params.to_unsafe_h, :url => request.url)
+  end
 
   def resource
     raise "define a `resource`"
