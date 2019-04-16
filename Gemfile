@@ -23,7 +23,7 @@ gem "sentry-raven"
 gem "sitemap_generator"
 gem "uglifier"
 
-group :test do
+group :development, :test do
   gem "capybara"
   gem "database_cleaner"
   gem "factory_bot_rails"
