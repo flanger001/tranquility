@@ -34,19 +34,22 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :users, :schedules
+
     resources :recommendations,
       :reviews,
-      :schedules,
       :snippets,
       :snippet_collections,
-      :users,
-      :concerns => [:active, :list_repositionable]
+      :concerns => [:active]
 
     resources :categories,
       :category_collections,
       :products,
-      :staff,
       :concerns => [:active, :list_repositionable],
+      :param => :url
+
+    resources :staff,
+      :concerns => [:active],
       :param => :url
   end
 end

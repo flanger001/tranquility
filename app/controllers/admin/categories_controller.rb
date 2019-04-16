@@ -1,5 +1,7 @@
 module Admin
   class CategoriesController < Admin::BaseController
+    include Admin::Concerns::Positioning
+
     finder :url
 
     private
