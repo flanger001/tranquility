@@ -3,7 +3,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :schedule, :counter_cache => true, :optional => false
 
-  validates :day, :presence => true
+  validates :day, :inclusion => { :in => DAYS }
+  validate :start_and_end_time_not_equal, :if => proc { |e| [e.start_time, e.end_time].all? }
 
   before_save do
     self.off = true unless start_time.present? && end_time.present?
@@ -11,6 +12,10 @@ class Event < ActiveRecord::Base
 
   def span
     Span.new(self)
+  end
+
+  def start_and_end_time_not_equal
+    errors.add(:base, "Start time and end time must not match") unless start_time != end_time
   end
 
   class Span
