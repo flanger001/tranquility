@@ -1,5 +1,7 @@
 module Admin
   class CategoriesController < Admin::BaseController
+    include Admin::Concerns::Positioning
+
     finder :url
 
     private
@@ -9,7 +11,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:category).permit(:name, :description, :remove_photo, :photo, :remote_photo_url, :inline, :seo, { :product_ids => [] }, :active)
+      params.require(:category).permit!
     end
 
     def collection

@@ -7,7 +7,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:snippet).permit(:name, :title, :body, :active, :category_id)
+      params.require(:snippet).permit!
     end
   end
 end

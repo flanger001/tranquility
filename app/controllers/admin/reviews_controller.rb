@@ -7,7 +7,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:review).permit(:product_id, :title, :customer_name, :body, :rating, :active, :date, :show_customer_name)
+      params.require(:review).permit!
     end
   end
 end

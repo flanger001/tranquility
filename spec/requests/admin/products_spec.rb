@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Admin::ProductsController do
-  let(:product) { create(:product) }
   let(:user) { create(:user, :admin) }
+  let(:product) { create(:product) }
 
   before { sign_in(user) }
 

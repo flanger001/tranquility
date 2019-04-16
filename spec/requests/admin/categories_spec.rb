@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Admin::CategoriesController do
-  let(:category) { create(:category) }
   let(:user) { create(:user, :admin) }
+  let(:category) { create(:category) }
 
   before { sign_in(user) }
 
