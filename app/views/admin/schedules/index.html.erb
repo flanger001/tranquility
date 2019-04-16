@@ -1,0 +1,29 @@
+<% content_for :page_title, "#{resource_class.to_s.titleize} Manager" %>
+<table class="table">
+  <thead>
+  <tr>
+    <%= render "index_row_headers" %>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% collection.each do |row| %>
+    <tr>
+      <%= render "index_row_columns", :row => row %>
+      <td>
+        <div class="btn-group btn-group-xs pull-right">
+          <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actions
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <%= render "index_row_actions", :row => row %>
+            <%= render "index_row_extra_actions", :row => row %>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= render "buttons" %>
