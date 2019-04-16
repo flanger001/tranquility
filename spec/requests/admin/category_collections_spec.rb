@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Admin::CategoryCollectionsController do
-  let(:category_collection) { create(:category_collection) }
   let(:user) { create(:user, :admin) }
+  let(:category_collection) { create(:category_collection) }
 
   before { sign_in(user) }
 
