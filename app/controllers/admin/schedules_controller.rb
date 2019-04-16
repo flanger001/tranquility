@@ -7,7 +7,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:schedule).permit(:name, :description, :notes, :events_attributes => [:id, :start_time, :end_time, :day, :off, :destroy])
+      params.require(:schedule).permit!
     end
   end
 end

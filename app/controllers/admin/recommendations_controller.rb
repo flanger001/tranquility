@@ -7,7 +7,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:recommendation).permit(:name, :description, :url, :active)
+      params.require(:recommendation).permit!
     end
   end
 end

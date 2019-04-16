@@ -11,7 +11,7 @@ module Admin
     end
 
     def resource_params
-      params.require(:category_collection).permit(:name, :description, :inline, :seo, { :category_ids => [] }, :active)
+      params.require(:category_collection).permit!
     end
 
     def collection
