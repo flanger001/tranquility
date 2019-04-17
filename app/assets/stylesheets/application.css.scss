@@ -167,12 +167,13 @@ a {
 
   &__link {
     color: lighten($body-bg, 10%);
+    text-decoration: underline;
   }
 }
 
 .product {
   &__header {
-    background: $brown;
+    background: $orange;
     color: #fff;
     padding: 5px;
     @media all and (max-width: 768px) {
