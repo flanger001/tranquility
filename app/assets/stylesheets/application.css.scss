@@ -159,7 +159,7 @@ a {
   &__header {
     background: $brown;
     color: #fff;
-    padding: 5px;
+    padding: 5px 5px 7px 5px;
     @media all and (max-width: 768px) {
       font-size: 1.3em;
     }
@@ -167,7 +167,11 @@ a {
 
   &__link {
     color: lighten($body-bg, 10%);
-    text-decoration: underline;
+    border-bottom: 1px solid #fff;
+
+    &:hover, &:focus {
+      border-bottom: 1px solid rgb(47, 47, 47);
+    }
   }
 }
 
