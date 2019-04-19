@@ -170,8 +170,7 @@ a {
     border-bottom: 1px solid #fff;
 
     &:hover, &:focus {
-      color: lighten($teal, 42%);
-      border-bottom: 1px solid lighten($teal, 42%);
+      border-bottom: 1px solid rgb(47, 47, 47);
     }
   }
 }
