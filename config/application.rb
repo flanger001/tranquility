@@ -6,10 +6,6 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-if Rails.env.development? || Rails.env.test?
-  Dotenv.load(".env.#{Rails.env}")
-end
-
 module Tranquility
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
