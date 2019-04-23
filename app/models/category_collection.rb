@@ -1,7 +1,6 @@
 class CategoryCollection < ActiveRecord::Base
-  has_many :categories
-  has_many :products, :through => :categories
-  has_one :snippet_collection
+  has_many :categories, :dependent => :nullify
+  has_one :snippet_collection, :dependent => :nullify
 
   accepts_nested_attributes_for :categories, :snippet_collection
 

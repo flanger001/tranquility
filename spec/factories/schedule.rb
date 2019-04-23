@@ -3,7 +3,7 @@ FactoryBot.define do
     sequence(:name) { |i| "Schedule #{i}" }
     sequence(:notes) { |i| "Schedule #{i} notes" }
 
-    after(:create) do |schedule, evaluator|
+    after(:create) do |schedule, _evaluator|
       schedule.events << build_list(:event, 3)
     end
   end

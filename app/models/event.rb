@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   DAYS = %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday).freeze
 
-  belongs_to :schedule, :counter_cache => true, :optional => false
+  belongs_to :schedule, :counter_cache => true
 
   validates :day, :inclusion => { :in => DAYS }
   validate :start_and_end_time_not_equal, :if => proc { |e| [e.start_time, e.end_time].all? }
