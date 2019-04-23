@@ -66,43 +66,44 @@ RSpec.describe Admin::ProductsController do
   end
 
   context "moving products" do
-    let!(:product) { create(:product, :position => 1) }
-    let!(:product_other) { create(:product, :position => 2, :name => "Hotter towels", :category => product.category) }
+    # Setting positions explicitly for visibility
+    let!(:product_1) { create(:product, :position => 1) }
+    let!(:product_2) { create(:product, :position => 2, :category => product_1.category) }
+    let!(:product_3) { create(:product, :position => 3, :category => product_1.category) }
+    let!(:product_4) { create(:product, :position => 4, :category => product_1.category) }
 
     describe "#move_down" do
-      let!(:position) { product.position }
+      let!(:position) { product_1.position }
 
       it "moves product down" do
-        post move_down_admin_product_path(:url => product.url)
-        expect(product.reload.position).to eq(position + 1)
+        post move_down_admin_product_path(:url => product_1.url)
+        expect(product_1.reload.position).to eq(position + 1)
         expect(response).to redirect_to(admin_products_path)
       end
     end
 
     describe "#move_up" do
-      let!(:position) { product_other.position }
+      let!(:position) { product_2.position }
 
       it "moves product up" do
-        post move_up_admin_product_path(:url => product_other.url)
-        expect(product_other.reload.position).to eq(position - 1)
+        post move_up_admin_product_path(:url => product_2.url)
+        expect(product_2.reload.position).to eq(position - 1)
         expect(response).to redirect_to(admin_products_path)
       end
     end
 
     describe "#move_to_top" do
       it "moves product to top of list" do
-        post move_to_top_admin_product_path(:url => product.url)
-        expect(product.reload.position).to eq(1)
+        post move_to_top_admin_product_path(:url => product_1.url)
+        expect(product_1.reload.position).to eq(1)
         expect(response).to redirect_to(admin_products_path)
       end
     end
 
     describe "#move_to_bottom" do
-      before { create_list(:product, 2, :category => product.category) }
-
       it "moves product to bottom of list" do
-        post move_to_bottom_admin_product_path(:url => product.url)
-        expect(product.reload.position).to eq(4)
+        post move_to_bottom_admin_product_path(:url => product_1.url)
+        expect(product_1.reload.position).to eq(4)
         expect(response).to redirect_to(admin_products_path)
       end
     end
