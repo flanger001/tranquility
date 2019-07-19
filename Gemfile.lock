@@ -306,17 +306,17 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails
   jquery-rails
-  kaminari (~> 1.1)
+  kaminari
   listen
   mini_magick
   newrelic_rpm
-  pg (~> 1.1)
+  pg
   pry-rails
-  puma (~> 3.1)
+  puma
   rails (= 5.2.3)
   rspec-rails
-  rubocop (~> 0.67.2)
-  rubocop-performance (~> 1.1)
+  rubocop
+  rubocop-performance
   sass-rails
   sentry-raven
   sitemap_generator
