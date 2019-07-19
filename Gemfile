@@ -18,6 +18,7 @@ gem "puma"
 gem "rails", "5.2.3"
 gem "rubocop", :require => false
 gem "rubocop-performance"
+gem "rubocop-rails"
 gem "sass-rails"
 gem "sentry-raven"
 gem "sitemap_generator"
