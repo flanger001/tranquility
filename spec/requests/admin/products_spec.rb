@@ -50,7 +50,7 @@ RSpec.describe Admin::ProductsController do
 
     it "updates a product" do
       patch admin_product_path(:url => product.url), :params => { :product => product_attributes }
-      expect(response).to redirect_to(admin_product_path(product))
+      expect(response).to redirect_to(admin_product_path(product.reload))
     end
   end
 
