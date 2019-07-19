@@ -66,8 +66,8 @@ GEM
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.1.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
-    bcrypt (3.1.12)
-    better_html (1.0.13)
+    bcrypt (3.1.13)
+    better_html (1.0.14)
       actionview (>= 4.0)
       activesupport (>= 4.0)
       ast (~> 2.0)
@@ -75,20 +75,20 @@ GEM
       html_tokenizer (~> 0.0.6)
       parser (>= 2.4)
       smart_properties
-    bindex (0.7.0)
-    bootsnap (1.4.3)
+    bindex (0.8.1)
+    bootsnap (1.4.4)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.3)
-    capybara (3.16.2)
+    capybara (3.26.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.2)
+      regexp_parser (~> 1.5)
       xpath (~> 3.2)
     carrierwave (1.3.1)
       activemodel (>= 4.0.0)
@@ -102,11 +102,11 @@ GEM
     crass (1.0.4)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
-    dotenv (2.7.2)
-    dotenv-rails (2.7.2)
-      dotenv (= 2.7.2)
+    dotenv (2.7.4)
+    dotenv-rails (2.7.4)
+      dotenv (= 2.7.4)
       railties (>= 3.2, < 6.1)
-    erb_lint (0.0.28)
+    erb_lint (0.0.29)
       activesupport
       better_html (~> 1.0.7)
       html_tokenizer
@@ -128,9 +128,9 @@ GEM
     html_tokenizer (0.0.7)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    jaro_winkler (1.5.2)
+    jaro_winkler (1.5.3)
     jmespath (1.4.0)
-    jquery-rails (4.3.3)
+    jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -162,18 +162,18 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
     mimemagic (0.3.3)
-    mini_magick (4.9.3)
-    mini_mime (1.0.1)
+    mini_magick (4.9.5)
+    mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    msgpack (1.2.9)
+    msgpack (1.3.0)
     multipart-post (2.0.0)
-    newrelic_rpm (6.2.0.354)
+    newrelic_rpm (6.5.0.357)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     parallel (1.17.0)
-    parser (2.6.2.1)
+    parser (2.6.3.0)
       ast (~> 2.4.0)
     pg (1.1.4)
     pry (0.12.2)
@@ -181,9 +181,9 @@ GEM
       method_source (~> 0.9.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    psych (3.1.0)
-    public_suffix (3.0.3)
-    puma (3.12.1)
+    public_suffix (3.1.1)
+    puma (4.0.1)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -216,7 +216,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    regexp_parser (1.4.0)
+    regexp_parser (1.6.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -234,17 +234,19 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.67.2)
+    rubocop (0.73.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
-      psych (>= 3.1.0)
+      parser (>= 2.6)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.6)
-    rubocop-performance (1.1.0)
-      rubocop (>= 0.67.0)
-    ruby-progressbar (1.10.0)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.4.0)
+      rubocop (>= 0.71.0)
+    rubocop-rails (2.2.1)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -264,7 +266,7 @@ GEM
       faraday (>= 0.7.6, < 1.0)
     sitemap_generator (6.0.2)
       builder (~> 3.0)
-    smart_properties (1.13.1)
+    smart_properties (1.15.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -279,7 +281,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.5.0)
+    unicode-display_width (1.6.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -306,17 +308,18 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails
   jquery-rails
-  kaminari (~> 1.1)
+  kaminari
   listen
   mini_magick
   newrelic_rpm
-  pg (~> 1.1)
+  pg
   pry-rails
-  puma (~> 3.1)
+  puma
   rails (= 5.2.3)
   rspec-rails
-  rubocop (~> 0.67.2)
-  rubocop-performance (~> 1.1)
+  rubocop
+  rubocop-performance
+  rubocop-rails
   sass-rails
   sentry-raven
   sitemap_generator
@@ -327,4 +330,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.3
+   2.0.2
