@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.5.1"
+ruby `cat .ruby-version`.chomp
 
 gem "acts_as_list"
 gem "bcrypt"
