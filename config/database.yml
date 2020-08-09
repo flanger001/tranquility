@@ -6,7 +6,6 @@ default: &default
   username: <%= ENV.fetch("DATABASE_USERNAME") %>
   password: <%= ENV.fetch("DATABASE_PASSWORD") %>
 
-
 development:
   <<: *default
   database: tranquility_development
@@ -14,3 +13,4 @@ development:
 test:
   <<: *default
   database: tranquility_test
+  host: 127.0.0.1
