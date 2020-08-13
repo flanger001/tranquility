@@ -5,6 +5,6 @@ class Staff < ActiveRecord::Base
 
   validates :first_name, :last_name, :presence => true
 
-  include Concerns::Person
-  include Concerns::Url
+  include Person
+  include Url
 end

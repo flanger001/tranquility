@@ -4,7 +4,7 @@ class Review < ActiveRecord::Base
             :numericality => { :less_than_or_equal_to => 5, :greater_than_or_equal_to => 1 }
   validates :product, :presence => true
 
-  include Concerns::Active
+  include Active
 
   def self.random
     order(Arel::Nodes::NamedFunction.new("RANDOM", [])).first

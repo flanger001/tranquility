@@ -15,7 +15,7 @@ gem "newrelic_rpm"
 gem "pg"
 gem "pry-rails"
 gem "puma"
-gem "rails", "5.2.3"
+gem "rails"
 gem "rubocop", :require => false
 gem "rubocop-performance"
 gem "rubocop-rails"

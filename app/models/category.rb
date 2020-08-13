@@ -4,9 +4,9 @@ class Category < ActiveRecord::Base
 
   accepts_nested_attributes_for :products, :allow_destroy => true
 
-  include Concerns::Url
-  include Concerns::SeoTags
-  include Concerns::Active
+  include Url
+  include SeoTags
+  include Active
 
   acts_as_list :scope => :category_collection
 
