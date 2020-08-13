@@ -26,6 +26,7 @@ gem "uglifier"
 
 group :development, :test do
   gem "capybara"
+  gem "selenium-webdriver"
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "rspec-rails"
