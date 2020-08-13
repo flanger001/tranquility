@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     docker:
-      - image: circleci/ruby:2.6.5-node
+      - image: circleci/ruby:2.6.5-node-browsers
       - image: circleci/postgres:11.6
     environment:
       RAILS_ENV: test
@@ -22,7 +22,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Initialize DB
-          command: bundle exec rails db:setup --trace
+          command: bundle exec rails db:create db:schema:load --trace
       #      - node/install-packages:
       #          pkg-manager: yarn
       # - ruby/rubocop-check
