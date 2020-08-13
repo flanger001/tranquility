@@ -6,9 +6,9 @@ class CategoryCollection < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  include Concerns::Url
-  include Concerns::SeoTags
-  include Concerns::Active
+  include Url
+  include SeoTags
+  include Active
 
   acts_as_list
 end

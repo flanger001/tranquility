@@ -1,5 +1,5 @@
 class Recommendation < ActiveRecord::Base
-  include Concerns::Active
+  include Active
 
   before_save :set_url
   validate :good_url?

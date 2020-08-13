@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  include Concerns::Person
+  include Person
 
   def self.from_session(session)
     if session[:user_id]
