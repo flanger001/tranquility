@@ -23,6 +23,7 @@ gem "sass-rails"
 gem "sentry-raven"
 gem "sitemap_generator"
 gem "uglifier"
+gem "webpacker"
 
 group :development, :test do
   gem "capybara"
