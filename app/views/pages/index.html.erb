@@ -1,12 +1,12 @@
 <% content_for :page_title, "A Sanctuary To Restore You" %>
 
 <div class="text-center">
-  <p><%= Snippet[:announcement] %></p>
+  <div class="announcement">
+    <%= simple_format(Snippet[:announcement]) %>
+  </div>
 
   <div class="landing-text">
-    <p>
-      <%= Snippet[:landing] %>
-    </p>
+    <%= simple_format(Snippet[:landing]) %>
   </div>
   <div class="site-logo">
     <%= image_tag(asset_pack_path("media/images/logos/desktop-new.png"), :class => "site-logo__image") %>
