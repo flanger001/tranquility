@@ -23,8 +23,8 @@ jobs:
       - run:
           name: Initialize DB
           command: bundle exec rails db:create db:schema:load --trace
-      #      - node/install-packages:
-      #          pkg-manager: yarn
+      - node/install-packages:
+          pkg-manager: yarn
       # - ruby/rubocop-check
       - ruby/rspec-test
       - slack/status
