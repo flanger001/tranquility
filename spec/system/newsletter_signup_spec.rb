@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Newsletter Signup", :js do
+RSpec.xdescribe "Newsletter Signup", :js do
   it "signs the user up and redirects to the newsletter site" do
     visit("/newsletter_signup")
 

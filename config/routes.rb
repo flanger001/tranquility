@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root :to => "pages#index"
 
   get "contact_us", :to => "pages#contact_us"
-  get "newsletter_signup", :to => "pages#newsletter_signup"
+  # get "newsletter_signup", :to => "pages#newsletter_signup"
 
   resources :reviews, :only => [:index, :show]
   resources :recommendations, :only => [:index]

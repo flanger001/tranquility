@@ -8,7 +8,7 @@ module Navigation
       site_links = {
         "Home" => url_helpers.root_path,
         "About Us" => url_helpers.about_path,
-        "Newsletter" => url_helpers.newsletter_signup_path,
+        # "Newsletter" => url_helpers.newsletter_signup_path,
         "Reviews" => url_helpers.reviews_path,
         "Recommendations" => url_helpers.recommendations_path,
         "Contact Us" => url_helpers.contact_us_path
