@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    ["staff", "no-photo.png"].join("/")
+    Webpacker.manifest.lookup(File.join("media", "images", "staff", "no-photo.png"))
   end
 
   # Process files as they are uploaded:
