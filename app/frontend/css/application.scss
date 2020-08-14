@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 @import 'mixins';
 @import 'variables';
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap';
 
 html {
   width: 100%;
@@ -44,7 +43,7 @@ a {
   position: relative;
   text-align: center;
   background: {
-    image: image-url("home/candles-banner.jpg");
+    image: url("~images/home/candles-banner.jpg");
     size: cover;
     repeat: no-repeat;
   }
