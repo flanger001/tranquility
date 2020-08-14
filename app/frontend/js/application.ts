@@ -1,7 +1,3 @@
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-sprockets
-
 function App() {}
 
 App.prototype.visitHome = function(e) {
@@ -20,9 +16,9 @@ App.prototype.removeElement = function() {
 App.prototype.addFields = function() {
     return (function(e) {
         e.preventDefault();
-        var target = e.currentTarget;
-        var time = new Date().getTime();
-        var regexp = new RegExp($(target).data('id'), 'g');
+        const target = e.currentTarget;
+        const time = new Date().getTime();
+        const regexp = new RegExp($(target).data('id'), 'g');
         $(target).before($(target).data('fields').replace(regexp, time));
     }).bind(this);
 };
@@ -33,8 +29,8 @@ App.prototype.slidePasswordField = function() {
     }).bind(this);
 };
 
-$(function() {
-    var app = new App();
+$(function(): void {
+    let app = new App();
 
     $('.flash').fadeOut(2000, app.removeElement());
     $(document).on('submit', 'form[name="mailchimp_signup"]', app.visitHome());
