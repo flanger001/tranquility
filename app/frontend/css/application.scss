@@ -334,6 +334,10 @@ a {
 
 // Extended Bootstrap Classes
 
+.error--text-center {
+  @extend .text-center;
+}
+
 .footer__container {
   @extend .container;
 
