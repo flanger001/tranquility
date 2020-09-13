@@ -334,6 +334,30 @@ a {
 
 // Extended Bootstrap Classes
 
+.announcements--text-center {
+  @extend .text-center;
+}
+
+.callouts__jumbotron {
+  @extend .jumbotron;
+}
+
+.callouts__lead {
+  @extend .lead;
+}
+
+.callouts__row {
+  @extend .row;
+}
+
+.callouts__text-center {
+  @extend .text-center;
+}
+
+.contact-us--text-center {
+  @extend .text-center;
+}
+
 .error--text-center {
   @extend .text-center;
 }
@@ -350,12 +374,48 @@ a {
   @extend .row;
 }
 
+.gifts__lead {
+  @extend .lead;
+}
+
 .hours__lead {
   @extend .lead;
 }
 
 .message__alert {
   @extend .alert;
+}
+
+.newsletter__btn {
+  @extend .btn;
+}
+
+.newsletter__btn-success {
+  @extend .btn-success;
+}
+
+.newsletter__btn-lg{
+  @extend .btn-lg;
+}
+
+.newsletter__control-label {
+  @extend .control-label;
+}
+
+.newsletter__form-control {
+  @extend .form-control;
+}
+
+.newsletter__form-group {
+  @extend .form-group;
+}
+
+.newsletter__radio {
+  @extend .radio;
+}
+
+.newsletter__text-center {
+  @extend .text-center;
 }
 
 .page__container {
