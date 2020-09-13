@@ -382,6 +382,20 @@ a {
   @extend .lead;
 }
 
+.message {
+  &__alert-success {
+    @extend .alert-success;
+  }
+
+  &__alert-danger {
+    @extend .alert-danger;
+  }
+
+  &__alert-info {
+    @extend .alert-info;
+  }
+}
+
 .message__alert {
   @extend .alert;
 }
@@ -422,20 +436,10 @@ a {
   @extend .container;
 }
 
-.message {
-  &__alert-success {
-    @extend .alert-success;
-  }
+.rating__glyphicon {
+  @extend .glyphicon;
+}
 
-  &__alert-danger {
-    @extend .alert-danger;
-  }
-
-  &__alert-block {
-    @extend .alert-block !optional;
-  }
-
-  &__alert-info {
-    @extend .alert-info;
-  }
+.rating__glyphicon-star {
+  @extend .glyphicon-star;
 }
