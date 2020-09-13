@@ -1,12 +1,12 @@
 <div class="staff" id="<%= staff.name.downcase.gsub(" ", "-") %>">
-  <div class="row">
-    <div class="col-sm-6">
+  <div class="staff__row">
+    <div class="staff__col-sm-6">
       <div class="staff__photo">
-        <%= image_tag staff.photo.url, :class => "staff__image img-responsive img-rounded", :alt => "#{staff.first_name} #{staff.last_name}" %>
+        <%= image_tag staff.photo.url, :class => "staff__image staff--img-responsive staff--img-rounded", :alt => "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="staff__col-sm-6">
       <div class="services">
         <h2 class="services__header">Services</h2>
         <%= simple_format(staff.title, :class => "staff__title") %>
@@ -14,7 +14,7 @@
           <b><%= staff.first_name %></b> is available for:
         </p>
         <% if staff.services.present? %>
-          <ul class="services-list list-unstyled">
+          <ul class="services-list staff--list-unstyled">
             <% staff.services.split("\n").each do |service| %>
               <li class="services-list__item"><%= service %></li>
             <% end %>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="staff__row">
     <blockquote class="bio">
       <%= simple_format(staff.bio, :class => "bio__body") %>
     </blockquote>

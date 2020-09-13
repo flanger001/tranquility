@@ -471,3 +471,31 @@ a {
 .sessions--input-lg {
   @extend .input-lg;
 }
+
+.staff__col-sm-4 {
+  @extend .col-sm-4;
+}
+
+.staff__col-sm-6 {
+  @extend .col-sm-6;
+}
+
+.staff--img-responsive {
+  @extend .img-responsive;
+}
+
+.staff--img-rounded {
+  @extend .img-rounded;
+}
+
+.staff__lead {
+  @extend .lead;
+}
+
+.staff--list-unstyled {
+  @extend .list-unstyled;
+}
+
+.staff__row {
+  @extend .row;
+}
