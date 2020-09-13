@@ -331,3 +331,47 @@ a {
     }
   }
 }
+
+// Extended Bootstrap Classes
+
+.footer__container {
+  @extend .container;
+
+  &.footer--text-center {
+    @extend .text-center;
+  }
+}
+
+.footer__row {
+  @extend .row;
+}
+
+.hours__lead {
+  @extend .lead;
+}
+
+.message__alert {
+  @extend .alert;
+}
+
+.page__container {
+  @extend .container;
+}
+
+.message {
+  &__alert-success {
+    @extend .alert-success;
+  }
+
+  &__alert-danger {
+    @extend .alert-danger;
+  }
+
+  &__alert-block {
+    @extend .alert-block !optional;
+  }
+
+  &__alert-info {
+    @extend .alert-info;
+  }
+}

@@ -1,11 +1,11 @@
-<div class="container text-center footer">
-  <div class="row footer__body">
+<div class="footer__container footer--text-center footer">
+  <div class="footer__row footer__body">
     <%= simple_format(Snippet[:spa_address]) %>
   </div>
-  <div class="row footer__body">
+  <div class="footer__row footer__body">
     <p> Copyright &copy; 2001-<%= Time.now.year %> A Touch Of Tranquility</p>
   </div>
-  <div class="row footer__body">
+  <div class="footer__row footer__body">
     <div class="col-md-12">
       <p>
         <% if user_logged_in? %>
