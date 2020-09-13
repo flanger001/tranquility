@@ -443,3 +443,31 @@ a {
 .rating__glyphicon-star {
   @extend .glyphicon-star;
 }
+
+.sessions__btn {
+  @extend .btn;
+}
+
+.sessions--btn-lg {
+  @extend .btn-lg;
+}
+
+.sessions--btn-success {
+  @extend .btn-success;
+}
+
+.sessions__control-label {
+  @extend .control-label;
+}
+
+.sessions__form-control {
+  @extend .form-control;
+}
+
+.sessions__form-group {
+  @extend .form-group;
+}
+
+.sessions--input-lg {
+  @extend .input-lg;
+}
