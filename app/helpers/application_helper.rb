@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def bootstrap_class_for(flash_type)
-    flashes = { :success => "alert-success", :error => "alert-danger", :alert => "alert-block", :notice => "alert-info" }
+    flashes = { :success => "message__alert-success", :error => "message__alert-danger", :alert => "message__alert-block", :notice => "message__alert-info" }
     flashes[flash_type.to_sym] || flash_type.to_s
   end
 end

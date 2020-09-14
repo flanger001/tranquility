@@ -331,3 +331,315 @@ a {
     }
   }
 }
+
+// Extended Bootstrap Classes
+
+.admin__btn {
+  @extend .btn;
+}
+
+.admin--btn-default {
+  @extend .btn-default;
+}
+
+.admin__btn-group {
+  @extend .btn-group;
+}
+
+.admin--btn-group-xs {
+  @extend .btn-group-xs;
+}
+
+.admin--pull-right {
+  @extend .pull-right;
+}
+
+.admin--btn-info {
+  @extend .btn-info;
+}
+
+.admin--btn-lg {
+  @extend .btn-lg;
+}
+
+.admin--btn-success {
+  @extend .btn-success;
+}
+
+.admin--btn-warning {
+  @extend .btn-warning;
+}
+
+.admin__btn-toolbar {
+  @extend .btn-toolbar;
+}
+
+.admin__caret {
+  @extend .caret;
+}
+
+.admin__checkbox {
+  @extend .checkbox;
+}
+
+.admin__close {
+  @extend .close;
+}
+
+.admin--col-sm-1 {
+  @extend .col-sm-1;  
+}
+
+.admin--col-sm-3 {
+  @extend .col-sm-3;
+}
+
+.admin--col-sm-4 {
+  @extend .col-sm-4;
+}
+
+.admin--col-sm-5 {
+  @extend .col-sm-5;
+}
+
+.admin--col-sm-6 {
+  @extend .col-sm-6;  
+}
+
+.admin--col-sm-10 {
+  @extend .col-sm-10; 
+}
+
+.admin--col-sm-11 {
+  @extend .col-sm-11; 
+}
+
+.admin__control-label {
+  @extend .control-label;
+}
+
+.admin__divider {
+  @extend .divider;
+}
+
+.admin__dropdown-menu {
+  @extend .dropdown-menu;
+}
+
+.admin__dropdown-toggle {
+  @extend .dropdown-toggle;
+}
+
+.admin__form-control {
+  @extend .form-control;
+}
+
+.admin__form-group {
+  @extend .form-group;
+}
+
+.admin--img-responsive {
+  @extend .img-responsive;
+}
+
+.admin--img-rounded {
+  @extend .img-rounded;
+}
+
+.admin--list-unstyled {
+  @extend .list-unstyled;
+}
+
+.admin__row {
+  @extend .row;
+}
+
+.admin__table {
+  @extend .table;
+}
+
+.admin--text-info {
+  @extend .text-info;
+}
+
+.admin--text-warning {
+  @extend .text-warning;
+}
+
+.admin--text-danger {
+  @extend .text-danger;
+}
+
+.admin__well {
+  @extend .well;
+}
+
+.announcements--text-center {
+  @extend .text-center;
+}
+
+.callouts__jumbotron {
+  @extend .jumbotron;
+}
+
+.callouts__lead {
+  @extend .lead;
+}
+
+.callouts__row {
+  @extend .row;
+}
+
+.callouts__text-center {
+  @extend .text-center;
+}
+
+.contact-us--text-center {
+  @extend .text-center;
+}
+
+.error--text-center {
+  @extend .text-center;
+}
+
+.footer--col-md-12 {
+  @extend .col-md-12;
+}
+
+.footer__container {
+  @extend .container;
+
+  &.footer--text-center {
+    @extend .text-center;
+  }
+}
+
+.footer__row {
+  @extend .row;
+}
+
+.gifts__lead {
+  @extend .lead;
+}
+
+.hours__lead {
+  @extend .lead;
+}
+
+.message {
+  &__alert-success {
+    @extend .alert-success;
+  }
+
+  &__alert-danger {
+    @extend .alert-danger;
+  }
+
+  &__alert-info {
+    @extend .alert-info;
+  }
+}
+
+.message__alert {
+  @extend .alert;
+}
+
+.newsletter__btn {
+  @extend .btn;
+}
+
+.newsletter--btn-success {
+  @extend .btn-success;
+}
+
+.newsletter--btn-lg{
+  @extend .btn-lg;
+}
+
+.newsletter__control-label {
+  @extend .control-label;
+}
+
+.newsletter__form-control {
+  @extend .form-control;
+}
+
+.newsletter__form-group {
+  @extend .form-group;
+}
+
+.newsletter__radio {
+  @extend .radio;
+}
+
+.newsletter--text-center {
+  @extend .text-center;
+}
+
+.page__container {
+  @extend .container;
+}
+
+.rating__glyphicon {
+  @extend .glyphicon;
+}
+
+.rating__glyphicon-star {
+  @extend .glyphicon-star;
+}
+
+.sessions__btn {
+  @extend .btn;
+}
+
+.sessions--btn-lg {
+  @extend .btn-lg;
+}
+
+.sessions--btn-success {
+  @extend .btn-success;
+}
+
+.sessions__control-label {
+  @extend .control-label;
+}
+
+.sessions__form-control {
+  @extend .form-control;
+}
+
+.sessions__form-group {
+  @extend .form-group;
+}
+
+.sessions--input-lg {
+  @extend .input-lg;
+}
+
+.staff--col-sm-4 {
+  @extend .col-sm-4;
+}
+
+.staff--col-sm-6 {
+  @extend .col-sm-6;
+}
+
+.staff--img-responsive {
+  @extend .img-responsive;
+}
+
+.staff--img-rounded {
+  @extend .img-rounded;
+}
+
+.staff__lead {
+  @extend .lead;
+}
+
+.staff--list-unstyled {
+  @extend .list-unstyled;
+}
+
+.staff__row {
+  @extend .row;
+}

@@ -3,35 +3,35 @@
 <%= form_with :model => @form, :url => @form.url, :authenticity_token => false, :html => { :name => "mailchimp_signup" } do |form| %>
   <h2>Sign up for email updates from A Touch Of Tranquility!</h2>
 
-  <div class="form-group">
-    <%= form.label :email, "Email Address *", :class => "control-label" %>
-    <%= form.text_field :email, :name => "EMAIL", :class => "form-control required" %>
+  <div class="newsletter__form-group">
+    <%= form.label :email, "Email Address *", :class => "newsletter__control-label" %>
+    <%= form.text_field :email, :name => "EMAIL", :class => "newsletter__form-control required" %>
   </div>
-  <div class="form-group">
-    <%= form.label :fname, "First Name *", :class => "control-label" %>
-    <%= form.text_field :fname, :name => "FNAME", :class => "form-control required" %>
+  <div class="newsletter__form-group">
+    <%= form.label :fname, "First Name *", :class => "newsletter__control-label" %>
+    <%= form.text_field :fname, :name => "FNAME", :class => "newsletter__form-control required" %>
   </div>
-  <div class="form-group">
-    <%= form.label :lname, "Last Name *", :class => "control-label" %>
-    <%= form.text_field :lname, :name => "LNAME", :class => "form-control required" %>
+  <div class="newsletter__form-group">
+    <%= form.label :lname, "Last Name *", :class => "newsletter__control-label" %>
+    <%= form.text_field :lname, :name => "LNAME", :class => "newsletter__form-control required" %>
   </div>
-  <div class="form-group">
+  <div class="newsletter__form-group">
     <%= form.collection_radio_buttons(:emailtype, MailchimpForm::EMAIL_TYPES, :first, :last, :html => { :name => "EMAILTYPE" }) do |b| %>
-      <div class="radio">
+      <div class="newsletter__radio">
         <%= b.label { b.radio_button + b.text } %>
       </div>
     <% end %>
   </div>
   <div>
     <%= form.hidden_field @form.token, :value => true, :name => @form.token %>
-    <%= form.submit "Subscribe", :name => "subscribe", :class => "btn btn-success btn-lg" %>
+    <%= form.submit "Subscribe", :name => "subscribe", :class => "newsletter__btn newsletter--btn-success newsletter--btn-lg" %>
     <span>(Clicking will take you to the newsletter site)</span>
   </div>
 <% end %>
 
 <br />
 <div class="clear">
-  <p class="text-center">
+  <p class="newsletter--text-center">
     Check your spam folder if you have signed up and haven't received any newsletters yet.
     Additionally, be sure to add <a href="mailto:christina.lower@yahoo.com">christina.lower@yahoo.com</a> to your contacts!
   </p>

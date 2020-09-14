@@ -1,6 +1,6 @@
 <% content_for :page_title, "About Us" %>
 
-<p class="lead">
+<p class="staff__lead">
   A Touch of Tranquility Spa is a sanctuary for restorative health; as a holistic spa for massage therapy, skin care, and expert hair removal services.
 </p>
 <p>
@@ -20,12 +20,12 @@
 <div class="staff-grid category">
   <h1 class="category__header">Our Staff</h1>
   <% collection.each_slice(3) do |staff_chunk| %>
-    <div class="staff-grid__item row">
+    <div class="staff-grid__item staff__row">
       <% staff_chunk.each do |staff| %>
-        <div class="col-sm-4">
+        <div class="staff--col-sm-4">
           <div class="staff__photo">
             <%= link_to(staff, :class => "staff__link") do %>
-              <%= image_tag(staff.photo.url, :class => "staff__image--grid img-responsive img-rounded", :alt => "#{staff.first_name} #{staff.last_name}") %>
+              <%= image_tag(staff.photo.url, :class => "staff__image--grid staff--img-responsive staff--img-rounded", :alt => "#{staff.first_name} #{staff.last_name}") %>
             <% end %>
           </div>
           <h2 class="staff__name"><%= staff.first_name %> <%= staff.last_name %></h2>

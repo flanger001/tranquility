@@ -1,33 +1,33 @@
-<div class='row'>
-  <div class='col-sm-4'>
-    <div class='form_group'>
-      <%= form.label :day, :class => "control-label" %>
-      <%= form.select :day, Event::DAYS, {}, :class => "form-control" %>
+<div class='admin__row'>
+  <div class='admin--col-sm-4'>
+    <div class='admin__form-group'>
+      <%= form.label :day, :class => "admin__control-label" %>
+      <%= form.select :day, Event::DAYS, {}, :class => "admin__form-control" %>
     </div>
   </div>
-  <div class='col-sm-3'>
-    <div class='form-group'>
-      <%= form.label :start_time, :class => "control-label" %>
-      <%= form.time_field :start_time, :class => "form-control" %>
+  <div class='admin--col-sm-3'>
+    <div class='admin__form-group'>
+      <%= form.label :start_time, :class => "admin__control-label" %>
+      <%= form.time_field :start_time, :class => "admin__form-control" %>
     </div>
   </div>
-  <div class='col-sm-3'>
-    <div class='form-group'>
-      <%= form.label :end_time, :class => "control-label" %>
-      <%= form.time_field :end_time, :class => "form-control" %>
+  <div class='admin--col-sm-3'>
+    <div class='admin__form-group'>
+      <%= form.label :end_time, :class => "admin__control-label" %>
+      <%= form.time_field :end_time, :class => "admin__form-control" %>
     </div>
   </div>
-  <div class='col-sm-1'>
-    <div class='form-group'>
-      <%= form.label :off, "Off?", :class => "control-label" %>
-      <%= form.check_box :off, :class => "checkbox" %>
+  <div class='admin--col-sm-1'>
+    <div class='admin__form-group'>
+      <%= form.label :off, "Off?", :class => "admin__control-label" %>
+      <%= form.check_box :off, :class => "admin__checkbox" %>
     </div>
   </div>
   <% unless form.object.new_record? %>
-    <div class='col-sm-1'>
-      <div class='form-group'>
-        <%= form.label :_destroy, "Remove day?", :class => "control-label" %>
-        <%= form.check_box :_destroy, :class => "checkbox" %>
+    <div class='admin--col-sm-1'>
+      <div class='admin__form-group'>
+        <%= form.label :_destroy, "Remove day?", :class => "admin__control-label" %>
+        <%= form.check_box :_destroy, :class => "admin__checkbox" %>
       </div>
     </div>
   <% end %>

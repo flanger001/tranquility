@@ -1,16 +1,16 @@
-<div class="form-group">
-  <%= form.label :name, :class => "control-label" %>
-  <%= form.text_field :name, :class => "form-control" %>
+<div class="admin__form-group">
+  <%= form.label :name, :class => "admin__control-label" %>
+  <%= form.text_field :name, :class => "admin__form-control" %>
 </div>
 <%= form.fields_for :events do |event| %>
   <%= render "event_fields", :form => event %>
 <% end %>
 
-<div class="form-group">
+<div class="admin__form-group">
   <%= form.add_additional :events, "Add Day", :partial => "admin/schedules/event_fields" %>
 </div>
 
-<div class="form-group">
-  <%= form.label :notes, "Schedule notes", :class => "control-label" %>
-  <%= form.text_area :notes, :rows => 4, :class => "form-control" %>
+<div class="admin__form-group">
+  <%= form.label :notes, "Schedule notes", :class => "admin__control-label" %>
+  <%= form.text_area :notes, :rows => 4, :class => "admin__form-control" %>
 </div>
