@@ -24,14 +24,14 @@
   </div>
   <div>
     <%= form.hidden_field @form.token, :value => true, :name => @form.token %>
-    <%= form.submit "Subscribe", :name => "subscribe", :class => "newsletter__btn newsletter__btn-success newsletter__btn-lg" %>
+    <%= form.submit "Subscribe", :name => "subscribe", :class => "newsletter__btn newsletter--btn-success newsletter--btn-lg" %>
     <span>(Clicking will take you to the newsletter site)</span>
   </div>
 <% end %>
 
 <br />
 <div class="clear">
-  <p class="newsletter__text-center">
+  <p class="newsletter--text-center">
     Check your spam folder if you have signed up and haven't received any newsletters yet.
     Additionally, be sure to add <a href="mailto:christina.lower@yahoo.com">christina.lower@yahoo.com</a> to your contacts!
   </p>

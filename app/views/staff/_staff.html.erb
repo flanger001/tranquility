@@ -1,12 +1,12 @@
 <div class="staff" id="<%= staff.name.downcase.gsub(" ", "-") %>">
   <div class="staff__row">
-    <div class="staff__col-sm-6">
+    <div class="staff--col-sm-6">
       <div class="staff__photo">
         <%= image_tag staff.photo.url, :class => "staff__image staff--img-responsive staff--img-rounded", :alt => "#{staff.first_name} #{staff.last_name}" %>
       </div>
     </div>
 
-    <div class="staff__col-sm-6">
+    <div class="staff--col-sm-6">
       <div class="services">
         <h2 class="services__header">Services</h2>
         <%= simple_format(staff.title, :class => "staff__title") %>

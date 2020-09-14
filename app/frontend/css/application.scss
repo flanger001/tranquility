@@ -334,6 +334,146 @@ a {
 
 // Extended Bootstrap Classes
 
+.admin__btn {
+  @extend .btn;
+}
+
+.admin--btn-default {
+  @extend .btn-default;
+}
+
+.admin__btn-group {
+  @extend .btn-group;
+}
+
+.admin--btn-group-xs {
+  @extend .btn-group-xs;
+}
+
+.admin--pull-right {
+  @extend .pull-right;
+}
+
+.admin--btn-info {
+  @extend .btn-info;
+}
+
+.admin--btn-lg {
+  @extend .btn-lg;
+}
+
+.admin--btn-success {
+  @extend .btn-success;
+}
+
+.admin--btn-warning {
+  @extend .btn-warning;
+}
+
+.admin__btn-toolbar {
+  @extend .btn-toolbar;
+}
+
+.admin__caret {
+  @extend .caret;
+}
+
+.admin__checkbox {
+  @extend .checkbox;
+}
+
+.admin__close {
+  @extend .close;
+}
+
+.admin--col-sm-1 {
+  @extend .col-sm-1;  
+}
+
+.admin--col-sm-3 {
+  @extend .col-sm-3;
+}
+
+.admin--col-sm-4 {
+  @extend .col-sm-4;
+}
+
+.admin--col-sm-5 {
+  @extend .col-sm-5;
+}
+
+.admin--col-sm-6 {
+  @extend .col-sm-6;  
+}
+
+.admin--col-sm-10 {
+  @extend .col-sm-10; 
+}
+
+.admin--col-sm-11 {
+  @extend .col-sm-11; 
+}
+
+.admin__control-label {
+  @extend .control-label;
+}
+
+.admin__divider {
+  @extend .divider;
+}
+
+.admin__dropdown-menu {
+  @extend .dropdown-menu;
+}
+
+.admin__dropdown-toggle {
+  @extend .dropdown-toggle;
+}
+
+.admin__form-control {
+  @extend .form-control;
+}
+
+.admin__form-group {
+  @extend .form-group;
+}
+
+.admin--img-responsive {
+  @extend .img-responsive;
+}
+
+.admin--img-rounded {
+  @extend .img-rounded;
+}
+
+.admin--list-unstyled {
+  @extend .list-unstyled;
+}
+
+.admin__row {
+  @extend .row;
+}
+
+.admin__table {
+  @extend .table;
+}
+
+.admin--text-info {
+  @extend .text-info;
+}
+
+.admin--text-warning {
+  @extend .text-warning;
+}
+
+.admin--text-danger {
+  @extend .text-danger;
+}
+
+.admin__well {
+  @extend .well;
+}
+
 .announcements--text-center {
   @extend .text-center;
 }
@@ -360,6 +500,10 @@ a {
 
 .error--text-center {
   @extend .text-center;
+}
+
+.footer--col-md-12 {
+  @extend .col-md-12;
 }
 
 .footer__container {
@@ -404,11 +548,11 @@ a {
   @extend .btn;
 }
 
-.newsletter__btn-success {
+.newsletter--btn-success {
   @extend .btn-success;
 }
 
-.newsletter__btn-lg{
+.newsletter--btn-lg{
   @extend .btn-lg;
 }
 
@@ -428,7 +572,7 @@ a {
   @extend .radio;
 }
 
-.newsletter__text-center {
+.newsletter--text-center {
   @extend .text-center;
 }
 
@@ -472,11 +616,11 @@ a {
   @extend .input-lg;
 }
 
-.staff__col-sm-4 {
+.staff--col-sm-4 {
   @extend .col-sm-4;
 }
 
-.staff__col-sm-6 {
+.staff--col-sm-6 {
   @extend .col-sm-6;
 }
 

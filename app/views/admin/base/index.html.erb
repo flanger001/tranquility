@@ -1,6 +1,6 @@
 <% content_for :page_title, "#{resource_class.to_s.titleize} Manager" %>
 <%= form_with :model => resource_class, :url => [:active, :admin, resource_class] do |form| %>
-<table class="table">
+<table class="admin__table">
   <thead>
     <tr>
       <%= render "index_row_headers" %>
@@ -13,12 +13,12 @@
         <tr>
           <%= render "index_row_columns", :row => row, :form => fields %>
           <td>
-            <div class="btn-group btn-group-xs pull-right">
-              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="admin__btn-group admin--btn-group-xs admin--pull-right">
+              <button class="admin__btn admin--btn-default admin__dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Actions
-                <span class="caret"></span>
+                <span class="admin__caret"></span>
               </button>
-              <ul class="dropdown-menu">
+              <ul class="admin__dropdown-menu">
                 <%= render "index_row_actions", :row => row %>
                 <%= render "index_row_extra_actions", :row => row %>
               </ul>

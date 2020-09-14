@@ -22,7 +22,7 @@
   <% collection.each_slice(3) do |staff_chunk| %>
     <div class="staff-grid__item staff__row">
       <% staff_chunk.each do |staff| %>
-        <div class="staff__col-sm-4">
+        <div class="staff--col-sm-4">
           <div class="staff__photo">
             <%= link_to(staff, :class => "staff__link") do %>
               <%= image_tag(staff.photo.url, :class => "staff__image--grid staff--img-responsive staff--img-rounded", :alt => "#{staff.first_name} #{staff.last_name}") %>
